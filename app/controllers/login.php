@@ -16,12 +16,10 @@ if(isset($_POST['log_button'])){
         }
         
         $_SESSION['name'] = $username;
-        header("Location: ../views/studentDash.php");
+        header("Location:../views/studentDash.php");
         exit();
     }
     else{
         array_push($error_array,"Email or password was incorrect<br>");
     }
 }
-
-?>
