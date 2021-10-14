@@ -14,3 +14,12 @@ $(document).ready(function() {
 
 
 });
+
+
+function openForm() {
+  document.getElementById("complainBox").style.display = "block"; 
+}
+
+function closeForm() {
+  document.getElementById("complainBox").style.display = "none";
+}
