@@ -15,6 +15,26 @@ require '../helpers/header.php';
 
 <body>
 
+        <!----------- Department card --------------->
+
+    <div class="depcard">
+
+        <div class="blog-card">
+            <div class="meta">
+                <div class="photo" style="background-image: url(https://cmb.ac.lk/wp-content/uploads/collagehouse.jpg)"></div>
+            </div>
+        
+            <div class="description">
+            <h1>Student Councellor's Office</h1>
+            <h2>Exam Issues, Ragging and Violence, COunselling Support</h2>
+            
+            <p class="read-more">
+                <a href="https://cmb.ac.lk/sco/" target="blank">Know More</a>
+            </p>
+            </div>
+        </div>
+    </div>
+
 <div class="container">
 <!-- whole body should be within this div -->
 
@@ -60,97 +80,57 @@ require '../helpers/header.php';
 
 
 	<div class="column-2 box" style="width:100%; padding: 0px 20px 0px 20px">
-        <h1>Dashboard</h1>
-		<br>
-
-
-		 <ul class="cards">
-				<li class="cards_item" id="SSA">
-					<div class="dashCard" style="background-color: #7dff9e" onclick="location.href='stuStaAff.php';">
-						<div class="dashCard_content">
-							<h2 class="dashCard_title">Student & Staff Affairs</h2>
-							<p class="dashCard_text">Bursary, Scholarships, Laptop Load, Societies & Services</p>
-							<!-- <button class="btn card_btn">View Services</button> -->
-						</div>
-					</div>
-				</li>
-
-				<li class="cards_item" id="SCO">
-					<div class="dashCard" style="background-color: #ff7d7d" onclick="location.href='stuCoun.php';">
-						
-						<div class="dashCard_content">
-						<h2 class="dashCard_title">Student Councellor</h2>
-						<p class="dashCard_text">Counselling, Personal / Academic problems, Stress, Health</p>
-						<!-- <button class="btn card_btn">Read More</button> -->
-						</div>
-					</div>
-				</li>
-
-				<li class="cards_item" id="SCHOL">
-					<div class="dashCard" style="background-color: #839aff">
-						<div class="dashCard_content">
-						<h2 class="dashCard_title">Scholarships</h2>
-						<p class="dashCard_text">Mahapola, Bursary and all kinds of scholarships</p>
-						<!-- <button class="btn card_btn">Read More</button> -->
-						</div>
-					</div>
-				</li>	
-		</ul>
 
 		<br>
 
-		<h1>Popular Topics</h1>
-		<br>
-		<!-- auto generating topics from database data -->
+        <h2>Services Offered</h2>
 
 		<ul class="cards">
-				
-				<li class="cards_item_small">
-						<div class="dashCard-topics">
-							<div class="dashCard_content">
-								<h4>Laptop Loans</h4>
-							</div>
-						</div>
-				</li>
+			<li class="cards_item_dep" id="topic1">
+				<div class="depCard">
+					<div class="depCard_content">
+						<p class="depCard_title">Exam Issues</p>
+						<p class="depCard_text">How to apply, appeal and check your eligibility</p>
+						<!-- <button class="btn">View Services</button> -->
+					</div>
+				</div>
+			</li>
 
-				<li class="cards_item_small">
-						<div class="dashCard-topics">
-							<div class="dashCard_content">
-								<h4>mahapola</h4>
-							</div>
-						</div>
-				</li>
+			<li class="cards_item_dep" id="topic2">
+				<div class="depCard">
+					<div class="depCard_content">
+						<p class="depCard_title">Ragging / Violence</p>
+						<p class="depCard_text">Privately log a complaint about harrsement etc.</p>
+						<!-- <button class="btn">View Services</button> -->
+					</div>
+				</div>
+			</li>
+
+			<li class="cards_item_dep" id="topic3">
+				<div class="depCard">
+					<div class="depCard_content">
+						<p class="depCard_title">Counselling Support</p>
+						<p class="depCard_text">Seek the assistant of a professional counsellor</p>
+						<!-- <button class="btn">View Services</button> -->
+					</div>
+				</div>
+			</li>
 
 
-				<li class="cards_item_small">
-						<div class="dashCard-topics">
-							<div class="dashCard_content">
-								<h4>Student ID</h4>
-							</div>
-						</div>
-				</li>
-
-
-				<li class="cards_item_small" >
-						<div class="dashCard-topics">
-							<div class="dashCard_content">
-								<h4>Bursary</h4>
-							</div>
-						</div>
-				</li>
-
-				<li class="cards_item_small">
-						<div class="dashCard-topics">
-							<div class="dashCard_content">
-								<h4>Exam</h4>
-							</div>
-						</div>
-				</li>
+			<li class="cards_item_dep" id="topic4">
+				<div class="depCard">
+					<div class="depCard_content">
+						<p class="depCard_title">Other</p>
+						<p class="depCard_text">See all other services</p>
+						<!-- <button class="btn">View Services</button> -->
+					</div>
+				</div>
+			</li>
 		</ul>
 
 		<br><br><hr><br>
 		<div>
-		<h1> Announcements</h1>
+		<h2> Announcements</h2>
 		
 			<div class="long-card" id="#long-card">
 				<div class="card-content">
@@ -201,50 +181,7 @@ require '../helpers/header.php';
 		<br><hr><br>
 
 
-		<h3> Departments</h3>
-
-		<ul class="cards">
-			<li class="cards_item_dep" id="topic1">
-				<div class="depCard">
-					<div class="depCard_content">
-						<p class="depCard_title">Exam Issues</p>
-						<p class="depCard_text">How to apply, appeal and check your eligibility</p>
-						<!-- <button class="btn">View Services</button> -->
-					</div>
-				</div>
-			</li>
-
-			<li class="cards_item_dep" id="topic2">
-				<div class="depCard">
-					<div class="depCard_content">
-						<p class="depCard_title">Ragging / Violence</p>
-						<p class="depCard_text">Privately log a complaint about harrsement etc.</p>
-						<!-- <button class="btn">View Services</button> -->
-					</div>
-				</div>
-			</li>
-
-			<li class="cards_item_dep" id="topic3">
-				<div class="depCard">
-					<div class="depCard_content">
-						<p class="depCard_title">Counselling Support</p>
-						<p class="depCard_text">Seek the assistant of a professional counsellor</p>
-						<!-- <button class="btn">View Services</button> -->
-					</div>
-				</div>
-			</li>
-
-
-			<li class="cards_item_dep" id="topic4">
-				<div class="depCard">
-					<div class="depCard_content">
-						<p class="depCard_title">Other</p>
-						<p class="depCard_text">See all other services</p>
-						<!-- <button class="btn">View Services</button> -->
-					</div>
-				</div>
-			</li>
-		</ul>
+		
 
 		<br><br>
 

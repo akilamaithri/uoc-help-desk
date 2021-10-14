@@ -36,7 +36,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 
   <a href="#About" class="nav-label">About</a>
   <a href="#Services" class="nav-label">Services</a>
-  <a href="#Home" class="nav-label">Home</a>
+  <a href="../../app/views/studentDash.php" class="nav-label">Home</a>
 
   <div class="search-bar">
     <form action="/action_page.php">
@@ -49,8 +49,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 
   <a href="javascript:void(0);" class="icon" onclick="mobileNav()">
     <img src="../../public/img/icons/hamburg.svg">
-
-     
+        
   </div>
   </a>
 
