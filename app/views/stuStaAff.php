@@ -15,6 +15,26 @@ require '../helpers/header.php';
 
 <body>
 
+        <!----------- Department card --------------->
+
+    <div class="depcard">
+
+        <div class="blog-card">
+            <div class="meta">
+                <div class="photo" style="background-image: url(https://cmb.ac.lk/wp-content/uploads/collagehouse-wide.jpg)"></div>
+            </div>
+        
+            <div class="description">
+            <h1>Student & Staff Affairs Unit</h1>
+            <h2>Bursary, scholarships. Laptop Loan, Societies & Services</h2>
+            
+            <p class="read-more">
+                <a href="https://cmb.ac.lk/student-staff-affairs/" target="blank">Know More</a>
+            </p>
+            </div>
+        </div>
+    </div>
+
 <div class="container">
 <!-- whole body should be within this div -->
 
@@ -29,17 +49,6 @@ require '../helpers/header.php';
 
 				<br>
 
-					<!-- <a href="<?php echo $userLoggedIn; ?>">
-						<?php 
-							echo $user['first_name'] . " " . $user['last_name'];
-						?> 
-					</a> 
-					<br>
-					<?php echo "Posts: " . $user['num_posts']. "<br>"; 
-					echo "Likes: " . $user['num_likes'];
-
-					?>-->
-
 			</div>
 
             <img src="../../public/img/default/avatar-girl.png" alt="profile-pic" style="width:50%; border-radius: 50%; margin-top: 1rem">
@@ -47,7 +56,7 @@ require '../helpers/header.php';
             <h2>Lavinka Guruge</h2>
             <p class="pplTitle">Faculty of Science</p>
 
-			<p><button class="mainbtn pplButtonMain">View Profile</button></p>
+			<p><button class="pplButton pplButtonMain">View Profile</button></p>
 			<p><button class="pplButton" onclick="openForm()">Add a complaint</button></p>
 			<p><button class="pplButton">My Inquiries</button></p>
 			<p><button class="pplButton">Messages</button></p>
@@ -60,148 +69,10 @@ require '../helpers/header.php';
 
 
 	<div class="column-2 box" style="width:100%; padding: 0px 20px 0px 20px">
-        <h1>Dashboard</h1>
-		<br>
-
-
-		 <ul class="cards">
-				<li class="cards_item" id="SSA">
-					<div class="dashCard" style="background-color: #7dff9e">
-						<div class="dashCard_content">
-							<h2 class="dashCard_title">Student & Staff Affairs</h2>
-							<p class="dashCard_text">Bursary, Scholarships, Laptop Load, Societies & Services</p>
-							<!-- <button class="btn card_btn">View Services</button> -->
-						</div>
-					</div>
-				</li>
-
-				<li class="cards_item" id="SCO">
-					<div class="dashCard" style="background-color: #ff7d7d">
-						
-						<div class="dashCard_content">
-						<h2 class="dashCard_title">Student Councellor</h2>
-						<p class="dashCard_text">Counselling, Personal / Academic problems, Stress, Health</p>
-						<!-- <button class="btn card_btn">Read More</button> -->
-						</div>
-					</div>
-				</li>
-
-				<li class="cards_item" id="SCHOL">
-					<div class="dashCard" style="background-color: #839aff">
-						<div class="dashCard_content">
-						<h2 class="dashCard_title">Scholarships</h2>
-						<p class="dashCard_text">Mahapola, Bursary and all kinds of scholarships</p>
-						<!-- <button class="btn card_btn">Read More</button> -->
-						</div>
-					</div>
-				</li>	
-		</ul>
 
 		<br>
 
-		<h1>Popular Topics</h1>
-		<br>
-		<!-- auto generating topics from database data -->
-
-		<ul class="cards">
-				
-				<li class="cards_item_small">
-						<button class="dashCard-topics">
-							<div class="dashCard_content">
-								<h4>Laptop Loans</h4>
-							</div>
-						</button>
-				</li>
-
-				<li class="cards_item_small">
-						<div class="dashCard-topics">
-							<div class="dashCard_content">
-								<h4>mahapola</h4>
-							</div>
-						</div>
-				</li>
-
-
-				<li class="cards_item_small">
-						<div class="dashCard-topics">
-							<div class="dashCard_content">
-								<h4>Student ID</h4>
-							</div>
-						</div>
-				</li>
-
-
-				<li class="cards_item_small" >
-						<div class="dashCard-topics">
-							<div class="dashCard_content">
-								<h4>Bursary</h4>
-							</div>
-						</div>
-				</li>
-
-				<li class="cards_item_small">
-						<div class="dashCard-topics">
-							<div class="dashCard_content">
-								<h4>Exam</h4>
-							</div>
-						</div>
-				</li>
-		</ul>
-
-		<br><hr><br>
-		<div>
-		<h1> Announcements</h1>
-		
-			<div class="long-card" id="#long-card">
-				<div class="card-content">
-
-					<p class="status">Status : Received</p>
-					<p class="privacy">Public</p>				
-					<br>
-
-				<p class="title">I didn't receive Mahapola for two months now</p>			
-
-				<p class="author">Lavinka Guruge</p>
-				<p class="date">10th of October, 2021</p>
-					<br><br>
-
-				<p class="content">Dear sir/madam, me along with many of my firend shavent received mahapola scholarship for two months now. That is jue and july. As of the curren situation, its much hard to pay for all bills and stff. Also some of my firends at unveisroy of japura have recived mahapola...</p>
-					<br>
-
-				<a href="#" class="btn-reply">Reply</a>
-				<a href="#" class="btn-reply btn-other">Forward</a>
-		
-				<p class="me-too">12 students have had this issue</p>
-				</div>
-			</div>
-
-						<div class="long-card" id="#long-card">
-				<div class="card-content">
-
-					<p class="status">Status : Received</p>
-					<p class="privacy">Public</p>				
-					<br>
-					
-				<p class="title">I didn't receive Mahapola for two months now</p>			
-
-				<p class="author">Lavinka Guruge</p>
-				<p class="date">10th of October, 2021</p>
-					<br><br>
-
-				<p class="content">Dear sir/madam, me along with many of my firend shavent received mahapola scholarship for two months now. That is jue and july. As of the curren situation, its much hard to pay for all bills and stff. Also some of my firends at unveisroy of japura have recived mahapola...</p>
-					<br>
-
-				<a href="#" class="btn-reply">Reply</a>
-				<a href="#" class="btn-reply btn-other">Forward</a>
-		
-				<p class="me-too">12 students have had this issue</p>
-				</div>
-			</div>
-		</div>
-		<br><hr><br>
-
-
-		<h3> Departments</h3>
+        <h2>Services Offered</h2>
 
 		<ul class="cards">
 			<li class="cards_item_dep" id="topic1">
@@ -246,54 +117,66 @@ require '../helpers/header.php';
 			</li>
 		</ul>
 
+		<br><br><hr><br>
+		<div>
+		<h2> Announcements</h2>
+		
+			<div class="long-card" id="#long-card">
+				<div class="card-content">
+
+					<p class="status">Status : Received</p>
+					<p class="privacy">Public</p>				
+					
+
+				<p class="title">I didn't receive Mahapola for two months now</p>			
+
+				<p class="author">Lavinka Guruge</p>
+				<p class="date">10th of October, 2021</p>
+					<!-- <br><br><br> -->
+
+				<p class="content">Dear sir/madam, me along with many of my firend shavent received mahapola scholarship for two months now. That is jue and july. As of the curren situation, its much hard to pay for all bills and stff. Also some of my firends at unveisroy of japura have recived mahapola...</p>
+					<br>
+
+				<a href="#" class="btn-reply">Reply</a>
+				<a href="#" class="btn-reply btn-other">Forward</a>
+		
+				<p class="me-too">12 students have had this issue</p>
+				</div>
+			</div>
+
+						<div class="long-card" id="#long-card">
+				<div class="card-content">
+
+					<p class="status">Status : Received</p>
+					<p class="privacy">Public</p>				
+					<br>
+					
+				<p class="title">I didn't receive Mahapola for two months now</p>			
+
+				<p class="author">Lavinka Guruge</p>
+				<p class="date">10th of October, 2021</p>
+					<br><br>
+
+				<p class="content">Dear sir/madam, me along with many of my firend shavent received mahapola scholarship for two months now. That is jue and july. As of the curren situation, its much hard to pay for all bills and stff. Also some of my firends at unveisroy of japura have recived mahapola...</p>
+					<br>
+
+				<a href="#" class="btn-reply">Reply</a>
+				<a href="#" class="btn-reply btn-other">Forward</a>
+		
+				<p class="me-too">12 students have had this issue</p>
+				</div>
+			</div>
+		</div>
+		<br><hr><br>
+
+
+		
+
 		<br><br>
 
 
-			<!-- <div class="main_column column"> -->
-			<form class="post_form" action="index.php" method="POST" enctype="multipart/form-data">
-				<input type="file" name="fileToUpload" id="fileToUpload">
-				<textarea name="post_text" id="post_text" placeholder="Got something to say?"></textarea>
-				<input type="submit" name="post" id="post_button" value="Post" class="mainbtn">
-				<hr>
 
-			</form>
-
-			<div class="posts_area"></div>
-			<!-- <button id="load_more">Load More Posts</button> -->
-			<img id="loading" src="assets/images/icons/loading.gif">
-
-
-		<!-- </div> -->
-	
-
-		<!-- <div class="user_details column">
-
-			<h4>Popular</h4>
-
-			<div class="trends">
-				<?php 
-				$query = mysqli_query($con, "SELECT * FROM trends ORDER BY hits DESC LIMIT 9");
-
-				foreach ($query as $row) {
-					
-					$word = $row['title'];
-					$word_dot = strlen($word) >= 14 ? "..." : "";
-
-					$trimmed_word = str_split($word, 14);
-					$trimmed_word = $trimmed_word[0];
-
-					echo "<div style'padding: 1px'>";
-					echo $trimmed_word . $word_dot;
-					echo "<br></div><br>";
-
-
-				}
-
-				?>
-			</div>
-
-
-		</div> -->
+		
 		
 	</div>
         
@@ -358,3 +241,11 @@ require '../helpers/header.php';
 
 
 
+					 <!-- <a href="<?php echo $userLoggedIn; ?>">  -->
+						<!-- <?php echo $user['first_name'] . " " . $user['last_name']; ?>  -->
+					</a> 
+					<br>
+					<!-- <?php echo "Posts: " . $user['num_posts']. "<br>"; 
+					echo "Likes: " . $user['num_likes']; 
+
+					?> 
