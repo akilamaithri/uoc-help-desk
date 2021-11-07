@@ -1,6 +1,7 @@
 <?php
 /*add connecter
 */
+
 ?>
 
 <!DOCTYPE html>
@@ -20,6 +21,8 @@
 
 <link rel="shortcut icon" type="image/jpg" href="../../public/img/logo/favicon.png"/>
 
+<script src="../../public/javascript/register.js"></script>
+
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
@@ -29,31 +32,32 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 <body>
 
 <!-- Navbar -->
-<div class="navbar" id="navbar">
-  <a href="#home" class="nav-icon active" style="float:left"><img src="../../public/img/logo/landscape.png" width="100px"></a>
-  
-  <!-- <a href="#Search" class="search" onclick="doSearch()">Search</a> -->
+  <div class="navbar" id="navbar">
+    <a href="../views/studentDash.php" class="nav-icon active" style="float:left"><img src="../../public/img/logo/landscape.png" width="100px"></a>
+    
+    <!-- <a href="#Search" class="search" onclick="doSearch()">Search</a> -->
 
-  <a href="#About" class="nav-label">About</a>
-  <a href="#Services" class="nav-label">Services</a>
-  <a href="../../app/views/studentDash.php" class="nav-label">Home</a>
+    <!-- <a href="#About" class="nav-label">About</a>
+    <a href="#Services" class="nav-label">Services</a> -->
+    <a href="../" class="nav-label">Home</a>
 
-  <div class="search-bar">
-    <form action="/action_page.php">
-      <input type="text" placeholder="Search..." name="search">
-      <button type="submit" class="sbutton"><img src="../../public/img/icons/search.svg"></button>
-    </form>
+    <!-- <div class="search-bar">
+      <form action="/action_page.php">
+        <input type="text" placeholder="Search..." name="search">
+        <button type="submit" class="sbutton"><img src="../../public/img/icons/search.svg"></button>
+      </form>
+    </div> -->
+
+
+
+    <a href="javascript:void(0);" class="icon" onclick="mobileNav()">
+      <img src="../../public/img/icons/hamburg.svg">
+
+      
+    </div>
+    </a>
+
   </div>
-
-
-
-  <a href="javascript:void(0);" class="icon" onclick="mobileNav()">
-    <img src="../../public/img/icons/hamburg.svg">
-        
-  </div>
-  </a>
-
-</div>
 </div>
 
 
