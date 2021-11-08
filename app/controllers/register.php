@@ -1,4 +1,16 @@
 <?php
+require 'MailConfig.php';
+
+
+// USER NOT CONFIRMED (PENDING) - P
+// USER ACCOUNT ACTIVATED - A
+// USER ACCOUNT CLOSE - C
+ 
+
+function keyGenerater($length=30){
+    return substr(str_shuffle("abcdefghijklmnopqrst0123456789AZMLIYUQCXPTNSX"),0,$length);
+}
+
 
 $name = "";
 $em = "";
@@ -19,10 +31,10 @@ if(isset($_POST['register_button'])){
     $em = ucwords(strtolower($em));
     $_SESSION['reg_email'] = $em;
 
-    $em2 = strip_tags($_POST['reg_email2']);
+    $em2 = strip_tags($_POST['reg_email']);
     $em2 = str_replace(' ','',$em2);
     $em2 = ucwords(strtolower($em2));
-    $_SESSION['reg_email2'] = $em2;
+    $_SESSION['reg_email'] = $em2;
 
     $password = strip_tags($_POST['reg_password']);
 
@@ -67,9 +79,19 @@ if(isset($_POST['register_button'])){
         $profile_pic = "../../public/img/profile_pics/defaults/head_emerald.png";
         elseif($rand==2)
         $profile_pic = "../../public/img/profile_pics/defaults/head_deep_blue.png";
-        $query = mysqli_query($con,"INSERT INTO user VALUES (NULL,'$name','$em','$password','$date','$profile_pic','0','0','no',',')");
+        $date = date("Y-m-d H:i:s");
+        $value = keyGenerater();
+        $sql = "INSERT INTO user VALUES (NULL,'$name','$em','$password','$date','$profile_pic','0','0','P',','); ";
+        mysqli_query($con,$sql);
+        $sql = "SELECT LAST_INSERT_ID()";
+        $query = mysqli_query($con,$sql);
+        $data = mysqli_fetch_assoc($query);
+        $stdId = $data['LAST_INSERT_ID()'];
+        $sql = "INSERT INTO resetpass(stdId,createdTime,valueIdentity) VALUE($stdId,'$date','$value');";
+        $test = "<a href='http://localhost/uochelpdesk/app/views/confirm.php?value=".$value."&id=".$stdId."'>click</a>";
+        mysqli_query($con,$sql);
+        EmailContentBody("UOC-HELP-DESK Configuration","Welocme Undergraduate!","This is regarding the Confirmation of your university email.<br>".$test,$em);
         array_push($error_array,"<span style='color:#14c800;'> You are all set! Goahead and login!</span><br>");
-    
         $_SESSION['reg_name'] = "";
         $_SESSION['reg_email'] = "";
         $_SESSION['reg_email2'] = "";

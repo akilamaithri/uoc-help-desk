@@ -23,7 +23,10 @@ html, body {
       height: auto;
   }
   
-
+hr{
+  opacity: 0.3;
+  width: 90%;
+}
   .makeCenter {
     display: flex;
     justify-content: center;
@@ -72,6 +75,78 @@ html, body {
   .invert{
       filter: brightness(0) invert(1);
   }
+
+ /* Tooltip container */
+.tooltip {
+  /* position: relative; */
+  display: inline-block;
+  /* border-bottom: 1px dotted black; If you want dots under the hoverable text */
+  z-index: 10;
+  width: auto;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: auto;
+  background-color: rgba(167, 167, 167, 0.377);
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 5px 5px 5px 5px;
+  border-radius: 10px;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 10;
+  top: -5px;
+  right: 105%;
+  margin-left: -60px;
+}
+
+.notification_badge {
+	padding: 2px 5px;
+	font-size: 10px;
+	font-weight: 700;
+	line-height: 1;
+	color: #fff;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: baseline;
+	background-color: rgba(201, 25, 25, 0.671);
+	border-radius: 10px;
+	position: absolute;
+	left: 81%;
+	top: 2.8%;
+  z-index: 100;
+}
+
+.notification_badge_notification {
+	padding: 2px 5px;
+	font-size: 10px;
+	font-weight: 700;
+	line-height: 1;
+	color: #fff;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: baseline;
+	background-color: rgba(30, 153, 96, 0.671);
+	border-radius: 10px;
+	position: absolute;
+	left: 77%;
+	top: 2%;
+  z-index: 100;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+ .vl {
+    border-left: 1px solid #00000033;
+    height: auto;
+}
+
   
   /*----------------------TWO COLUMN LAYOUT------------------------*/
   
@@ -79,7 +154,6 @@ html, body {
     box-sizing: border-box;
   }
   
-
   .container {
     display: flex;
     width: 100%;
@@ -121,8 +195,13 @@ html, body {
     text-align: center;
     border-radius: 15px;
   }
-  
+    
   .pplTitle {
+    color: black;
+    font-size: 24px;
+  }
+
+  .pplFac {
     color: grey;
     font-size: 18px;
   }
@@ -176,11 +255,11 @@ html, body {
       justify-content: center;
       align-items: center;
           max-width: 400px;
-          min-height: 400px;  
+          /* min-height: 400px;   */
           background: #fff;
           box-shadow: 0 15px 50px rgba(0,0,0,0.5);
           padding:50px;
-      margin: 50px 50px 50px 50px;
+          margin: 50px 50px 50px 50px;
           box-sizing: border-box;	
           border-radius:20px;
   }
@@ -392,7 +471,7 @@ html, body {
   flex-direction: column;
   margin: 1rem auto;
 	box-shadow: 10px 10px 40px -10px rgba(0, 0, 0, 0.185);
-  margin-bottom: 1.6%;
+  /* margin-bottom: 1.6%; */
   background: #fff;
   line-height: 1.4;
   font-family: sans-serif;
@@ -400,6 +479,12 @@ html, body {
   overflow: hidden;
   z-index: -1;
   cursor: default;
+}
+
+.blog-card:hover {
+cursor: pointer;
+	box-shadow: 10px 10px 60px -10px rgba(0, 0, 0, 0.301);
+
 }
 
 .blog-card a:hover {
@@ -525,13 +610,15 @@ html, body {
 	margin: 0px 2px 0px 2px;
   color: #000;
   text-decoration: none;
+  transition-duration: 0.5s;
 
 }
 
-.cards_item :hover {
+.cards_item_small :hover {
 	text-decoration: none;
-	opacity: 0.9;
+	opacity: 0.5;
 }
+
 
 @media only screen and (max-width: 600px) {
   .cards_item {
@@ -548,20 +635,53 @@ html, body {
 
 .dashCard{
 	background-color: #F4D569;
+  width: 100%;
 	/* border-radius: 0.25rem; */
-	box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+	box-shadow: 0 5px 50px -14px rgba(0, 0, 0, 0.25);
 	display: flex;
 	flex-direction: column;
 	overflow: hidden;
 	border-radius: 8px;
-  color: #000;
+  color: rgb(255, 255, 255);
   text-decoration: none;
+  border: 1px solid;
+  background-color: #660066ad; 
+  transition-duration: 0.5s;
+
 }
 
+.dashCard:hover{
+    background-color: #660066; 
+
+}
+
+.ssaCard{
+  background-image: url("../img/backs/ssa-box.jpg");
+  background-size: 110%;
+	border-radius: 8px;
+  object-fit: cover;
+}
+
+.counCard{
+  background-image: url("../img/backs/coun-back.webp");
+  background-size: 100%;
+	border-radius: 8px;
+  object-fit: cover;
+}
+
+.scholCard{
+  background-image: url("../img/backs/schol-box.jpg");
+  background-size: 110%;
+	border-radius: 8px;
+  object-fit: cover;
+}
+
+
 .dashCard-topics{
-	background-color: #F4D569;
+	background-color: #660066;
+  color: white;
 	/* border-radius: 0.25rem; */
-	box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+	box-shadow: 0 20px 40px -14px rgba(134, 15, 15, 0.25);
 	display: flex;
 	flex-direction: column;
 	overflow: hidden;
@@ -569,78 +689,234 @@ html, body {
 	float: 1;
   border: none;
   margin-right: 3px;
+  width: 100%;
+  opacity: 0.8;
+  transition-duration: 0.5s;
+
+}
+
+.dashCard-topics:hover{
+opacity: 1;
 }
 
 .dashCard_content {
   /* padding: 2px; */
   text-decoration: none;
-  color: #000;
-  /* background: linear-gradient(to bottom left, #EF8D9C 40%, #FFC39E 100%); */
+  width: 100%;
+  height: 100%;
+  color: rgb(255, 255, 255);
+
 }
 
 .dashCard_title {
-  color: black;
+  color: rgb(255, 255, 255);
   font-size: 20px;
   text-transform: capitalize;
   padding: 5px 0px 0px 20px;
 }
 
+.profileCard_title {
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  text-transform: capitalize;
+  /* padding: 20px 0px 0px 20px; */
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+}
+
 .dashCard_text {
 	margin: 5px 0px 5px 5px;
-	color: #000000;
+	color: #ffffff;
 	font-size: 16px;
-  padding: 0px 0px 20px 15px;
+  padding: 0px 15px 20px 15px;
 
 }
 
 @media only screen and (max-width: 600px) {
+  .scholCard {
+	  width: 100%;
+  }
 
-
-  .dashCard{
-	  width: 85%;
-
+  .dashCard .cards_item{
+	  width: 100%;
   }
 }
 
+
+/* ---------------Profile Settings------------- */
+
+
+.profileCard {
+	box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  width: 95%;
+  padding: 5%;
+	height: auto;
+  text-align: center;
+  border-radius: 15px;
+	float: left;
+	margin-right: 30px;
+	/* background-color: rgba(0, 0, 0, 0.034); */
+  }
+
+
+  .tab {
+	float: left;
+	width: 22%;
+	height: auto;
+	/* box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25); */
+	/* margin-right: 7%; */
+	
+  }
+  
+  /* Style the buttons inside the tab */
+  .tab button {
+	display: block;
+	background-color: inherit;
+	color: black;
+	padding: 22px 16px;
+	width: 100%;
+	outline: none;
+	border: none;
+	text-align: left;
+	cursor: pointer;
+	transition: 0.3s;
+	font-size: 17px;
+  }
+  
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+	background-color: rgb(158, 131, 177);
+  color: #000000;
+  
+  }
+  
+  /* Create an active/current "tab button" class */
+  .tab button.active {
+	background-color: rgb(87, 38, 94);
+	color: white;
+	
+	
+	
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+	/* padding: 30px 12px; */
+	width: 100%;
+  height: 100%;
+	box-shadow: 15px 0px 20px -10px rgba(0, 0, 0, 0.25);
+	border-radius: 15px;
+	/* margin-left: 3%; */
+  }
+ 
+
 /*----------------Complaint Box ---------------*/
 
-.comp_container{
+#comp_container{
+    display: none;
     position: fixed;
-    left: 50%;
-    top:50%;
-    transform: translate(-50%, -50%);
-    display:none;
-    justify-content: center;
-    align-items: center;
     z-index: 100;
+    left: 0;
+    top:0;
+    bottom: 0;
+    width: 100%;
+    height: 100%; 
+    overflow: auto;
+    /* transform: translate(-50%, -50%); */
+    /* justify-content: center;
+    align-items: center; */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    -webkit-animation-name: fadeIn; /* Fade in the background */
+    -webkit-animation-duration: 0.6s;
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+backdrop-filter: blur(10px);
+
+}
+
+#ask_friend{
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top:0;
+    bottom: 0;
+    width: 100%;
+    height: 100%; 
+    overflow: auto;
+    /* transform: translate(-50%, -50%); */
+    /* justify-content: center;
+    align-items: center; */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    -webkit-animation-name: fadeIn; /* Fade in the background */
+    -webkit-animation-duration: 0.6s;
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+backdrop-filter: blur(10px);
+
+}
+
+/* Add Animation */
+@-webkit-keyframes slideIn {
+  from {bottom: -300px; opacity: 0} 
+  to {bottom: 0; opacity: 1}
+}
+
+@keyframes slideIn {
+  from {bottom: -300px; opacity: 0}
+  to {bottom: 0; opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
+
+/* @media only screen and (max-width: 600px) {
+  #comp_container{
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top:0;
+    bottom: 0;
+    width: 100%;
+    height: 100%; 
+    overflow: auto;
+    
+  }
+} */
+
+.complain_box{
+	/* max-width:800px; */
+	/* height:600px; */
+  position: fixed;
+  z-index: 101;
+  bottom: 0;
+	width:80%;
+	background:#ffffffe1;
+	padding:10px 40px 10px 40px;
+  margin-left: 10%;
+  margin-right: 10%;
+	border-radius:20px 20px 0px 0px ;
+	box-shadow: 0 15px 50px rgba(0,0,0,0.5);
+	box-sizing: border-box;	
 }
 
 @media only screen and (max-width: 600px) {
-  .comp_container{
-    position: fixed;
-    left: 1%;
-    right: 1%;
-    top:10%;
-    transform: translate(0%, 0%);
-    display:none;
-    justify-content: center;
-    align-items: center;
-    z-index: 100;
-}
-}
-
-.complain_box{
-	max-width:800px;
-	/* height:600px; */
-	width:100%;
-	background:rgb(224, 224, 224);
-	padding:10px 40px;
-  /* margin: 50px 0px 50px 50px; */
-	border-radius:20px;
-	box-shadow: 0 15px 50px rgba(0,0,0,0.5);
-	box-sizing: border-box;	
-  	/* border:1px solid #212121; */
-
+ .complain_box{
+  width: 100%;
+  margin-left: 0px;
+  margin-right: 0px;
+ }  
 }
 
 .complain_box .btn{
@@ -655,16 +931,13 @@ html, body {
 	font-size: 25px;
 	font-weight:1000;
 	position: relative;
-
 }
 
 
 .comp_details .inputTitle{
 	margin-top: 20px;
-
 	outline:none;
 	border-radius:10px;
-	border:1px solid rgb(0, 0, 0);
 	font-size: 20px;
     white-space:normal;
     margin-top: 5px;	
@@ -672,6 +945,10 @@ html, body {
 	margin-left:2px;
 	border-bottom-width:2px;
   
+}
+
+.compBtns{
+  float:"right";
 }
 
 
@@ -700,6 +977,28 @@ html, body {
 	margin-top: 5px;
 }
 
+.comp_box select{
+	height:40px;
+	width:100%;
+	outline:none;
+	border-radius:10px;
+	border:1px solid #ccc;
+	padding:10px;
+	font-size: 14px;	
+	margin-top: 5px;
+}
+
+.comp_box_short select{
+	height:40px;
+	width:30%;
+	outline:none;
+	border-radius:10px;
+  border: 2px solid #ccc;
+	padding:10px;
+	font-size: 14px;	
+	margin-top: 5px;
+}
+
 .comp_details input[type="radio"], input[type="checkbox"]{
 	
 	margin-top: 25px;
@@ -718,7 +1017,7 @@ html, body {
   border-radius: 10px;
   background-color: #f8f8f8;
   font-size: 20px;
-
+  border: 2px solid #ccc;
 }
 
 .comp_details textarea {
@@ -768,6 +1067,241 @@ form .icon i{
 	
 }
 
+/* ................. Inquiries ............... */
+
+
+.inquiry {
+  overflow: hidden;
+  border: 2px solid rgb(226, 226, 226);
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  width: fit-content;
+}
+
+
+.inquiry button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.2s;
+  font-size: 16px;
+
+}
+
+.inquiry button:hover {
+  background-color: #660066;
+  color: white;
+}
+
+.inquiry button.active {
+  background-color: #660066;
+  color: white;
+  font-weight: bold;
+}
+
+.inquirycontent {
+  display: none;
+  padding: 6px 12px;
+  /* border: 1px solid rgb(66, 34, 34); */
+  border-top: none;
+
+}
+
+.inquirycontent_selected {
+  padding: 6px 12px;
+  /* border: 1px solid rgb(66, 34, 34); */
+  border-top: none;
+
+}
+
+.inquirycontent {
+  animation: fadeEffect 1s; 
+}
+
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.select-box {
+float:right;
+padding-right: 7%;
+margin-bottom: 100px;
+position: relative;
+}
+.select-box select{
+  padding: 10px 10px 10px 10px;
+  overflow: hidden;
+  border: 2px solid rgb(226, 226, 226);
+  /* background-color: #f1f1f1; */
+  border-radius: 10px;
+}
+
+.select-box option{
+  padding: 10px 10px 10px 10px;
+  overflow: hidden;
+  border: 2px solid rgb(226, 226, 226);
+  background-color: #f1f1f1;
+  border-radius: 10px;
+}
+
+
+/* --------------------------Student Help */
+
+/*---------------------------StudentHelp---------------------------------*/
+  .prof{
+    box-shadow: 0 15px 30px -12px rgba(0, 0, 0, 0.25);
+    width: auto;
+    height: 22vh;
+   /*display: inline-block;*/
+    margin-left: 5%;
+    margin-right: 5%;
+    border-radius: 15px;
+   
+    /*text-align:left;*/
+  }
+
+.prof-img{
+  float: left; 
+  margin-top: 1rem;
+  margin-left: 70px;
+  margin-right: 50px;
+}
+
+.prof-img-2{
+  margin-top: 1rem;
+  margin-right: 2%;
+   float: right; 
+   border-radius:10px;
+   max-width: 50%;
+    height: auto;
+   object-fit: contain;
+   width:300px;
+   height: 80%;
+ 
+  
+  transition: transform 0.2s;
+}
+
+.prof-img-2:hover{
+  transform: scale(1.1);
+}
+.prof-text{
+  
+ padding-left: 30%;
+/*float: left;*/
+ line-height: 0.8;
+  font-size: 1.1vw;
+}
+
+.help-card{
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  width: 220px;
+ margin-left: 5%;
+  margin-right: 5%;
+  text-align: center;
+  border-radius: 15px;
+  margin-top: 2%;
+  border-width: 1px;
+  /* float: left; */
+ 
+
+}
+
+.help-content{
+  
+  width:auto;
+  height: auto;
+  display: block;
+  margin: 5%;
+ margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 2px;
+   
+ 
+}
+.help-cards{
+ /* box-shadow: 0 0px 20px -14px rgba(0, 0, 0, 0.25);*/
+  width: 110%;
+  height: 15%;
+  text-align: center;
+  border-radius: 5px;
+  margin: 4%;
+  margin-top: 5%;
+  border-width: 1px;
+ list-style-type: none;
+
+
+}
+
+.helpcard-text{
+  font-size: 12px;
+ 
+}
+
+.help-box{
+  width: 80%;
+  display: flex;
+ align-items: center;
+padding-left: 10%;
+ /* align-items: center;*/
+ float: left;
+}
+
+.helpbox-content{
+   box-sizing: border-box;
+  background-color: rgba(148, 106, 146, 0.719);
+  width: 100%;
+  
+	display: flex;
+ 
+
+}
+
+
+@media only screen and (max-width: 600px) {
+  .help-container {
+    flex-direction: column;  
+  }
+
+ .help-content{
+    width: 70%;
+    display: block;
+    float: left;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: center;
+  }
+  .help-card{
+    
+    width: 70%;
+  margin-left:15%;
+    margin-right: 15%;
+
+  }
+
+  .prof-img-2{
+    display: none;
+  }
+  .prof-text{
+    font-size: 10px;
+   padding-top: 5%;
+   margin-left: 5px;
+  }
+ .help-box{
+   display: block;
+   margin-left: 5%;
+   margin-right: 5%;
+ }
+
+ .helpbox-content{
+   margin-left: 1px;
+ }
+
+}
 
 /*----------------- Departments ---------------*/
 
@@ -779,25 +1313,27 @@ form .icon i{
 	cursor: pointer;
 	/* border: 1px solid; */
 	border-radius: 5px;
-	margin: 5px 5px 20px 0px;
+	margin: 5px 10px 10px 0px;
 	display: flex;
+    /* border:1px solid rgb(46, 25, 25); */
+
 }
 
 .depCard{
-	background-color: #ffffff;
-	box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+	background-color: #660066;
+  color: white;
+	box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.144);
 	display: flex;
 	flex-direction: column;
 	overflow: hidden;
 	border-radius: 8px;
-	transition: transform .4s;
+  transition: 0.4s;
 	flex: 1;
 }
 
 .depCard:hover{
-	transform: scale(1.02);
+	background-color: #850085;
 	box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.363);
-
 }
 
 .daCard-topics{
@@ -813,12 +1349,10 @@ form .icon i{
 .depCard_content {
   padding: 5px 5px 5px 5px;
   text-decoration: none;
-  color: #000;
   /* background: linear-gradient(to bottom left, #EF8D9C 40%, #FFC39E 100%); */
 }
 
 .depCard_title {
-  color: black;
   font-size: 18px;
   font-weight: 700;
   /* letter-spacing: 1px; */
@@ -828,17 +1362,131 @@ form .icon i{
 
 .depCard_text {
 	margin: 5px 0px 5px 5px;
-	color: #000000;
 	font-size: 12px;
 }
 
-@media only screen and (max-width: 800px) {
+.depCard_text {
+	margin: 5px 0px 5px 5px;
+	font-size: 12px;
+}
+
+.fitPhoto{
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+@media only screen and (max-width: 600px) {
   .cards_item_dep{
-	  width: 42%;
+	  width: 40%;
 
   }
 }
 
+.fitPhoto{
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  text-align: center;;
+}
+
+
+/*--------------- Staff card ---------------*/
+
+
+.cards_item_staff{
+	width: 50%;
+	text-align: left;
+	cursor: pointer;
+	border-radius: 5px;
+	display: flex;
+  text-decoration: none;
+	margin: 5px 20px 10px 0px;
+
+  /* display: flex;
+	padding: 10px;
+	width: 30%;
+	cursor: pointer;
+	border: 1px solid;
+	border-radius: 5px;*/
+} 
+
+.staffCard {
+	box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  text-align: center;
+  display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	border-radius: 10px;
+  padding-bottom: 1rem;
+  cursor: default;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  text-decoration: none;
+	/* margin: 0px 20px 0px 5px; */
+
+	/* background-color: #ffffff;
+	border-radius: 0.25rem;
+	box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	border-radius: 8px;
+  color: #000;
+  text-decoration: none; */
+}
+
+.staffCard .title {
+  color: grey;
+  font-size: 18px;
+  margin-bottom: 0px;
+}
+
+.staffCard button {
+  border: none;
+  /* outline: 0; */
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.staffCard a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+.staffCard img{
+  width:50%; 
+  border-radius: 50%; 
+  position: center;
+  display: block;
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #d1d2d2;
+}
+
+.staffCard button:hover, a:hover {
+  opacity: 0.7;
+}
+
+@media only screen and (max-width: 600px) {
+  .cards_item_staff {
+    width: 80%;
+  }
+
+}
 
 /*---------------- long-card ---------------*/
 
@@ -853,12 +1501,12 @@ form .icon i{
 	border-radius: 8px;
 }
 
-@media only screen and (max-width: 800px) {
+/* @media only screen and (max-width: 800px) {
   .long-card{
-	  width: 85%;
+	  width: 100%;
 
   }
-}
+} */
 
 
 
@@ -879,13 +1527,15 @@ form .icon i{
 	margin: 5px;
 	text-align: center;
 	border-radius: 10px;
-	float: right;
+	/* float: right; */
 }
 
 .long-card .title{
 	color: rgb(0, 0, 0);
 	font-size: 25px;
 	padding: 0px 0px 0px 10px;
+  margin-bottom: 0px;
+  margin-top: 10px;
 	/* margin: 10px 0px 5px 0px; */
 }
 
@@ -903,7 +1553,7 @@ form .icon i{
 	/* margin: 5px; */
 	font-style: 10px;
 	text-align: left;
-	float: left;
+	/* float: left; */
 }
 
 
@@ -967,6 +1617,8 @@ form .icon i{
 	color: white;
     cursor: pointer;
 }
+
+
   
   /*---------------------------NAVBAR----------------------------- */
   
@@ -974,6 +1626,12 @@ form .icon i{
     overflow: hidden;
     background-color: #F4D569;
     box-shadow: 0 4px 8px 0 #c7c7c7;
+
+    /* width: 100%; */
+
+    /* display: inline-flex; */
+    /* position: fixed; */
+    z-index: 10;
   }
   
   .navbar a {
@@ -981,18 +1639,22 @@ form .icon i{
     display: block;
     color: #000000;
     text-align: center;
-    padding: 14px 16px;
+    padding: 10px 14px 10px 14px;
     text-decoration: none;
     font-size: 16px;
   }
   
   .nav-label {
-    margin: 13px;
-    font-size: 16px;
+    margin-top: 13px;
+    font-size: 10px;
+  }
+
+    .nav-label span{
+     display: none;
   }
   
   .navbar a:hover {
-    background-color: #ffc800;
+    background-color: #e4c760;
     color: black;
   }
   
@@ -1027,16 +1689,17 @@ form .icon i{
   
   .sbutton {
     float: right;
-    height: 34px;
+    height: 33px;
     width: auto;
     padding: 6px 6px;
-    margin-top: 7px;
+    margin-top: 8px;
     margin-right: 16px;
     margin-bottom: 10px;
     background: #ffffff;
-    font-size: 8px;
+    /* font-size: 8px; */
     border: none;
-    cursor: pointer; 
+    cursor: pointer;
+    border-radius: 0px 5px 5px 0px;
   }
   
   .sbutton:hover {
@@ -1052,6 +1715,13 @@ form .icon i{
     .navbar .search-bar{
         display: none;
     }
+
+    .nav-label span{
+     display: inline-block;
+      font-size: 15px;
+      padding-left: 5px;
+
+  }
   }
   
   @media screen and (max-width: 600px) {
@@ -1074,7 +1744,7 @@ form .icon i{
       float: left;
       display: block;
       text-align: left;
-      margin: 0px 0px 10px 28px;
+      margin: 20px 0px 10px 15px;
     }
   
       /* .navbar.responsive .search{
@@ -1101,7 +1771,147 @@ form .icon i{
       border: 1px solid #ccc;
     } */
   }
+
+
+  /*-------------------- Messages -----------*/
   
+.user_details {
+	width: 250px;
+	float: left;
+	margin: 20px;
+}
+
+.user_details img {
+	height: 120px;
+	border-radius: 5px;
+	margin-right: 5px;
+}
+
+.user_details_left_right {
+	width: 120px;
+	display: inline-table;
+	position: absolute;
+}
+
+.column {
+	/* background-color: #fff; */
+	padding: 10px;
+	border: 1px solid #D3D3D3;
+	border-radius: 5px;
+	/* box-shadow: 2px 2px 1px #D3D3D3; */
+	/* z-index: -1; */
+	color: rgb(211, 211, 211);
+}
+
+.main_column {
+	/* float: block; */
+	/* width: 70%; */
+	z-index: -1;
+	min-height: 170px;
+}
+
+/*------------------------ New Add */
+
+.complain_form {
+	width: 100%;
+}
+
+.complain_form textarea {
+	width: 81%;
+	height: 60px;
+	border-radius: 8px;
+	margin-right: 5px;
+	border: 1px solid #D3D3D3;
+	font-size: 12px;
+	padding: 5px;
+}
+
+textarea:focus {
+	outline: 0;
+}
+/* 
+.complain_form input[type="submit"] {
+	width: 11%;
+	height: 60px;
+	border: none;
+	border-radius: 3px;
+	background-color: #3498db;
+	font-family: 'Bellota-BoldItalic', sans-serif;
+	color: #fff;
+	text-shadow: #73B6E2 0.5px 0.5px 0px;
+	font-size: 90%;
+	position: absolute;
+	outline: 0;
+	margin: 0;
+} */
+
+
+  
+.complain_form input[type="submit"] {
+      background-color: white; /* Green */
+      max-width: 300px;   
+      /* height: 20px;    */
+      border: 2px solid #660066;
+      color: black;
+      padding: 10px 20px 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      /* margin: 2px 2px; */
+      border-radius: 4px;
+      transition-duration: 0.3s;
+      cursor: pointer;
+  }
+  
+ .complain_form input[type="submit"] :hover {
+      background-color: #440044;
+      color: white;
+      cursor: pointer;
+  }
+
+.complain_form input[type="submit"]:active {
+	padding: 5px 4px 4px 5px;
+}
+
+.status_complain{
+	width: 96%;
+	font-size: 15px;
+	padding: 0px 5px;
+	min-height: 75px;
+  background-color: white;
+}
+
+.complain_profile_pic{
+	float: left;
+	margin-right: 7px;
+}
+
+.complain_profile_pic img{
+border-radius: 20px;
+}
+
+
+
+.comment_like {
+	background-color: transparent;
+	border: none;
+	font-size: 14px;
+	color: #3498db;
+	padding: 0;
+	height: auto;
+	width: auto;
+	margin: 0;
+}
+
+.like_value {
+	display: inline;
+	font-size: 14px;
+	margin: 0px;
+	padding: 0px;
+}
+
+
   /*-------------------------------FOOTER--------------------------------*/
   
   
@@ -1240,7 +2050,10 @@ form .icon i{
   }
 
 
-
+.reqbtn{
+	background-color:red;
+	padding: 10px 5px 10px 5px;
+}
   
   /* @media (max-width: 600px) {
   

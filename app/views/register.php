@@ -1,8 +1,8 @@
 <?php
-require '../modules/connect.php';
-require '../controllers/register.php';
-require '../controllers/login.php';
-require '../helpers/header.php';
+    require '../modules/connect.php';
+    require '../controllers/register.php';
+    require '../controllers/login.php';
+    require '../helpers/header.php';
 ?>
 
 <html>
@@ -18,9 +18,12 @@ require '../helpers/header.php';
     <div class="makeCenter">
     
     <div class="mainForm">
-        <h2>Login Or SignUp below</h2>
+        
         
         <div id="first">
+
+            <h2>Login</h2>
+
             <form action="register.php" method="POST">
                 <div class="input-box">
                 <input type="email" name="log_email" placeholder="Student Email" value="<?php 
@@ -46,7 +49,7 @@ require '../helpers/header.php';
     </div>
 
     <div id="second" >
-
+        <h2>Register</h2>
         <!-- <div id="second"> -->
                 <form action="register.php" method="POST">
                     <div class="input-box">
