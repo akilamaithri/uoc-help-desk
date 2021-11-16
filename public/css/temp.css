@@ -1,62 +1,3 @@
-
-body {
-	line-height: 17px;
-	background-color: #E6EAE8;
-}
-
-a {
-	color: #20AAE5;
-	text-decoration: none;
-}
-
-.top_bar {
-    
-	width: 100%;
-	min-width: 1050px;
-	height: 50px;
-	background-color: #20aae5;
-	border-bottom: 0.25em solid #1894ca;
-	margin: 0 0 10px 0;
-	display: inline-flex;
-	position: fixed;
-	z-index: 10;
-}
-
-.logo a{
-	font-family: 'Bellota-BoldItalic', sans-serif;
-	margin-left: 10px;
-	font-size: 30;
-	position: relative;
-	top: 9px;
-	text-shadow: #73B6E2 0.5px 0.5px 0px;
-	color: #1086BA;
-}
-
-a:hover {
-	text-decoration: none;
-}
-
-nav {
-	float: right;
-	right: 1px;
-	position: absolute;
-	margin: 10px;
-}
-
-nav a{
-	position: relative;
-	color: #fff;
-	text-decoration: none;
-	font-size: 17px;
-}
-
-nav a:hover {
-	border-bottom: 7px solid #e67e22;
-	color: #fff;
-}
-
-.wrapper {
-
 /* body {
 	line-height: 17px;
 	background-color: #E6EAE8;
@@ -70,20 +11,17 @@ nav a:hover {
 
 
 /* .wrapper {
-
 	margin: 0 auto;
 	top: 50px;
 	position: relative;
 	padding: 0 10px;
 	width: 75%;
 	min-width: 950px;
-
 } */
 
 a{
 	text-decoration: none;
 	color: #000;
-
 }
 
 .column {
@@ -113,12 +51,6 @@ a{
 	width: 70%;
 	z-index: -1;
 	min-height: 170px;
-
-}
-
-.complain_form {
-	width: 100%;
-
 } 
 
 .complain_form {
@@ -131,7 +63,6 @@ a{
 	padding: 10px 10px 15px 15px;
 	text-align: left;
 	border-radius: 8px;
-
 }
 
 .complain_form textarea {
@@ -168,12 +99,6 @@ textarea:focus {
 }
 
 .status_complain{
-
-	width: 96%;
-	font-size: 15px;
-	padding: 0px 5px;
-	min-height: 75px;
-
 	/* width: 96%; */
 	font-size: 15px;
 
@@ -241,18 +166,11 @@ textarea:focus {
 .sameline_left{
 	float: left;
 	margin-right: 30px;
-
 }
 
 .complain_profile_pic{
 	float: left;
 	margin-right: 7px;
-
-}
-
-.complain_profile_pic img{
-border-radius: 20px;
-
 	border-radius: 500px;
 
 }

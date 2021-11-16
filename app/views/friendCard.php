@@ -25,7 +25,7 @@
  
 
                 if($logged_in_user_obj->isFriend($username)){
-                    echo '<p><input type="submit" name="remove_friend" class="pplButton" style="background-color:red; color:white" value="Remove Friend"></p><br>';
+                    echo '<p><input type="submit" name="remove_friend" class="pplButton" style="background-color:red; color:white" value="Remove Friend"></p>';
                 }
                 else if ($logged_in_user_obj->didReceiveRequest($username)){
                     echo ' <p><input type="submit" name="respond_request" class="pplButton" value="Respond to Request" ></p>';

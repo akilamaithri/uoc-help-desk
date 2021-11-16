@@ -174,21 +174,12 @@ require '../helpers/stuStaff_header.php';
 
 
 	<div id="contact" class="inquirycontent">
-
-	<div>
-	<br>
-	</div>
 		<h2>Contact Us</h2>
-
 		<ul class="cards">
 			
-			<li class="cards_item_staff">
+			<li class="cards_item_staffpage">
 				<div class="staffCard" >
-		
-					<img src="../../public/img/default/avatar-girl.png" alt="Senior Student Councellor">
-					<h2>Ms Monika Bamunuarachchi</h2><hr>
-					<p class="title">MA -Bursary, laptop loans</p>
-					<p class="title">moni@ssa.cmb.ac.lk</p>
+					<?php include '../helpers/people/ssa_monika.php'; ?>
 				</div>
 			</li>
 			

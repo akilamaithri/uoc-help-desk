@@ -16,21 +16,6 @@ $(document).ready(function() {
 });
 
 
-
-function openForm() {
-  document.getElementById("complainBox").style.display = "block"; 
-}
-
-function closeForm() {
-  document.getElementById("complainBox").style.display = "none";
-}
-
-/*.................. Inquiries ..................*/
-
-function openinq(evt, InqName) {
-	// Declare all variables
-	var i, inquirycontent, inquirylink;
-  
 /*.................. Complain ..................*/
 
 function openForm() {
@@ -57,14 +42,11 @@ function openinq(evt, InqName)
 	// Declare all variables
 	var i, inquirycontent, inquirylink;
 
-
 	// Get all elements with class="inquirycontent" and hide them
 	inquirycontent = document.getElementsByClassName("inquirycontent");
 	for (i = 0; i < inquirycontent.length; i++) {
 		inquirycontent[i].style.display = "none";
 	}
-
-  
 
 	// Get all elements with class="inquirylink" and remove the class "active"
 	inquirylink = document.getElementsByClassName("inquirylink");
@@ -72,10 +54,8 @@ function openinq(evt, InqName)
 		inquirylink[i].className = inquirylink[i].className.replace(" active", "");
 	}
 
-
 	document.getElementById(InqName).style.display = "block";
 	evt.currentTarget.className += " active";
 }
 
 	document.getElementById("defaultOpen").click();
-

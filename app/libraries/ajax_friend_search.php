@@ -27,15 +27,16 @@ if($query != "") {
 
 		if($user->isFriend($row['name'])) {
 			echo "<div class='resultDisplay'>
-					<a href='../views/messages.php?u=" . $row['name'] . "' style='color: #000'>
-						<div class='liveSearchProfilePic'>
-							<img src='". $row['profile_pic'] . "'>
-						</div>
+					<a href='../views/messages.php?u=" . $row['name'] . "'>
+
 
 						<div class='liveSearchText'>
+							<img src='". $row['profile_pic'] . "'>
+
 							<p style='margin: 0;'>". $row['name'] . "</p>
 							<p id='grey'>".$mutual_friends . "</p>
 						</div>
+				
 					</a>
 				</div>";
 
@@ -47,3 +48,5 @@ if($query != "") {
 }
 
 ?>
+
+

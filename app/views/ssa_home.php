@@ -30,9 +30,55 @@ require '../helpers/stuStaff_header.php';
     </div>
 
 
-	<div class="column-2 box" style="width:100%; padding: 0px 20px 0px 20px">
+	<div class="column-2 box">
+
+<div class="inquiry">
+		<button  id="defaultOpen" class="inquirylink" onclick="openinq(event, 'functions')">Home</button>
+
+		<button class="inquirylink" onclick="openinq(event, 'contact')">Contact Us</button>
+</div>
+
 
 		<br>
+
+<!-------------------------------------------------------------------- MenuBar -->
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<script>
+
+
+			function openinq(evt, InqName) 
+			{
+				// Declare all variables
+				var i, inquirycontent, inquirylink;
+
+				// Get all elements with class="inquirycontent" and hide them
+				inquirycontent = document.getElementsByClassName("inquirycontent");
+				for (i = 0; i < inquirycontent.length; i++) {
+					inquirycontent[i].style.display = "none";
+				}
+
+				// Get all elements with class="inquirylink" and remove the class "active"
+				inquirylink = document.getElementsByClassName("inquirylink");
+				for (i = 0; i < inquirylink.length; i++) {
+					inquirylink[i].className = inquirylink[i].className.replace(" active", "");
+				}
+
+				document.getElementById(InqName).style.display = "block";
+				evt.currentTarget.className += " active";
+			}
+
+		
+		</script>
+
+
+<!-------------------------------------------------------------------- MenuBar -->
+
+
+<!-------------------------------------------------------------------- options -->
+
+	<div id="functions" class="inquirycontent">
 
         <h2>Services Offered</h2>
 
@@ -131,7 +177,7 @@ require '../helpers/stuStaff_header.php';
 			</li>
 
 
-			<li class="cards_item_dep" id="topic4" onclick="location.href='ssa_services.php';">
+			<li class="cards_item_dep" id="topic4" onclick="location.href='ssa_vehipass.php';">
 				<div class="depCard">
 					<div class="depCard_content">
 						<p class="depCard_title">Vehicle Pass</p>
@@ -143,9 +189,10 @@ require '../helpers/stuStaff_header.php';
 
 		</ul>
 
+<!-------------------------------------------------------------------- options -->
 
-		<br><br><hr><br>
-		<div>
+<!------------------------------------------------------------------announcements -->
+
 		<h2> Announcements</h2>
 		
 			<div class="long-card" id="#long-card">
@@ -168,57 +215,98 @@ require '../helpers/stuStaff_header.php';
 				</div>
 			</div>
 
-						<div class="long-card" id="#long-card">
+			<div class="long-card" id="#long-card">
 				<div class="card-content">
 
 					<p class="status">Status : Received</p>
 					<p class="privacy">Public</p>				
 					<br>
 					
-				<p class="title">I didn't receive Mahapola for two months now</p>			
+					<p class="title">I didn't receive Mahapola for two months now</p>			
 
-				<p class="author">Lavinka Guruge</p>
-				<p class="date">10th of October, 2021</p>
-					<br><br>
+					<p class="author">Lavinka Guruge</p>
+					<p class="date">10th of October, 2021</p>
+						<br><br>
 
-				<p class="content">Dear sir/madam, me along with many of my firend shavent received mahapola scholarship for two months now. That is jue and july. As of the curren situation, its much hard to pay for all bills and stff. Also some of my firends at unveisroy of japura have recived mahapola...</p>
-					<br>
+					<p class="content">Dear sir/madam, me along with many of my firend shavent received mahapola scholarship for two months now. That is jue and july. As of the curren situation, its much hard to pay for all bills and stff. Also some of my firends at unveisroy of japura have recived mahapola...</p>
+						<br>
 
-				<a href="#" class="btn-reply">Reply</a>
-				<a href="#" class="btn-reply btn-other">Forward</a>
-		
-				<p class="me-too">12 students have had this issue</p>
+					<a href="#" class="btn-reply">Reply</a>
+					<a href="#" class="btn-reply btn-other">Forward</a>
+			
+					<p class="me-too">12 students have had this issue</p>
 				</div>
 			</div>
-		</div>
-		<br><hr><br>
-
-
-		
-
-		<br><br>
-
-
-
-		
-		
 	</div>
-        
+
+		
+		
+
+
+<!------------------------------------------------------------------ announcements -->
+
+<!-------------------------------------------------------------------- contact us -->
+
+<div id="contact" class="inquirycontent">
+
+
+		<h2>Contact Us</h2>
+
+		<ul class="cards">
+			
+			<li class="cards_item_staff">
+				<div class="staffCard" >
+					<?php include '../helpers/people/ssa_gayani.php'; ?>
+				</div>
+			</li>
+			
+			<li class="cards_item_staff" >
+				<div class="staffCard" >
+					<?php include '../helpers/people/ssa_monika.php'; ?>
+				</div>
+			</li>
+
+			<li class="cards_item_staff">
+				<div class="staffCard" >
+					<?php include '../helpers/people/ssa_nayani.php'; ?>
+				</div>
+			</li>
+		</ul>
+
+
+		<ul class="cards">
+			
+			<li class="cards_item_staff">
+				<div class="staffCard" >
+					<?php include '../helpers/people/ssa_dasuni.php'; ?>
+				</div>
+			</li>
+			
+			<li class="cards_item_staff">
+				<div class="staffCard" >
+					<?php include '../helpers/people/ssa_taniya.php'; ?>
+				</div>
+			</li>
+
+			<li class="cards_item_staff">
+				<div class="staffCard" >
+					<?php include '../helpers/people/ssa_geeth.php'; ?>
+				</div>
+			</li>
+		</ul>
+	
 	</div>
+
+<script>
+				document.getElementById("defaultOpen").click();
+</script>
+
+
+</div>
 
 </div>
 
 
-
-    <?php require '../helpers/footer.php';?>
-
+<?php require '../helpers/footer.php';?>
 
 
-					 <!-- <a href="<?php echo $userLoggedIn; ?>">  -->
-						<!-- <?php echo $user['first_name'] . " " . $user['last_name']; ?>  -->
-					</a> 
-					<br>
-					<!-- <?php echo "Posts: " . $user['num_posts']. "<br>"; 
-					echo "Likes: " . $user['num_likes']; 
-
-					?> 

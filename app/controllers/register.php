@@ -31,10 +31,10 @@ if(isset($_POST['register_button'])){
     $em = ucwords(strtolower($em));
     $_SESSION['reg_email'] = $em;
 
-    $em2 = strip_tags($_POST['reg_email']);
+    $em2 = strip_tags($_POST['reg_email2']);
     $em2 = str_replace(' ','',$em2);
     $em2 = ucwords(strtolower($em2));
-    $_SESSION['reg_email'] = $em2;
+    $_SESSION['reg_email2'] = $em2;
 
     $password = strip_tags($_POST['reg_password']);
 
