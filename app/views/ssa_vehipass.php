@@ -15,7 +15,8 @@ require '../helpers/stuStaff_header.php';
 
 
 	<div class="column-2 box" >
-		<h1>Season Tickets</h1>
+
+				<h1>Vehicle Pass</h1>
 
 		<div class="inquiry">
 		<button  id="defaultOpen" class="inquirylink" onclick="openinq(event, 'functions')">Functions</button>
@@ -187,7 +188,7 @@ require '../helpers/stuStaff_header.php';
 			
 			<li class="cards_item_staffpage">
 				<div class="staffCard" >
-					<?php include '../helpers/people/ssa_geeth.php'; ?>
+					<?php include '../helpers/people/ssa_taniya.php'; ?>
 				</div>
 			</li>
 			

@@ -38,7 +38,7 @@ require '../views/complain.php';
         <h2>Choose an option</h2>
 
             <li class="cards_item_dep" id="topic2">
-				<div class="depCard" style="background-color:#f1e496;">
+				<div class="depCard">
 					<div class="depCard_content">
 						<div class="makeCenter">
 							<h3>Report an Issue</h3>

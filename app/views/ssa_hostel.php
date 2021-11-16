@@ -15,6 +15,7 @@ require '../helpers/stuStaff_header.php';
 
 
 	<div class="column-2 box" >
+		<h1>Hostel</h1>
 
 		<div class="inquiry">
 			<button  id="defaultOpen" class="inquirylink" onclick="openinq(event, 'functions')">Functions</button>
@@ -69,7 +70,7 @@ require '../helpers/stuStaff_header.php';
 
 		<ul class="cards">
 			<li class="cards_item_dep" id="topic1">
-				<div class="depCard" style="background-color:#f1e496;">
+				<div class="depCard" >
 					<div class="depCard_content">
 						<div class="makeCenter">
 							<h3>Application Form</h3>
@@ -79,7 +80,7 @@ require '../helpers/stuStaff_header.php';
 			</li>
 
 			<li class="cards_item_dep" id="topic2">
-				<div class="depCard" style="background-color:#f1e496;">
+				<div class="depCard">
 					<div class="depCard_content">
 						<div class="makeCenter">
 							<h3>Submission link</h3>
@@ -89,7 +90,7 @@ require '../helpers/stuStaff_header.php';
 			</li>
 
             <li class="cards_item_dep" id="topic2">
-				<div class="depCard" style="background-color:#f1e496;">
+				<div class="depCard">
 					<div class="depCard_content">
 						<div class="makeCenter">
 							<h3>Report an Issue</h3>
@@ -183,31 +184,14 @@ require '../helpers/stuStaff_header.php';
 		
 		<ul class="cards">
 			
-			<li class="cards_item_staff" >
-				<div class="staffCard">
-		
-					<img src="../../public/img/default/avatar-girl.png" alt="Senior Student Councellor">
-					<h2>Ms Monika Bamunuarachchi</h2><hr>
-					<p class="title">MA -Bursary, laptop loans</p>
-					<p class="title">moni@ssa.cmb.ac.lk</p>
+			<li class="cards_item_staffpage">
+				<div class="staffCard" >
+					<?php include '../helpers/people/ssa_dasuni.php'; ?>
 				</div>
 			</li>
 			
 		</ul>
 
-		<ul class="cards">
-			
-			<li class="cards_item_staff" >
-				<div class="staffCard">
-		
-					<img src="../../public/img/default/avatar-girl.png" alt="Senior Student Councellor">
-					<h2>Ms Monika Bamunuarachchi</h2><hr>
-					<p class="title">MA -Bursary, laptop loans</p>
-					<p class="title">moni@ssa.cmb.ac.lk</p>
-				</div>
-			</li>
-			
-		</ul>
 		
 	</div>
 

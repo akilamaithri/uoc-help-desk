@@ -155,10 +155,10 @@ if (isset($_POST['x'])){
 }// post x
 ?>
 <div id="Overlay" style=" width:100%; height:100%; border:0px #990000 solid; position:absolute; top:0px; left:0px; z-index:2000; ;display:none;"></div>
-<div class="main_column column" style="border:0px; width:550px; margin-left:auto;margin-right:30%; margin-top:5%;" >
+<div class="main_column column" style="border:0px">
 
 
-	<div id="formExample" style="padding-top:100px; ">
+	<div id="formExample" style="padding-top:100px">
 		
 	    <p><b> <?=$msg?> </b></p>
 	    

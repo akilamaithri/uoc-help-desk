@@ -48,11 +48,6 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
       </form>
     </div> -->
 
-  <a href="javascript:void(0);" class="icon" onclick="mobileNav()">
-    <img src="../../public/img/icons/hamburg.svg">
-        
-  </div>
-  </a>
 
 
     <a href="javascript:void(0);" class="icon" onclick="mobileNav()">

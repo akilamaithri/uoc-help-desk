@@ -39,7 +39,7 @@ require '../views/complain.php';
 
 		<ul class="cards">
 			<li class="cards_item_dep" id="topic1" onclick="location.href='ssa_vehicleapp.php';">
-				<div class="depCard" style="background-color:#f1e496;">
+				<div class="depCard">
 					<div class="depCard_content">
 						<div class="makeCenter">
 							<h3>Application Form</h3>
@@ -49,7 +49,7 @@ require '../views/complain.php';
 			</li>
 
 			<li class="cards_item_dep" id="topic2" >
-				<div class="depCard" style="background-color:#f1e496;">
+				<div class="depCard">
 					<div class="depCard_content">
 						<div class="makeCenter">
 							<h3>Submission link</h3>
@@ -59,7 +59,7 @@ require '../views/complain.php';
 			</li>
 
             <li class="cards_item_dep" id="topic2">
-				<div class="depCard" style="background-color:#f1e496;">
+				<div class="depCard">
 					<div class="depCard_content">
 						<div class="makeCenter">
 							<h3>Report an Issue</h3>
