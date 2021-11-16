@@ -1,4 +1,5 @@
 <?php
+
 require '../modules/connect.php';
 require '../controllers/register.php';
 require '../controllers/login.php';
@@ -35,11 +36,26 @@ require '../helpers/header.php';
         </div>
     </div>
 
+// require '../modules/connect.php';
+// require '../controllers/register.php';
+// require '../controllers/login.php';
+require '../helpers/headerIn.php';
+require '../views/complain.php';  
+?>
+
+
+
+        <!----------- Department card --------------->
+
+                <?php require '../helpers/stuCoun_header.php'; ?>
+
+
 <div class="container">
 <!-- whole body should be within this div -->
 
 	<div class="column-1 box">
 	<!-- use the column layout to divide the content to ratio -->
+
         
         <div class="card">
           
@@ -76,6 +92,9 @@ require '../helpers/header.php';
 
         </div>
         
+
+         <?php require '../views/pplCard.php'; ?>      
+
     </div>
 
 
@@ -89,7 +108,7 @@ require '../helpers/header.php';
 			<li class="cards_item_dep" id="topic1">
 				<div class="depCard" onclick="location.href='stuCoun_ragging.php';">
 					<div class="depCard_content">
-						<p class="depCard_title">Exam Issues</p>
+
 						<p class="depCard_text">How to apply, appeal and check your eligibility</p>
 						<!-- <button class="btn">View Services</button> -->
 					</div>
@@ -99,7 +118,7 @@ require '../helpers/header.php';
 			<li class="cards_item_dep" id="topic2">
 				<div class="depCard">
 					<div class="depCard_content">
-						<p class="depCard_title">Ragging / Violence</p>
+
 						<p class="depCard_text">Privately log a complaint about harrsement etc.</p>
 						<!-- <button class="btn">View Services</button> -->
 					</div>
@@ -135,28 +154,36 @@ require '../helpers/header.php';
 			<div class="long-card" id="#long-card">
 				<div class="card-content">
 
-					<p class="status">Status : Received</p>
+
+					
 					<p class="privacy">Public</p>				
 					
 
-				<p class="title">I didn't receive Mahapola for two months now</p>			
+				<p class="title">Laptop Loan details released</p>			
 
 				<p class="author">Lavinka Guruge</p>
 				<p class="date">10th of October, 2021</p>
-					<!-- <br><br><br> -->
+
+
 
 				<p class="content">Dear sir/madam, me along with many of my firend shavent received mahapola scholarship for two months now. That is jue and july. As of the curren situation, its much hard to pay for all bills and stff. Also some of my firends at unveisroy of japura have recived mahapola...</p>
 					<br>
+
 
 				<a href="#" class="btn-reply">Reply</a>
 				<a href="#" class="btn-reply btn-other">Forward</a>
 		
 				<p class="me-too">12 students have had this issue</p>
+
+				<a href="#" class="btn-reply">View More</a>
+
+
 				</div>
 			</div>
 
 						<div class="long-card" id="#long-card">
 				<div class="card-content">
+
 
 					<p class="status">Status : Received</p>
 					<p class="privacy">Public</p>				
@@ -168,13 +195,27 @@ require '../helpers/header.php';
 				<p class="date">10th of October, 2021</p>
 					<br><br>
 
+					<p class="privacy">Public</p>				
+
+					
+				<p class="title">Updated bursary eligible list for the year 2022</p>			
+
+				<p class="author">Nimesh Deshan</p>
+				<p class="date">10th of October, 2021</p>
+
+
 				<p class="content">Dear sir/madam, me along with many of my firend shavent received mahapola scholarship for two months now. That is jue and july. As of the curren situation, its much hard to pay for all bills and stff. Also some of my firends at unveisroy of japura have recived mahapola...</p>
 					<br>
+
 
 				<a href="#" class="btn-reply">Reply</a>
 				<a href="#" class="btn-reply btn-other">Forward</a>
 		
 				<p class="me-too">12 students have had this issue</p>
+
+				<a href="#" class="btn-reply">View More</a>
+
+
 				</div>
 			</div>
 		</div>
@@ -194,6 +235,7 @@ require '../helpers/header.php';
 	</div>
 
 </div>
+
 
 <div class = "comp_container" id="complainBox">
     <div class="complain_box">
@@ -245,6 +287,7 @@ require '../helpers/header.php';
 		</form>
     </div>
 </div>
+
 
 
 

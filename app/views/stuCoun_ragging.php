@@ -1,4 +1,5 @@
 <?php
+
 require '../modules/connect.php';
 require '../controllers/register.php';
 require '../controllers/login.php';
@@ -12,6 +13,15 @@ require '../helpers/header.php';
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         <script src="../../public/javascript/register.js"></script>
     </head>
+
+
+require '../helpers/headerIn.php';
+require '../views/complain.php';  
+require '../helpers/stuCoun_header.php'; 
+
+?>
+
+
 
 <body>
 
@@ -35,12 +45,14 @@ require '../helpers/header.php';
         </div>
     </div>
 
+
 <div class="container">
 <!-- whole body should be within this div -->
 
 	<div class="column-1 box">
 	<!-- use the column layout to divide the content to ratio -->
         
+
         <div class="card">
           
 		  	<div class="user_details column">
@@ -75,6 +87,10 @@ require '../helpers/header.php';
 			<p></p>
 
         </div>
+
+		<?php include('../views/pplCard.php'); ?>     
+
+
         
     </div>
 
@@ -261,6 +277,7 @@ require '../helpers/header.php';
 		</form>
     </div>
 </div>
+
 
 
 

@@ -1,3 +1,4 @@
+<<<<<<< Lavinka
  <?php
 require '../modules/connect.php';
 require '../controllers/register.php';
@@ -20,10 +21,18 @@ require '../helpers/header.php';
     <div class="complain_box">
 
         <div class="title">Complaint Form</div>
+=======
+
+<div class = "comp_container" id="comp_container">
+    <div class="complain_box">
+
+        <div class="title">Complaint Form</div><br>
+>>>>>>> main
 
         <form name = "complaint-form" action="#">
 
             <div class="comp_details">
+<<<<<<< Lavinka
             
                 <input type ="radio" id="html" name="compType" value="complaint" checked="checked">
                 <label for="complaint">Complaint</label>
@@ -42,6 +51,18 @@ require '../helpers/header.php';
                         <option value="hos">Hostel Issues</option>
                         <option value="med">Medical Issues</option>
                         <option value="lap">Laptop Loan Issues</option>
+=======
+
+                <div class="comp_box">	
+                    <select name="issuetype" id="issuetype" required= "">
+                        <option value="0">Select the type of the issue</option>
+                        <option value="bur">Bursary Issues</option>
+                        <option value="lap">Laptop Loan Issues</option>
+                        <option value="mah">Mahapola</option>
+                        <option value="hos">Hostel Issues</option>
+                        <option value="veh">Vehicle Pass</option>
+                        <option value="sea">Season/Railway tickets</option>                     
+>>>>>>> main
                         <option value="rag">Ragging and Violance Issues</option>
                         <option value="aca">Academic Issues</option>
                     </select>
@@ -62,6 +83,7 @@ require '../helpers/header.php';
                     new nicEditor({maxHeight : 40}).panelInstance('area5');
                 });
                 </script> -->            
+<<<<<<< Lavinka
                 <br><br>
             
                 <!-- <div class="icon">
@@ -82,11 +104,30 @@ require '../helpers/header.php';
                     <i class="far fa-smile-beam"></i>
                 </div> -->
                 <input type="submit" value="Send" class="mainbtn">
+=======
+                <br>
+                <input type = "checkbox" id="privacy" name="type" value="public">
+                <label for="notice">Private</label>
+                <br>
+                <div class="compBtns" align="left">
+                    <div class="btn">
+                        <input type="submit" class="mainbtn" name="complain" id="complain_button" value="Publish">
+                    </div>
+
+                    <div class="btn">
+                        <button class="mainbtn" onclick="closeForm()">Close</button>
+                    </div>
+                </div>
+>>>>>>> main
                 <br>
             </div>
 		</form>
     </div>
+<<<<<<< Lavinka
     </div>
 
 </body>
     <?php require '../helpers/footer.php';?>
+=======
+</div>
+>>>>>>> main
