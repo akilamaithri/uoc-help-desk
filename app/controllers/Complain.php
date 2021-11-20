@@ -1,5 +1,6 @@
 
 <?php
+
 class Complain{
     private $con;
     private $user_obj;
@@ -187,30 +188,54 @@ class Complain{
             
             $str .= "<div class='status_complain' onClick='javascript:toggle$id()'>
                         <div class='status_content'>
+
+
+
                             <div class='complain_profile_pic'>
-                            <img src='$profile_pic' width='50'>
+                                <img src='$profile_pic' width='50'>
                             </div>
 
-                            <div class='complain_by' style='color:#ACACAC;'>
-                            <a href='$added_by' >by $name</a> <span>$user_to</span> 
-                            <div class='sameline'>$delete_button</div>
-                            <br>
+                            <div class='complain_by'>
+                                by<a href='$added_by' > $name</a> <span>$user_to</span>of UCSC, 18/19  
 
-                            <span class='date'>posted $time_message</span>
+                                <div class='sameline'>
+                                
+                                    <div class='deleteBtn'>$delete_button</div>
+                                
+                                    <p class='status'>Status : Received</p>
+
+                                    <p class='privacy'>Public</p>
+                                
+                                </div>
+                                <br>
+
+                                <span class='date'>posted $time_message</span>
                             
                             </div>
+
+	    					<p class='title'>Complaint Title</p>	
 
                             <div id='complain_body'>
-                            $body
-                            <br>
-                            <br>
+                                $body
+                                <br>
+                                <br>
                             
                             </div>
-                        <div class='newsfeedcomplainOptions'>
-                            Comments($comments_check_num)&nbsp;&nbsp;&nbsp;&nbsp;
-                            <iframe src='../views/like.php?post_id=$id' scrolling='no'></iframe>
+
+
+                            <div class='newsfeedcomplainOptions' white-space: nowrap; '>
+                            
+                                <span class='btn-reply'>Comments&nbsp($comments_check_num)</span>
+                                
+                                <iframe src='../views/like.php?post_id=$id' scrolling='no'></iframe>
+
+                                <div class='bottomBtns'>
+						            <a href='#' onclick='forwardTo()' class='btn-reply btn-other'>Forward</a>
+                                </div>
                             </div>
-                        </div>
+
+                            
+                     </div>
                         
                     </div>
                     

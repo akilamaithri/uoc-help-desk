@@ -25,7 +25,6 @@ require '../views/complain.php';
     </div>
 
 	<div class="column-2 box" >
-	<div class="tab"> 
         <h1>Sent Complaints</h1>
    
 

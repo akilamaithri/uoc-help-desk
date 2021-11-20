@@ -5,6 +5,8 @@
     require '../controllers/Message.php';
     require '../controllers/Notification.php';
     require '../views/complain.php';  
+    require '../views/forwardTo.php';  
+
 
     session_start();
     //  print_r($_SESSION);

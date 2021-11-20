@@ -36,6 +36,17 @@ function closeFriend() {
   document.getElementById("ask_friend").style.display = "none";
 }
 
+//------------------------ Forward Complain-----------------
+
+function forwardTo() {
+  document.getElementById("forwardTo").style.display = "block"; 
+}
+
+function closeFriend() {
+  document.getElementById("forwardTo").style.display = "none";
+}
+
+
 /*.................. Inquiries ..................*/
 function openinq(evt, InqName) 
 {

@@ -56,45 +56,4 @@ require '../views/complain.php';
     </div>
 </div>
 
-<div class = "comp_container" id="complainBox">
-    <div class="complain_box">
-
-        <div class="title">Announcement Form</div>
-
-        <form action="staAnnounce.php" method="POST">
-
-            <div class="comp_details">
-            
-        
-                <div class="comp_box">	
-                    <select name="issuetype" id="issuetype">
-                        <option value="0">Select the category</option>
-                         <option value="bur">Bursary </option>
-                        <option value="hos">Hostel </option>
-                        <option value="med">Student societies and services</option>
-                        <option value="lap">Laptop Loan</option>
-                        <option value="rag">Ragging and Violance Issues</option>
-                        <option value="aca">Academic related</option>
-                    </select>
-                </div>
-                
-                <input type="text" id="Title" name="Title" placeholder="Title">
- 
-                <textarea name="complain_text" id="complain_text" placeholder="Add a Public Complain" style="height:100px"></textarea>
-
-                <br><br>
-                <div class="btn">
-                    <input type="submit" class="mainbtn" name="complain" id="complain_button" value="Publish">
-                </div>
-                <div class="btn">
-                    <button class="mainbtn" onclick="closeForm()">Close</button>
-                </div>
-                <br>
-                
-                
-                <br>
-            </div>
-		</form>
-    </div>
-</div>
 <?php require '../helpers/footer.php';?>
