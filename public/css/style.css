@@ -47,7 +47,6 @@ hr{
       font-size: 16px;
       /* margin: 2px 2px; */
       border-radius: 4px;
-      transition-duration: 0.3s;
       cursor: pointer;
   }
   
@@ -204,22 +203,23 @@ hr{
     
   .pplTitle {
     color: black;
-    font-size: 24px;
+    font-size: 22px;
+    margin-bottom: 2px;
   }
 
   .pplFac {
     color: grey;
-    font-size: 18px;
+    font-size: 14px;
+    margin-top: 4px;
+    margin-bottom: 4px;
   }
   
   .pplButton{
     width: 80%;
     height: 40px;
-    font-size: 18px;
+    font-size: 16px;
     border: none;
-    transition-duration: 0.3s;
     border-radius: 8px;
-  
   }
   
   .pplButtonMain{
@@ -236,6 +236,7 @@ hr{
   .pplButton:hover{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.137);
     cursor: pointer;
+    border: 1px solid #660066;
   
   }
   
@@ -1020,9 +1021,9 @@ backdrop-filter: blur(10px);
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
-  border-radius: 10px;
+  border-radius: 8px;
   background-color: #f8f8f8;
-  font-size: 20px;
+  font-size: 16px;
   border: 2px solid #ccc;
 }
 
@@ -1984,12 +1985,204 @@ textarea:focus {
 	padding: 5px 4px 4px 5px;
 }
 
+/*-------------------------- Individual Complaint box */
+
 .status_complain{
-	width: 96%;
+	/* width: 96%; */
 	font-size: 15px;
-	padding: 0px 5px;
+
 	min-height: 75px;
+	cursor: pointer;
+	background-color: #f5f5f5;
+	border: 3px solid #ebebeb;
+	box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+	width: auto;
+	margin: 10px 0px 25px 0px;
+	/* padding: 20px 10px 15px 20px; */
+	text-align: left;
+	border-radius: 8px;
+	cursor: pointer;
+	text-emphasis: none;
+}
+
+.deleteBtn{
+  padding: 3px 3px 3px 3px;
+  float: right;
+}
+
+.deleteBtn:hover{
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.status_complain .status{
+	display: inline-block;
+	background-color: #F4D569 ;
+	padding: 5px 10px 2px 10px;
+	margin: 5px;
+	text-align: center;
+	border-radius: 10px;
+
+}
+
+.status_complain .privacy{
+	display: inline-block;
+	background-color: #ffffff ;
+    border: 2px solid #660066;
+	padding: 5px 10px 2px 10px;
+	margin: 5px;
+	text-align: center;
+	border-radius: 10px;
+
+}
+
+
+.status_complain{
+	/* width: 96%; */
+	font-size: 15px;
+
+	min-height: 75px;
+	cursor: pointer;
+	background-color: #ffffff;
+	border: 3px solid #ebebeb;
+	box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.13);
+	width: auto;
+	margin: 10px 0px 25px 0px;
+	/* padding: 20px 10px 15px 20px; */
+	text-align: left;
+	border-radius: 8px;
+	cursor: pointer;
+	text-emphasis: none;
+}
+
+.status_content{
+	padding: 10px 10px 10px 10px;
+
+}
+
+.status_complain iframe{
+  margin-bottom: 0px;
+  margin-top: 0px;
+  height: 32px;
+	width:auto;
+	/* margin-top: 10px; */
+  /* padding: 20px 5px 20px 5px; */
+}
+
+
+.status_content{
+	padding: 10px 10px 10px 10px;
+
+}
+
+.complain_by a{
+	text-decoration: none;
+	color: black;
+	margin-bottom: 0.1rem;
+	padding: 5px;
+	font-size: 16px;
+	display: inline-block;
   background-color: white;
+
+}
+
+.status_complain a:hover{
+	text-decoration: 2px underline purple;
+  opacity: 1;
+
+}
+
+
+.date{
+	text-decoration: none;
+	color: black;
+	margin-bottom: 0.2rem;
+	padding: 5px;
+	font-size: 12px;
+	border-radius: 20px;
+	display: inline-block;
+}
+
+.sameline{
+	float: right;
+}
+
+.sameline_l{
+	float: left;
+}
+
+.sameline_left{
+	float: left;
+	margin-right: 30px;
+}
+
+.complain_profile_pic{
+	float: left;
+	margin-right: 7px;
+	border-radius: 500px;
+
+}
+
+.complain_profile_pic img{
+	border-radius: 500px;
+	border: 1px solid #ccc;
+}
+
+#comment_iframe {
+	max-height: 250px;	
+	width: 100%;
+	margin-top: 5px;
+}
+
+.comment_section {
+	padding: 0 5px 5px 5px;
+}
+
+.comment_section img {
+	margin: 0 3px 3px 3px;
+	border-radius: 500px;
+	border: 1px solid #ccc;
+
+}
+
+#comment_form textarea {
+	border-color: #D3D3D3;
+	width: 85%;
+	height: 35px;
+	border-radius: 10px;
+	color: #616060;
+	font-size: 14px;
+	margin: 3px 3px 3px 5px;
+	padding-top: 8px;
+	padding-left: 8px;
+}
+#comment_form input[type="submit"] {
+	background-color: #660066; 
+	border: none; 
+	border-radius: 5px;
+	color: white;
+    text-align: center;
+    text-decoration: none;
+	width: 13%;
+	height: 35px;
+	margin-top: 3px;
+	position: absolute;
+	/* font-family: 'Bellota-BoldItalic', sans-serif; */
+	/* text-shadow: #73B6E2 0.5px 0.5px 0px; */
+}
+
+#comment_form input[type="submit"]:hover {
+	background-color: #460046; 
+    cursor: pointer;
+}
+
+.status_complain .title{
+	color: rgb(0, 0, 0);
+	font-size: 20px;
+	padding: 0px 0px 0px 5px;
+  margin-bottom: 5px;
+  margin-top: 10px;
+	/* margin: 10px 0px 5px 0px; */
 }
 
 .complain_profile_pic{
@@ -2001,7 +2194,13 @@ textarea:focus {
 border-radius: 20px;
 }
 
-
+#complain_body{
+	padding: 0px 10px 0px 5px;
+	margin: 2px;
+	font-style: 12px;
+	text-align: left;
+	text-decoration: none;
+}
 
 .comment_like {
 	background-color: transparent;
@@ -2012,6 +2211,7 @@ border-radius: 20px;
 	height: auto;
 	width: auto;
 	margin: 0;
+  cursor: pointer;
 }
 
 .like_value {
@@ -2019,6 +2219,66 @@ border-radius: 20px;
 	font-size: 14px;
 	margin: 0px;
 	padding: 0px;
+  cursor: pointer;
+}
+
+.bottomBtns{
+  float: right;
+  position: inherit;
+  margin-bottom: 10px;
+  margin-right: 2px;
+}
+
+.btn-reply {
+	background-color: white;
+	border: 1px solid #660066;
+  display:inline-block;
+  max-width: 300px;   
+  /* height: 20px;    */
+  color: black;
+  padding: 5px 20px 5px 20px;
+  text-align: center;
+  text-align: inherit;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 4px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  margin-left: 5px;
+  vertical-align: top;
+}
+
+.btn-reply:hover {
+	background-color: #660066; 
+  color:white;
+    cursor: pointer;
+}
+
+.bottomBtns .btn-other{
+	display: inline-block;    
+	background-color: white; 
+    max-width: 300px;   
+    /* height: 20px;    */
+    border: 2px solid #660066;
+    color: black;
+    padding: 5px 20px 5px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    /* margin: 2px 2px; */
+    border-radius: 4px;
+}
+
+.bottomBtns .btn-other:hover {
+    background-color: #660066;
+	color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#forwardTo{
+  display:none;
 }
 
 

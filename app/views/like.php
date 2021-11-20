@@ -1,7 +1,7 @@
 <html>
 <head>
     <title></title>
-    <link rel="stylesheet" type="text/css" href="../../public/css/temp.css">
+    <link rel="stylesheet" type="text/css" href="../../public/css/style.css">
 </head>
 <body>
 
@@ -70,7 +70,7 @@
 
     if($num_rows > 0){
         echo '<form action="like.php?post_id=' . $post_id . '" method="POST">
-            <input type="submit" class="comment_like" name="unlike_button" value="Unlike">
+            <input type="submit" class="btn-reply" name="unlike_button" value="Unlike">&nbsp;&nbsp;
             <div class="like_value">
                 '. $total_likes . ' users have this issue
                 </div>
@@ -79,8 +79,8 @@
     }
     else{
         echo '<form action="like.php?post_id=' . $post_id . '" method="POST">
-            <input type="submit" class="comment_like" name="like_button" value="Like">
-            <div class="like_value">
+            <input type="submit" class="btn-reply" name="like_button" value="Like">
+            <div class="like_value">&nbsp;&nbsp;
                 '. $total_likes . ' users have this issue
                 </div>
             </form>

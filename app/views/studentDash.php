@@ -137,9 +137,9 @@ if(isset($_POST['complain'])){
 	<br><br><hr><br>
 
 	<div class="inquiry">
-			<button  id="defaultOpen" class="inquirylink" onclick="openinq(event, 'announce')">Announcements</button>
+			<button  id="defaultOpen" class="inquirylink" onclick="openinq(event, 'complain')">Public Complaints</button>
 
-			<button class="inquirylink" onclick="openinq(event, 'complain')">Public Complaints</button>
+			<button class="inquirylink" onclick="openinq(event, 'announce')">Announcements</button>
 	</div>
 
 
@@ -259,8 +259,6 @@ if(isset($_POST['complain'])){
 
 	<div id="announce" class="inquirycontent">
 
-
-		<br>
 		<h2> Announcements</h2>
 		
 			<div class="long-card" id="#long-card">

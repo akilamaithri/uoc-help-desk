@@ -6,6 +6,7 @@
 
 	<p class="pplTitle"><?php echo $user['name']; ?></p>
 	<p class="pplFac">Faculty of Science</p>
+	<p class="pplFac">2018/19</p>
 
 	<p><button class="pplButton pplButtonMain" onclick="location.href='<?php echo $userLoggedIn; ?>'">View Profile</button></p>
 	<p><button class="pplButton" onclick="openForm()">Add a complaint</button></p>
