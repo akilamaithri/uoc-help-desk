@@ -2339,63 +2339,6 @@ border-radius: 20px;
 
 
 
-/************************help********************/
-
-
-  .container8{
-    width:fit-content;
-    max-width: 80rem;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-  }
-  
-  .accordion-item{
-    background-color:	whitesmoke;
-    border-radius: .4rem;
-    margin-bottom: 1rem;
-    padding: 1rem;
-    box-shadow: .5rem 2px .5rem #00000080;
-  }
-  
-  .accordion-link{
-    font-size: 1.2rem;
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-    font-weight: bold;
-    background-color:	whitesmoke;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: .5rem;
-    color: #836954;
-  }
-  
-  
-  
-  .answer{
-    max-height: 0;
-    overflow: hidden;
-    position: relative;
-    background-color: #660066;
-    transition: max-height 650ms;
-  }
-  
-  
-  
-  .answer p{
-    color: rgb(255, 255, 255);
-    font-size: 1.2rem;
-    padding: 2rem;
-  }
-  
-  .accordion-item:target .answer{
-    max-height: 20rem;
-  }
-  
-
-
-
   /*-------------------------------FOOTER--------------------------------*/
   
   
