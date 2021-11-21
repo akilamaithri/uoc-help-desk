@@ -1,6 +1,6 @@
 <?php
 require '../helpers/headerIn.php';
-require '../views/complain.php';  
+require '../views/announcement.php';  
 ?>
 
 <div class="container">
@@ -55,5 +55,6 @@ require '../views/complain.php';
 
     </div>
 </div>
+
 
 <?php require '../helpers/footer.php';?>

@@ -63,7 +63,7 @@ if(isset($_POST['respond_request'])){
         <ul class="cards">	
 				<li class="cards_item">
 						<div class="dashCard-topics">
-								<h4 class="profileCard_title"><?php echo "Complains:" .  $user_array['num_posts'];?></h4>
+								<h4 class="profileCard_title"><?php echo "Complaints:" .  $user_array['num_posts'];?></h4>
 						</div>
 				</li>
 
@@ -108,7 +108,7 @@ if(isset($_POST['respond_request'])){
             
         <!---------------------- COmplains -------------------->
 
-        <h2>Complains</h2>
+        <h2>Complaints</h2>
 
         <div>
         

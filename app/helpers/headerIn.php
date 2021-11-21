@@ -6,6 +6,7 @@
     require '../controllers/Notification.php';
     require '../views/complain.php';  
     require '../views/forwardTo.php';  
+    require '../views/announcement.php';  
 
 
     session_start();

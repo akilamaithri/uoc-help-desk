@@ -1,12 +1,8 @@
 <?php
 require '../helpers/headerIn.php';
-require '../views/complain.php';  
+require '../views/announcement.php';  
 
-if(isset($_POST['complain'])){
-    $complain = new Complain($con,$userLoggedIn);
-    $complain->submitComplain($_POST['complain_text'],'none');
-    header("Location:staAnnounce.php");
-}
+
 ?>
 
 <div class="container">
