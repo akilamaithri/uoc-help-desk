@@ -2512,3 +2512,7 @@ border-radius: 20px;
       }
   } */
   
+  #ann_container{
+    display: none;
+
+  }
