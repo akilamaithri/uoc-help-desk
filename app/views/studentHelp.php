@@ -66,7 +66,7 @@ student counsellors office and  assistant registrars of the particular faculties
 
 				<li class="cards_item_dep2" id="topic1">
 
-					<div class="depCard">
+					<div class="depCard2">
 						<div class="depCard_content">
 							<p class="depCard_title">Staff Addressing</h4>
 
@@ -95,7 +95,7 @@ the person that you wish to contact. </p>
 				<ul class="cards">
 				<li class="cards_item_dep2" id="topic1">
 
-					<div class="depCard">
+					<div class="depCard2">
 						<div class="depCard_content">
 							<p class="depCard_title">Filling Forms</h4>
 							<p class="depCard_text"> This would be a main advantange that you can gain through this UOC Help Desk System. You can directly send your forms without any crushing or a delay to the relevant staff member.</p>
@@ -121,7 +121,7 @@ Therefore you don't need to waste time or pay any postal charges to send your fo
 
 				<li class = "cards_item_dep2" id="topic2">
 
-					<div class="depCard">
+					<div class="depCard2">
 						<div class="depCard_content">
 							<p class="depCard_title">Messaging</h4>
 							<p class="depCard_text"> We provided a chance to all the registered undergraduates in University of Colombo to chat with students of other faculties and update with the latest information. </p>
@@ -169,7 +169,7 @@ Therefore you don't need to waste time or pay any postal charges to send your fo
 							<img src=../../public/img/default/click.png width="25" height="30">
 						</a>
 						<div class="answer">
-							<p>It is possible to be connected with their personal Emails.<br> You can find those emails addresses from ........... </p>
+							<p>It is possible to be connected with their personal Emails.<br> You can find those emails addresses from Contact Us page  </p>
 						</div>
 					</div>
 
