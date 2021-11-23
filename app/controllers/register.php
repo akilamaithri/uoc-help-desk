@@ -1,5 +1,6 @@
 <?php
 require 'MailConfig.php';
+require '../modules/connect.php';
 
 
 // USER NOT CONFIRMED (PENDING) - P
@@ -22,6 +23,7 @@ $error_array = array();
 
 if(isset($_POST['register_button'])){
     $name = strip_tags($_POST['reg_name']);
+
     $name = str_replace(' ','',$name);
     $name = ucwords(strtolower($name));
     $_SESSION['reg_name'] = $name;
@@ -48,6 +50,7 @@ if(isset($_POST['register_button'])){
             $num_rows = mysqli_num_rows($e_check);
             if($num_rows > 0){
                 array_push($error_array,"Email is already Used<br>");
+                echo '<script>alert("Error")</script>';
             }
         }
         else{
@@ -61,6 +64,7 @@ if(isset($_POST['register_button'])){
         array_push($error_array,"Your Name must be between 2 and 25 characters<br>");
     }
     if($password != $password2){
+        
         array_push($error_array,"Your Password do not match<br>");
     }
     else{
@@ -76,12 +80,12 @@ if(isset($_POST['register_button'])){
         }
         $rand = rand(1,2);
         if($rand==1)
-        $profile_pic = "../../public/img/profile_pics/defaults/head_emerald.png";
-        elseif($rand==2)
-        $profile_pic = "../../public/img/profile_pics/defaults/head_deep_blue.png";
+        {$profile_pic = "../../public/img/profile_pics/defaults/head_emerald.png";}
+        elseif($rand==2){
+        $profile_pic = "../../public/img/profile_pics/defaults/head_deep_blue.png";}
         $date = date("Y-m-d H:i:s");
         $value = keyGenerater();
-        $sql = "INSERT INTO user VALUES (NULL,'$name','$em','$password','$date','$profile_pic','0','0','P',','); ";
+        $sql = "INSERT INTO user VALUES (NULL,'$name','$em','$password','$date','$profile_pic','0','0','P',',','user'); ";
         mysqli_query($con,$sql);
         $sql = "SELECT LAST_INSERT_ID()";
         $query = mysqli_query($con,$sql);
@@ -98,4 +102,5 @@ if(isset($_POST['register_button'])){
     }
 }
 
+//header('location:../views/register.php');
 ?>

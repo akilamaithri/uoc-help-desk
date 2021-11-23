@@ -324,7 +324,7 @@ $mail->Send();
 
 }
 
-EmailContentBody("UOC-HELP-DESK Configuration","Welocme Undergraduate!","This is regarding the Confirmation of your university email","akilamaithripala@gmail.com");
+// EmailContentBody("UOC-HELP-DESK Configuration","Welocme Undergraduate!","This is regarding the Confirmation of your university email","akilamaithripala@gmail.com");
 ?>
 
 

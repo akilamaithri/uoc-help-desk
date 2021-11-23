@@ -46,16 +46,7 @@ function closeFriend() {
   document.getElementById("forwardTo").style.display = "none";
 }
 
-/*.................. Announcement ..................*/
 
-function addAnnounce() {
-	document.getElementById("ann_container").style.display = "block"; 
-  }
-  
-  function closeFriend() {
-	document.getElementById("ann_container").style.display = "none";
-  }
-  
 /*.................. Inquiries ..................*/
 function openinq(evt, InqName) 
 {

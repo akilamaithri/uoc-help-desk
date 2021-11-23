@@ -1,6 +1,6 @@
 <?php
 require '../helpers/headerIn.php';
-//require '../views/complain.php';  
+require '../views/complain.php';  
 // require '../controllers/User.php';
 // require '../controllers/Complain.php';
 // mekata pahalin ekk enna one (5)-(2)
