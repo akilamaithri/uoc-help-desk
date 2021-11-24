@@ -4,7 +4,7 @@
 
         <div class="title">Complaint Form</div><br>
 
-        <form name = "complaint-form" action="#">
+        <form name = "complaint-form" action="studentDash.php" method="POST">
 
             <div class="comp_details">
 
@@ -25,7 +25,7 @@
                 <input type="text" id="Title" name="Title" placeholder="Title" required= "">
                
 
-                <textarea name="issue" placeholder="Add description to your issue" required= "" style="height:100px"></textarea>
+                <textarea name="complain_text" id="complain_text"  placeholder="Add description to your issue" required= "" style="height:100px"></textarea>
 
                 <!-- <script src="../../public/javascript/nicEdit.js" type="text/javascript"></script>
                 <script type="text/javascript">
