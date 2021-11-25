@@ -40,14 +40,14 @@ if(isset($_POST['complain'])){
 
 
 <div class="main_column column">
-    <form class="complain_form" action="studentDash.php" method="POST">
+    <!-- <form class="complain_form" action="studentDash.php" method="POST">
         <textarea name="complain_text" id="complain_text" placeholder="Add a Public Complain "></textarea> 
         <input type="submit" name="complain" id="complain_button" value="PUBLISH"><hr>
-    </form>
+    </form> -->
 
 
-    <div class="complain_area"> </div>
-    <img id="loading" src="../../public/img/loading.gif">
+    <!-- <div class="complain_area"> </div>
+    <img id="loading" src="../../public/img/loading.gif"> -->
 
 
 </div>

@@ -653,7 +653,6 @@ cursor: pointer;
   text-decoration: none;
   border: 1px solid;
   background-color: #660066ad; 
-  transition-duration: 0.5s;
 
 }
 
@@ -685,10 +684,10 @@ cursor: pointer;
 
 
 .dashCard-topics{
-	background-color: #660066;
+	background-color: #e2e2e2;
   color: white;
 	/* border-radius: 0.25rem; */
-	box-shadow: 0 20px 40px -14px rgba(134, 15, 15, 0.25);
+	box-shadow: 0 20px 40px -14px rgba(134, 15, 15, 0.13);
 	display: flex;
 	flex-direction: column;
 	overflow: hidden;
@@ -698,12 +697,14 @@ cursor: pointer;
   margin-right: 3px;
   width: 100%;
   opacity: 0.8;
-  transition-duration: 0.5s;
 
 }
 
 .dashCard-topics:hover{
 opacity: 1;
+border: 1px solid #440044;
+	box-shadow: 0 20px 40px -14px rgba(155, 155, 155, 0.349);
+
 }
 
 .dashCard_content {
@@ -711,7 +712,7 @@ opacity: 1;
   text-decoration: none;
   width: 100%;
   height: 100%;
-  color: rgb(255, 255, 255);
+  color: black;
 
 }
 
@@ -1333,19 +1334,20 @@ padding-left: 10%;
 }
 
 .depCard{
-	background-color: #660066;
-  color: white;
+	background-color: #f0f0f0;
+  color: black;
+  border: 1px solid #212121;
 	box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.144);
 	display: flex;
 	flex-direction: column;
 	overflow: hidden;
-	border-radius: 8px;
-  transition: 0.4s;
+	border-radius: 5px;
 	flex: 1;
 }
 
 .depCard:hover{
 	background-color: #850085;
+  color: white;
 	box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.363);
 }
 
@@ -1447,11 +1449,16 @@ padding-left: 10%;
 
 }
 
+.staffCard h2{
+  font-size: 18px;
+  margin-bottom: 1rem;
+}
 
 .staffCard .title {
   color: grey;
-  font-size: 18px;
+  font-size: 16px;
   margin-bottom: 0px;
+  margin-top: 0px;
 }
 
 .staffCard .button {
@@ -1463,15 +1470,17 @@ padding-left: 10%;
   text-align: center;
   cursor: pointer;
   /* width: 90%; */
-  font-size: 18px;
+  font-size: 16px;
   align-items: center;
 
 }
 
 .staffCard .mainbtn {
-  font-size: 18px;
+  font-size: 16px;
   justify-items: center;
   padding: 5px 20px 7px 20px;
+  border: 1px solid #b8b8b8;
+
 }
 
 .staffCard img{
@@ -1483,10 +1492,12 @@ padding-left: 10%;
   margin-left: auto;
   margin-right: auto;
   border: 1px solid #d1d2d2;
+  color:#212121;
 }
 
 .staffCard button:hover, a:hover {
-  opacity: 0.7;
+  background-color: #9b9b9b;
+  opacity: 1;
 }
 
 @media only screen and (max-width: 600px) {
@@ -1695,6 +1706,7 @@ padding-left: 10%;
   .navbar .search-bar {
     float: right;
     margin-top: 13px;
+    border-radius: 5px;
   }
   
   .navbar input[type=text] {
@@ -1703,7 +1715,11 @@ padding-left: 10%;
     font-size: 18px;
     border: none;
     width: 250px;
+    border-radius: 5px 0px 0px 5px;
+    outline: none;
   }
+
+
   
   .sbutton {
     float: right;
@@ -1721,7 +1737,7 @@ padding-left: 10%;
   }
   
   .sbutton:hover {
-    background: rgb(170, 21, 21);
+    background: rgb(194, 194, 194);
   }
   
   @media screen and (max-width: 600px) {
@@ -2259,7 +2275,7 @@ border-radius: 20px;
 	background-color: white; 
     max-width: 300px;   
     /* height: 20px;    */
-    border: 2px solid #660066;
+    border: 1px solid #bda6bd;
     color: black;
     padding: 5px 20px 5px 20px;
     text-align: center;

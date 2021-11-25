@@ -196,6 +196,8 @@ if(isset($_POST['complain'])){
 				<input type="submit" name="complain" id="complain_button" value="Publish"><hr>
 			</form> -->
 
+			<?php require '../views/complain.php'; ?>  
+
 
 			<div class="complain_area"></div>
 			<img id="loading" src="../../public/img/loading.gif">
