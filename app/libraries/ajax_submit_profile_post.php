@@ -6,7 +6,7 @@ require '../controllers/Notification.php';
 
 if(isset($_POST['post_body'])) {
     $complain = new Complain($con, $_POST['user_from']);
-	$complain->submitComplain($_POST['post_body'], $_POST['user_to']);
+	$complain->submitComplain($_POST['issuetype'],$_POST['Title'],$_POST['complain_text'],'none');;
 }
 ?>
 
@@ -48,7 +48,7 @@ if(isset($_POST['post_body'])) {
 
 	if($uploadOk) {
 		$post = new Complain($con, $_POST['user_from']);
-		$post->submitComplain($_POST['post_body'], $_POST['user_to'], $imageName);
+		$post->submitComplain($_POST['issuetype'],$_POST['Title'],$_POST['complain_text'],'none');
 	}
 	else {
 		echo "<div style='text-align:center;' class='alert alert-danger'>

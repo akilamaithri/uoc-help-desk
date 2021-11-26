@@ -10,15 +10,15 @@
 
                 <div class="comp_box">	
                     <select name="issuetype" id="issuetype" required= "">
-                        <option value="0">Select the type of the issue</option>
-                        <option value="bur">Bursary Issues</option>
-                        <option value="lap">Laptop Loan Issues</option>
-                        <option value="mah">Mahapola</option>
-                        <option value="hos">Hostel Issues</option>
-                        <option value="veh">Vehicle Pass</option>
-                        <option value="sea">Season/Railway tickets</option>                     
-                        <option value="rag">Ragging and Violance Issues</option>
-                        <option value="aca">Academic Issues</option>
+                        <option value="issuetype">Select the type of the issue</option>
+                        <option value="Bursary Issues">Bursary Issues</option>
+                        <option value="Laptop Loan Issues">Laptop Loan Issues</option>
+                        <option value="Mahapola">Mahapola</option>
+                        <option value="Hostel Issues">Hostel Issues</option>
+                        <option value="Vehicle Pass">Vehicle Pass</option>
+                        <option value="Season/Railway tickets">Season/Railway tickets</option>                     
+                        <option value="Ragging and Violance Issues">Ragging and Violance Issues</option>
+                        <option value="Academic Issues">Academic Issues</option>
                     </select>
                 </div>
                 

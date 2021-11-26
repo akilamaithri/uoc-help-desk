@@ -4,7 +4,7 @@ require '../views/complain.php';
 
 if(isset($_POST['complain'])){
     $complain = new Complain($con,$userLoggedIn);
-    $complain->submitComplain($_POST['complain_text'],'none');
+    $complain->submitComplain($_POST['issuetype'],$_POST['Title'],$_POST['complain_text'],'none');
     header("Location:staAnnounce.php");
 }
 ?>

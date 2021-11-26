@@ -2,7 +2,7 @@
 
 <div class="card">
 
-		        <img src="<?php echo $user['profile_pic'];?>" style="border-radius:20px; margin-top:10px">
+		        <img src="<?php echo $user_array['profile_pic'];?>" style="border-radius:20px; margin-top:10px">
 
 	<p class="pplTitle"><?php echo $username; ?></p>
 	<p class="pplFac">Faculty of Science</p>

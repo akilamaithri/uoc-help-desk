@@ -8,7 +8,7 @@ require '../controllers/Complain.php';
 
 if(isset($_POST['complain'])){
     $complain = new Complain($con,$userLoggedIn);
-    $complain->submitComplain($_POST['complain_text'],'none');
+    $complain->submitComplain($category,$complainTitle,$body,$user_to);
     header("Location:studentDash.php");
 }
 

@@ -1,14 +1,14 @@
 
 
 <div class="card">
-	<!-- <img src="<?php echo $user_array['profile_pic'];?>" alt="profile-pic" style="width:50%; border-radius: 50%; margin-top: 1rem"> -->
+	<img src="<?php echo $user_array['profile_pic'];?>" alt="profile-pic" style="width:50%; border-radius: 50%; margin-top: 1rem"> 
 
 		        <img src="<?php echo $user['profile_pic'];?>" style="border-radius:20px; margin-top:10px">
 
 
-	<!-- <a href="<?php echo $userLoggedIn; ?>">
+	 <a href="<?php echo $userLoggedIn; ?>">
 			<img src="<?php echo $user['profile_pic']; ?>" style="width:50%; border-radius: 50%; margin-top: 1rem">
-	</a> -->
+	</a> 
 	
 
 	<p class="pplTitle"><?php echo $user['name']; ?></p>

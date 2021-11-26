@@ -10,7 +10,14 @@ class Complain{
         $this->user_obj = new User($con,$user); 
     }
 
-    public function submitComplain($body,$user_to){
+    public function submitComplain($category,$complainTitle,$body,$user_to){
+        $category = nl2br($category);
+
+        $complainTitle = strip_tags($complainTitle);
+        $complainTitle = mysqli_real_escape_string($this->con,$complainTitle);
+        $complainTitle = str_replace('\r\n','\n',$complainTitle);
+        $complainTitle = nl2br($complainTitle);
+        
         $body = strip_tags($body);
         $body = mysqli_real_escape_string($this->con,$body);
         $body = str_replace('\r\n','\n',$body);
@@ -28,7 +35,7 @@ class Complain{
 
 
 
-            $query =mysqli_query($this->con,"INSERT INTO posts VALUES(NULL, '$body', '$added_by', '$user_to', '$date_added', 'no', 'no', '0')");
+            $query =mysqli_query($this->con,"INSERT INTO posts VALUES(NULL, '$category', '$complainTitle', '$body', '$added_by', '$user_to', '$date_added', 'no', 'no', '0')");
             $returned_id = mysqli_insert_id($this->con);  
             
             if($user_to != 'none'){
@@ -59,6 +66,8 @@ class Complain{
         
         while($row = mysqli_fetch_array($data_query)){
             $id = $row['id'];
+            $category = $row['category'];
+            $complainTitle = $row['complainTitle'];
             $body = $row['body'];
             $added_by = $row['added_by'];
             $date_time = $row['date_added'];
@@ -213,10 +222,12 @@ class Complain{
                             
                             </div>
 
-	    					<p class='title'>Complaint Title</p>	
+	    					<p class='title'>$category</p>	
 
                             <div id='complain_body'>
-                                $body
+                                <br>
+                                Title :- $complainTitle<br>
+                                <p>content :- $body<br><p>
                                 <br>
                                 <br>
                             
@@ -292,6 +303,8 @@ class Complain{
         
         while($row = mysqli_fetch_array($data_query)){
             $id = $row['id'];
+            $category = $row['category'];
+            $complainTitle = $row['complainTitle'];
             $body = $row['body'];
             $added_by = $row['added_by'];
             $date_time = $row['date_added'];
@@ -412,7 +425,9 @@ class Complain{
                     $delete_button
                     </div>
                     <div id='complain_body'>
-                    $body
+                    $category<br>
+                    $complainTitle<br>
+                    $body<br>
                     <br>
                     <br>
                     
@@ -474,6 +489,8 @@ class Complain{
 
 			$row = mysqli_fetch_array($data_query); 
 				$id = $row['id'];
+                $category = $row['category'];
+                $complainTitle = $row['complainTitle'];
 				$body = $row['body'];
 				$added_by = $row['added_by'];
 				$date_time = $row['date_added'];
@@ -608,7 +625,9 @@ class Complain{
 									$delete_button
 								</div>
 								<div id='post_body'>
-									$body
+                                    $category<br>
+                                    $complainTitle<br>
+                                    $body<br>
 									<br>
 									<br>
 									<br>

@@ -2,7 +2,8 @@
 <?php 
 require '../helpers/headerIn.php';
 require '../views/complain.php';  
-require '../views/askFriend.php';  
+require '../views/askFriend.php'; 
+
 
 
 if(isset($_GET['profile_name'])){
