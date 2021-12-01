@@ -184,7 +184,6 @@ if(isset($_POST['complain'])){
 
 	<div id="complain" class="inquirycontent">
 
-
 		<h2>Public Complaints</h2>
 		<h5></h5>
 		<!---------------------------- New Add -->

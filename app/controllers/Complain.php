@@ -197,42 +197,30 @@ class Complain{
             
             $str .= "<div class='status_complain' onClick='javascript:toggle$id()'>
                         <div class='status_content'>
+                            <article>
 
-
-
-                            <div class='complain_profile_pic'>
-                                <img src='$profile_pic' width='50'>
-                            </div>
-
-                            <div class='complain_by'>
-                                by<a href='$added_by' > $name</a> <span>$user_to</span>of UCSC, 18/19  
-
-                                <div class='sameline'>
+                                <span class='compTitle'>$complainTitle</span>
+                                <br><br>
                                 
-                                    <div class='deleteBtn'>$delete_button</div>
+                                <span class='compCategory'>$category</span>
+
+                                <span class='compPrivacy'><img src='../../public\img\icons\public.svg'>Public</span>
+
+                                <br><br>
                                 
-                                    <p class='status'>Status : Received</p>
 
-                                    <p class='privacy'>Public</p>
-                                
-                                </div>
-                                <br>
+                                <ul>
+                                    <li><img src='../../public/img/icons/date.svg'><span class='compName'>$time_message</span></li>
 
-                                <span class='date'>posted $time_message</span>
-                            
-                            </div>
+                                    <li><img src='../../public/img/icons/person.svg'><span class='compName'><a href='$added_by'>$name</a>$user_to</span></li>
 
-	    					<p class='title'>$category</p>	
+                                    <li><img src='../../public/img/icons/faculty.svg'><span class='compName'>UCSC</span></li>
+                                </ul>
 
-                            <div id='complain_body'>
-                                <br>
-                                Title :- $complainTitle<br>
-                                <p>content :- $body<br><p>
-                                <br>
-                                <br>
-                            
-                            </div>
-
+                                <p>$body</p>
+                                            
+                            </article>
+                        
 
                             <div class='newsfeedcomplainOptions' white-space: nowrap; '>
                             
@@ -241,12 +229,16 @@ class Complain{
                                 <iframe src='../views/like.php?post_id=$id' scrolling='no'></iframe>
 
                                 <div class='bottomBtns'>
-						            <a href='#' onclick='forwardTo()' class='btn-reply btn-other'>Forward</a>
+                                    <select name='forward' id='forward' class='btn-reply btn-other' placeholder='Send'>
+                                        <option>Forward</option>
+                                        <option>Department Head</option>
+                                        <option><span onclick='forwardTo()'>Other</span></option>
+                                    </select>
                                 </div>
                             </div>
 
-                            
-                     </div>
+                        </div>    
+                    
                         
                     </div>
                     

@@ -28,6 +28,8 @@ require '../helpers/stuStaff_header.php';
 
 		<br>
 
+		
+
 <!-------------------------------------------------------------------- MenuBar -->
 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -70,7 +72,7 @@ require '../helpers/stuStaff_header.php';
         <h2>Choose an option</h2>
 
 		<ul class="cards">
-			<li class="cards_item_dep" id="topic1" onclick="location.href='/uochelpdesk/app/views/ssa_seasonticketapp.php'">
+			<li class="cards_item_dep" id="topic1" onclick="location.href='ssa_seasonticketapp.php'">
 				<div class="depCard">
 					<div class="depCard_content">
 						<div class="makeCenter">

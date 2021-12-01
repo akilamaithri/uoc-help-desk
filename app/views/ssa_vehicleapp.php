@@ -1,3 +1,10 @@
+<?php
+   
+    require '../controllers/vehiclepass.php';
+   
+?>
+
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -204,22 +211,20 @@
   </head>
   <body>
 
-
-
-<div class="testbox">
-    <form action="/">
-      <div class="banner">
-        <h1>Application form of the  vehicle pass for University students</h1>
-      </div>
-      <br>
-      <div class="question">
+    <div class="testbox">
+        
+             <form action="../controllers/vehiclepass.php" method="post">
+                        <div class="banner">
+                          <h1>Application form of the  vehicle pass for University students</h1>
+                        </div>
+                            <div class="question">
        
-</div>
-      <div class="item">
+                            </div>
+                            <div class="item">
       <p>Undergraduate Year<span class="required">*</span></p>
-        <input type="text" name="name" required/>
+        <input type="text" name="year" required/>
       </div>
-
+                       
       <h5>1. Your Details:</h5>
       <div class="item">
         <p>Name with Initials<span class="required">*</span></p>
@@ -227,62 +232,57 @@
       </div>
       <div class="item">
         <p> Address<span class="required">*</span></p>
-        <input type="text" name="name" placeholder="Street address" required/>
-        <input type="text" name="name" placeholder="Street address line 2" required/>
+        <input type="text" name="address" placeholder="Street address" required/>
         <div class="city-item">
-          <input type="text" name="name" placeholder="City" required/>
-          <input type="text" name="name" placeholder="Province" required/>
-          <input type="text" name="name" placeholder="Postal / Zip code" required/>
+          <input type="text" name="city" placeholder="City" required/>
+          <input type="text" name="province" placeholder="Province" required/>
+          <input type="text" name="zip" placeholder="Postal / Zip code" required/>
         </div>
       </div>
-
-      <div class="item">
+<div class="item">
         <p>Contact Number<span class="required">*</span></p>
-        <input type="text" name="name" required/>
+        <input type="text" name="contact" required/>
       </div>
       <div class="item">
         <p>National Identity Card No<span class="required">*</span></p>
-        <input type="text" name="name" />
+        <input type="text" name="id_no" />
       </div>
       <div class="item">
         <p>Faculty<span class="required">*</span></p>
-        <input type="text" name="name" required/>
+        <input type="text" name="faculty" required/>
       </div>
       <div class="question">
         <p>Gender<span class="required">*</span></p>
         <div class="question-answer">
-          <input type="radio" value="none" id="radio_5" name="six" required/>
+          <input type="radio" value="male" name ="gender"id="radio_5" required/>
           <label for="radio_5" class="radio"><span>Male</span></label>
-          <input type="radio" value="none" id="radio_6" name="one" required/>
+          <input type="radio" value="female" name ="gender"id="radio_6"  required/>
           <label for="radio_6" class="radio"><span>Female</span></label>
         </div>
       </div>
-     
-
       <h5>2.Vehicle Details</h5>
       <div class="question">
         <p>Type of the Vehicle (Motor bicycle/Car/Van etc)<span class="required">*</span></p>
-        <input type="text" name="name" required/>
+        <input type="text" name="vehicle" required/>
         </div>
      
 
       <div class="item">
         <p>Vehicle No</p>
-        <input type="text" name="name" />
+        <input type="text" name="vehi_no" />
       </div>
 
       <div class="item">
         <p>Name of the owner of the Vehicle (Submit the copy of Vehicle registration book)</p>
-        <input type="text" name="name" />
+        <input type="text" name="owner" />
         <p><b> If you are not the owner of the vehicle please submit a formal letterof authorization to use the vehicle</b></p>
       </div>
 
       <div class="item">
         <p>Form submission date</p>
-        <input type="text" name="name" />
+        <input type="date" name="date" />
       </div>
-      
-        <br />
+      <br />
         <div class="question">
               <input type="checkbox" value="none" id="check_9" name="check" required/>
               <label for="check_9" class="check"><span>I certify that the above information given by me true and correct. I do not hold the University liable for the 
@@ -298,9 +298,9 @@
 
         <p><b> Don't foget to attach the recommendation letter of Dean/Head of the department/ DR/SAR of the faculty</b></p>
         <div class="btn-block">
-          <button type="submit" href="/">Submit</button>
-        </div>
-        </form>
-    </div>
-  </body>
+                        <button type="submit"  name="submit" value="Submit">Submit</button>
+                    </form>
+                
+   
+</body>
 </html>

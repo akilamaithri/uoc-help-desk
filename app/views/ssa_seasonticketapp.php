@@ -1,11 +1,12 @@
+
+
 <!DOCTYPE html>
 <html>
   <head>
-  <title>UOC HELP DESK</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" crossorigin="anonymous">
-    <style>
-      html, body {
+    <title>UOC HELP DESK</title>
+
+<!-- <style>
+    html, body {
       min-height: 100%;
       }
       body, div, form, input, select, textarea, p { 
@@ -200,95 +201,100 @@
       width: calc(50% - 8px);
       }
       }
-    </style>
+    </style> -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" crossorigin="anonymous">
   </head>
   <body>
 
+    <form action = "../controllers/seasonTicket.php" method="POST">
 
-
-<div class="testbox">
-    <form action="/">
-      <div class="banner">
-        <h1>Application form for Season Ticket</h1>
-      </div>
+      <div class="testbox">
+        
+          <div class="banner">
+            <h1>Application form for Season Ticket</h1>
+          </div>
       
-<div class="item">
-        <p>Undergraduate Year</p>
-        <input type="text" name="name" />
-      </div>
-      <div class="item">
-        <p>Date of the submission </p>
-        <input type="date" name="bdate" required/>
-        <i class="fas fa-calendar-alt"></i>
-      </div>
-      <h5>1. Your Details:</h5>
-      <div class="item">
-        <p>Name with Initials<span class="required">*</span></p>
-        <input type="text" name="name" required/>
-      </div>
-      <div class="item">
-        <p> Address<span class="required">*</span></p>
-        <input type="text" name="name" placeholder="Street address" required/>
-        <input type="text" name="name" placeholder="Street address line 2" required/>
-        <div class="city-item">
-          <input type="text" name="name" placeholder="City" required/>
-          <input type="text" name="name" placeholder="Province" required/>
-          <input type="text" name="name" placeholder="Postal / Zip code" required/>
-        </div>
-      </div>
+          <div class="item">
+            <p>Undergraduate Year</p>
+            <input type="text" name="year" />
+          </div>
 
-      <div class="item">
-        <p>Contact Number<span class="required">*</span></p>
-        <input type="text" name="name" required/>
-      </div>
-      
-      <div class="item">
-        <p>Email<span class="required">*</span></p>
-        <input type="text" name="name" required/>
-      </div>
+          <div class="item">
+            <p>Date of the submission </p>
+            <input type="date" name="subdate" required/>
+            <i class="fas fa-calendar-alt"></i>
+          </div>
+          
+          <h5>1. Your Details:</h5>
+          <div class="item">
+            <p>Name with Initials<span class="required">*</span></p>
+            <input type="text" name="name" required/>
+          </div>
+          <div class="item">
+            <p> Address<span class="required">*</span></p>
+            <input type="text" name="streetone" placeholder="Street address" required/>
+            <input type="text" name="streettwo" placeholder="Street address line 2" required/>
+            <div class="city-item">
+              <input type="text" name="city" placeholder="City" required/>
+              <input type="text" name="province" placeholder="Province" required/>
+              <input type="text" name="zip" placeholder="Postal / Zip code" required/>
+            </div>
+          </div>
+
+          <div class="item">
+            <p>Contact Number<span class="required">*</span></p>
+            <input type="text" name="num" required/>
+          </div>
+          
+          <div class="item">
+            <p>Email<span class="required">*</span></p>
+            <input type="text" name="mail" required/>
+          </div>
 
       
-      <div class="question">
-        <p>Gender<span class="required">*</span></p>
-        <div class="question-answer">
-          <input type="radio" value="none" id="radio_5" name="six" required/>
-          <label for="radio_5" class="radio"><span>Male</span></label>
-          <input type="radio" value="none" id="radio_6" name="one" required/>
-          <label for="radio_6" class="radio"><span>Female</span></label>
-        </div>
+          <div class="question">
+            <p>Gender<span class="required">*</span></p>
+            <div class="question-answer">
+              <input type="radio" value="none" id="radio_5" name="male" required/>
+              <label for="radio_5" class="radio"><span>Male</span></label>
+              <input type="radio" value="none" id="radio_6" name="female" required/>
+              <label for="radio_6" class="radio"><span>Female</span></label>
+            </div>
     
      
 
       <h5>2.Details for Season Ticket</h5>
       
 
-      <div class="item">
-        <p>Start Point (Station Name) <span class="required">*</span></p>
-        <input type="text" name="name" />
-      </div>
+          <div class="item">
+            <p>Start Point (Station Name) <span class="required">*</span></p>
+            <input type="text" name="start" />
+          </div>
 
-      <div class="item">
-        <p>End Station <span class="required">*</span></p>
-        <input type="text" name="name" />
-      </div>
+          <div class="item">
+            <p>End Station <span class="required">*</span></p>
+            <input type="text" name="end" />
+          </div>
 
-      <div class="item">
-        <p>Distance between start staion to end station<span class="required">*</span></p>
-        <input type="text" name="name" />
-      </div>
-        <br />
+          <div class="item">
+            <p>Distance between start staion to end station<span class="required">*</span></p>
+            <input type="text" name="distance" />
+          </div>
+            <br />
 
-        
-       
-        </div>
-        <div class="item">
-          <p>Electronic signature<span class="required">*</span></p>
-          <textarea rows="3" required></textarea>
-        </div>
-        <div class="btn-block">
-          <button type="submit" href="/">Submit</button>
-        </div>
-        </form>
+            </div>
+            <div class="item">
+              <p>Electronic signature<span class="required">*</span></p>
+              <textarea rows="3" name="esign" required></textarea>
+            </div>
+            <div class="btn-block">
+              <button type="submit" name="submit">Submit</button>
+            </div>
+      </form>
     </div>
+
+
   </body>
 </html>

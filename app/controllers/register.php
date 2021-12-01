@@ -91,7 +91,7 @@ if(isset($_POST['register_button'])){
         $query = mysqli_query($con,$sql);
         $data = mysqli_fetch_assoc($query);
         $stdId = $data['LAST_INSERT_ID()'];
-        $sql = "INSERT INTO resetpass(stdId,createdTime,valueIdentity) VALUE($stdId,'$date','$value');";
+        $sql = "INSERT INTO resetpass(stdId,createdTime,valueIdentity) VALUES($stdId,'$date','$value');";
         $test = "<a href='http://localhost/uochelpdesk/app/views/confirm.php?value=".$value."&id=".$stdId."'>click</a>";
         mysqli_query($con,$sql);
         EmailContentBody("UOC-HELP-DESK Configuration","Welocme Undergraduate!","This is regarding the Confirmation of your university email.<br>".$test,$em);
@@ -104,3 +104,4 @@ if(isset($_POST['register_button'])){
 
 //header('location:../views/register.php');
 ?>
+

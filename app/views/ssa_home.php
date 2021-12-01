@@ -166,7 +166,7 @@ require '../helpers/stuStaff_header.php';
 			</li> -->
 
 		<!-------- services -->
-			<li class="cards_item_dep" id="topic4" onclick="location.href='ssa_services.php';">
+			<li class="cards_item_dep" id="topic4" onclick="location.href='ssa_seasonticket.php';">
 				<div class="depCard">
 					<div class="depCard_content">
 						<p class="depCard_title">Season Tickets</p>

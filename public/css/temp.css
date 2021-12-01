@@ -329,12 +329,11 @@ display: inline-block;
 }
 
 .setting_item {
-	display: flex;
+	display: inline-block;
 	padding: 10px;
 	width: 40%;
 	/* margin-left: auto;
 	margin-right: auto; */
-	cursor: pointer;
 	/* border: 1px solid; */
 	border-radius: 5px;
 
@@ -355,38 +354,58 @@ display: inline-block;
 
 
 .settings_form input[type="text"], input[type="password"] {
-	width: 100%;
+	width: 60%;
   padding: 12px 10px;
   margin: 8px 0;
   box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #bdbdbd;
 }
 
-#save_details {
-	width: auto;
-	border-radius: 5px;
-	/* margin: 5px; */
-	margin-top: 40px;
-	border: none;
-	color: #fff;
-	background-color: #2ecc71;
-	padding: 10px 10px 10px 10px;
-	text-align: center;
-	float:top;
+@media screen and (max-width: 600px) {
+  .settings_form input[type="text"], input[type="password"] {
+    width: 80%;
+  }
 }
 
-#pro-pic {
-	width: 50px;
-	border-radius: 5px;
-	/* margin: 5px; */
-	margin-top: 40px;
-	border: none;
-	color: #fff;
-	background-color: #2ecc71;
-	padding: 10px 10px 10px 10px;
-	/* text-align: center; */
-	/* float:top; */
-	white-space: normal;
+
+.setting_btn {
+	background-color: white;
+	border: 1px solid #9b9b9ba1;
+  display:inline-block;
+  width:auto;   
+	height: auto;
+  color: black;
+  padding: 8px 40px 8px 40px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 5px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  /* vertical-align: top; */
+
 }
+
+.setting_btn:hover {
+	background-color: #ececec; 
+	color:black;
+    box-shadow: 4px 4px 10px 0 rgba(128, 128, 128, 0.137);
+	cursor: pointer;
+}	
+
+.btn_red {
+	background-color: #db4343ea;
+	border: 2px solid #9b9b9b85;
+  	color: white;
+}
+
+.btn_red:hover {
+	background-color: #ce3434;
+  	color: white;
+    box-shadow: 4px 4px 10px 0 rgba(128, 128, 128, 0.137);
+	cursor: pointer;
+}	
 
 #close_account {
 	width: auto;
