@@ -1,4 +1,5 @@
 <?php 
+
     require '../modules/connect.php';
     require '../controllers/User.php';
     require '../controllers/Complain.php';
@@ -6,7 +7,6 @@
     require '../controllers/Notification.php';
     require '../views/complain.php';  
     require '../views/forwardTo.php';  
-
 
     session_start();
     //  print_r($_SESSION);
@@ -24,8 +24,6 @@
     //methana ekak enna one (1)
 
 ?>
-
-
 
 <!DOCTYPE html>
     <head>
@@ -61,108 +59,140 @@
 
     <!-- Numbers count -->
     <?php
-				//Unread messages 
-				$messages = new Message($con, $userLoggedIn);
-				$num_messages = $messages->getUnreadNumber();
+        //Unread messages 
+        $messages = new Message($con, $userLoggedIn);
+        $num_messages = $messages->getUnreadNumber();
 
-				//Unread notifications 
-				$notifications = new Notification($con, $userLoggedIn);
-				$num_notifications = $notifications->getUnreadNumber();
+        //Unread notifications 
+        $notifications = new Notification($con, $userLoggedIn);
+        $num_notifications = $notifications->getUnreadNumber();
 
-				//Unread notifications 
-				$user_obj = new User($con, $userLoggedIn);
-				$num_requests = $user_obj->getNumberOfFriendRequests();
-		?>
+        //Unread friend req 
+        $user_obj = new User($con, $userLoggedIn);
+        $num_requests = $user_obj->getNumberOfFriendRequests();
+	?>
 
+    <div class="navbar" id="navbar" style="padding:0">
 
-    <div class="navbar" id="navbar">
-
-        <a href="../views/studentDash.php" class="nav-icon active" style="float:left"><img src="../../public/img/logo/landscape.png" style="width:100px; height:auto"></a>
-
-        <!-- <nav>
-            <!-- methana ekak enna one(2) -->
-            <!-- <a href="<?php echo $userLoggedIn; ?>"><?php echo $user['name']; ?></a>
-            <a href="../views/studentDash.php"> Home </a>
-            <a href="#"> Messages </a>
-            <a href="#"> Notification </a>
-            <a href="../views/requests.php"> Friend Requests </a>
-            <a href="#"> Profile </a>
-            <a href="#"> Settings </a>
-            <a href="../views/logout.php"> Log Out </a> -->
-        <!-- </nav> -->
-
-
-        <!-- Logout -->
-        <a href="../views/logout.php" class="nav-label"><i class="fa fa-sign-out" aria-hidden="true"></i> Log Out </a>
-
-        <!-- Settings -->
-        <a href="../views/settings.php" class="nav-label"><i class="fa fa-cog" aria-hidden="true"></i><span class="nav-label">Settings</span></a>
-
-        <!-- Messages -->
-        <a href="javascript:void(0);" onclick="getDropdownData('<?php echo $userLoggedIn; ?>', 'message')" class="nav-label"><i class="fa fa-comments" aria-hidden="true"></i>
-        
-        
-        <span class="nav-label">Messages</span>
-        
-        <!-- php notifcation circle -->
-        
+        <!------------- Logo -->
+        <a href="../views/studentDash.php" class="link" style="float:left; padding:0; position:inline">
+            <img src="../../public/img/logo/landscape.png" style="width:90px; height:50px">
         </a>
 
-        <!--- Firends -->
+            <span class="lineBreak"><br><br><br></span>
 
-        <a href="../views/requests.php" class="nav-label"><i class="fa fa-users" aria-hidden="true"></i><span class="nav-label">Friends</span>
-        </a>
+            <!-- Logout -->
 
-         <?php
-				if($num_requests > 0)
-				 echo '<span class="notification_badge" id="unread_requests">' . $num_requests . '</span>';
-				?>
-
-        <!-- Notification -->
-        <a href="javascript:void(0);" onclick="getDropdownData('<?php echo $userLoggedIn; ?>', 'notification')" class="nav-label"><i class="fa fa-bell" aria-hidden="true"></i>
-        
-        <span class="nav-label">Notifications</span>
-        </a>
-        
-        <?php
-        if($num_notifications > 0)
-				 echo '<span class="notification_badge_notification" id="unread_notification">' . $num_notifications . '</span>';
-				?>
+            <a href="../views/logout.php" class="nav-label"><i class="fa fa-sign-out" aria-hidden="true"></i> Log Out </a>
 
 
-        <!-- Home -->
-        <a href="../views/studentDash.php" class="nav-label"><i class="fa fa-home" aria-hidden="true"></i><span class="nav-label">Home</span></a>
+            <!-- Settings -->
+            <a href="../views/settings.php" class="nav-label"><i class="fa fa-cog" aria-hidden="true"></i><span class="nav-label">&nbsp Settings</span></a>
 
-        
-        <a href= "<?php echo $userLoggedIn; ?>" class="nav-label"><i class="fa fa-user" aria-hidden="true"></i>&nbspMy Profile</a>
 
-        <!-- Search -->
-        <div class="search-bar">
-            <form action="search.php" method="GET" name="search_form">
-                <input type="text" onkeyup="getLiveSearchUsers(this.value, '<?php echo $userLoggedIn; ?>')" name="q" placeholder="Search..." autocomplete="off" id="search_text_input">
-                <button type="submit" class="sbutton"><img src="../../public/img/icons/search.svg"></button>
-            </form>
-            <div class="search_results">
-            </div>
+            <!-- Messages -->
 
-            <div class="search_results_footer_empty">
-            </div>
+            <a href="javascript:void(0);" onclick="getDropdownData('<?php echo $userLoggedIn; ?>', 'message')" class="nav-label">
+            
+            <i class="fa fa-comments" aria-hidden="true"></i>
+            
+            
+            <span class="nav-label">Messages</span>
+                    
+            </a>
 
+
+            <!--- Friends -->
+
+            <a href="../views/requests.php" class="nav-label">
+                <i class="fa fa-users" aria-hidden="true"></i>
+                
+                <?php
+                    if($num_requests > 0)
+                    echo '<div class="badge" id="unread_requests">' . $num_requests . '</div>';
+                ?>
+                
+                <span class="nav-label">Friends</span>
+            </a>
+
+
+            <!---- Notification ---->
+
+            <a href="javascript:void(0);" onclick="getDropdownData('<?php echo $userLoggedIn; ?>', 'notification')" class="nav-label">
+                <i class="fa fa-bell" aria-hidden="true"></i>
+
+                <?php
+                    if($num_notifications > 0)
+                        echo '<span class="badge" id="unread_notification">' . $num_notifications . '</span>';
+                ?>
+
+                <span class="nav-label">Notifications</span>
+            </a>
+
+
+
+            <!-- Home -->
+            <a href="../views/studentDash.php" class="nav-label"><i class="fa fa-home" aria-hidden="true"></i><span class="nav-label">Home</span></a>
+
+            
+            <a href= "<?php echo $userLoggedIn; ?>" class="nav-label"><i class="fa fa-user" aria-hidden="true"></i>&nbspMy Profile</a>
+
+            <!-- Search -->
+            <!-- <div class="search-bar">
+                <form action="search.php" method="GET" name="search_form" >
+
+                    <input type="text" onkeyup="getLiveSearchUsers(this.value, '<?php echo $userLoggedIn; ?>')" name="q" placeholder="Search..." autocomplete="off" id="search_text_input">
+
+                    <button type="submit" class="sbutton"><img src="../../public/img/icons/search.svg"></button>
+
+                </form>
+
+                <div class="search_results">
+                </div>
+
+                <div class="search_results_footer_empty">
+                </div>
+
+            </div> -->
+
+            <div class="search">
+
+                <form action="search.php" method="GET" name="search_form">
+                    <input type="text" onkeyup="getLiveSearchUsers(this.value, '<?php echo $userLoggedIn; ?>')" name="q" placeholder="Search..." autocomplete="off" id="search_text_input">
+
+                    <div class="button_holder">
+                        <img src="../../public/img/icons/search.svg">
+                    </div>
+
+                </form>
+
+                <div class="search_results">
+                </div>
+
+                <!-- <div class="search_results_footer_empty">
+                </div> -->
+
+
+
+		    </div>
+
+            <a href="javascript:void(0);" class="icon" onclick="mobileNav()">
+                <img src="../../public/img/icons/hamburg.svg">
+            </a>
         </div>
-
-         <a href="javascript:void(0);" class="icon" onclick="mobileNav()">
-      <img src="../../public/img/icons/hamburg.svg">
-    
-    </div>
-    </a>
+        
+    <!-- </div> -->
     </div>
     </div>
    <!-- <div class="wrapper"> -->
 
-            <div class="dropdown_data_window" style="height:0px; border:none;"></div>
+        <div class="dropdown_data_window" style="height:0px; border:none;"></div>
 		<input type="hidden" id="dropdown_data_type" value="">
     
     </div>
+
+
+<!---------------------- Functions -->
 
 <script>
 function mobileNav() {
@@ -185,7 +215,9 @@ function mobileNav() {
 //   }
 // }
 
-
+	$('.sbutton').on('click', function() {
+		document.search_form.submit();
+	})
 
       var userLoggedIn = '<?php echo $userLoggedIn; ?>';
       $(document).ready(function(){

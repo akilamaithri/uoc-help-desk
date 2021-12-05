@@ -125,6 +125,7 @@ class Complain{
             </script>
             <?php
 
+            
             $comment_check = mysqli_query($this->con,"SELECT * FROM comments WHERE post_id='$id'");
             $comments_check_num = mysqli_num_rows($comment_check);
 
@@ -195,26 +196,25 @@ class Complain{
 
 
             
-            $str .= "<div class='status_complain' onClick='javascript:toggle$id()'>
+            $str .= "<div class='status_complain' >
                         <div class='status_content'>
                             <article>
-
-                                <span class='compTitle'>$complainTitle</span>
-                                <br><br>
-                                
+                                  
                                 <span class='compCategory'>$category</span>
 
                                 <span class='compPrivacy'><img src='../../public\img\icons\public.svg'>Public</span>
 
                                 <br><br>
-                                
+                                <span class='compTitle'>$complainTitle</span>
 
                                 <ul>
+                                
                                     <li><img src='../../public/img/icons/date.svg'><span class='compName'>$time_message</span></li>
 
-                                    <li><img src='../../public/img/icons/person.svg'><span class='compName'><a href='$added_by'>$name</a>$user_to</span></li>
+                                    <li class='outline'><img src='../../public/img/icons/person.svg'><span class='compName outline'><a href='$added_by'>$name</a>$user_to</span></li>
 
                                     <li><img src='../../public/img/icons/faculty.svg'><span class='compName'>UCSC</span></li>
+                                
                                 </ul>
 
                                 <p>$body</p>
@@ -222,21 +222,20 @@ class Complain{
                             </article>
                         
 
-                            <div class='newsfeedcomplainOptions' white-space: nowrap; '>
+                            <div class='newsfeedcomplainOptions'>
+                                <span class='btn-reply' onClick='javascript:toggle$id()'>Reply&nbsp($comments_check_num) </span>
                             
-                                <span class='btn-reply'>Comments&nbsp($comments_check_num)</span>
-                                
                                 <iframe src='../views/like.php?post_id=$id' scrolling='no'></iframe>
 
+                                
                                 <div class='bottomBtns'>
-                                    <select name='forward' id='forward' class='btn-reply btn-other' placeholder='Send'>
-                                        <option>Forward</option>
+                                    <select name='forward' id='forward' class='btn-reply'>
+                                        <option>Forward To</option>
                                         <option>Department Head</option>
                                         <option><span onclick='forwardTo()'>Other</span></option>
                                     </select>
                                 </div>
                             </div>
-
                         </div>    
                     
                         
@@ -253,15 +252,18 @@ class Complain{
 
         ?>
                 <script>
-                        $(document).ready(function(){
-                            $('#post<?php echo $id; ?>').on('click', function(){
-                                bootbox.confirm("Are you sure you want to delete this complain?", function(result){
+                        $(document).ready(function()
+                        {
+                            $('#post<?php echo $id; ?>').on('click', function()
+                            {
+                                bootbox.confirm("Are you sure you want to delete this complain?", function(result)
+                                {
                                     $.post("delete_complain.php?post_id=<?php echo $id; ?>", {result:result});
                                     if(result)
                                         location.reload();                        
+                                });
                             });
                         });
-                    });
                     </script>
 
         <?php

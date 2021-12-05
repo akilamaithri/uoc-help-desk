@@ -105,7 +105,7 @@ textarea:focus {
 	min-height: 75px;
 	cursor: pointer;
 	background-color: #f5f5f5;
-	border: 3px solid #ebebeb;
+	border: 1px solid #ebebeb;
 	box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
 	width: auto;
 	margin: 10px 0px 25px 0px;
@@ -174,37 +174,6 @@ textarea:focus {
 	border-radius: 500px;
 	border: 1px solid #ccc;
 
-}
-
-#comment_form textarea {
-	border-color: #D3D3D3;
-	width: 85%;
-	height: 35px;
-	border-radius: 10px;
-	color: #616060;
-	font-size: 14px;
-	margin: 3px 3px 3px 5px;
-	padding-top: 8px;
-	padding-left: 8px;
-}
-#comment_form input[type="submit"] {
-	background-color: #660066; 
-	border: none; 
-	border-radius: 5px;
-	color: white;
-    text-align: center;
-    text-decoration: none;
-	width: 13%;
-	height: 35px;
-	margin-top: 3px;
-	position: absolute;
-	/* font-family: 'Bellota-BoldItalic', sans-serif; */
-	/* text-shadow: #73B6E2 0.5px 0.5px 0px; */
-}
-
-#comment_form input[type="submit"]:hover {
-	background-color: #460046; 
-    cursor: pointer;
 }
 
 
@@ -573,10 +542,17 @@ display: inline-block;
 	padding: 5px 5px 0 5px;
 	height: 70px;
 	border-bottom: 1px solid #D3D3D3;
-	margin-top:10px
+	margin-top:10px;
+	box-sizing: border-box;
+	width: 300px;
+	z-index: 100;
 }
 .resultDisplay a {
-	float: none;
+	float: none;	
+}
+
+.resultDisplay a:hover {
+	background-color: white;
 }
 .resultDisplay:hover {
 	background-color: #EBEBEB;
@@ -598,6 +574,112 @@ display: inline-block;
 	left: 8px;
 	top: -5px;
 }
+/* ----------Search------------ */
+
+
+.search {
+	margin: 8px 0 0 15%;
+	width: 300px;
+	z-index: 200;
+	box-sizing: border-box;
+
+	float: right;
+    border-radius: 10px;
+    padding: 0;
+    margin-bottom:0 ;
+    padding-bottom: 0;
+    margin-top: 10px;
+}
+
+.search #search_text_input {
+	/* border: thin solid #E5E5E5; */
+	border: none;
+  	float: left;
+  	/* height: 23px; */
+  	outline: 0;
+  	width: 100px;
+	  padding: 6px;
+  	border-top-right-radius: 0;
+  	border-bottom-right-radius: 0;
+  	border-top-left-radius: 3px;
+  	border-bottom-left-radius: 3px;
+/* 
+	      
+    margin-top: 8px;
+    font-size: 16px;
+    border: none;
+    width: 250px;
+    border-radius: 5px 0px 0px 5px;
+    outline: none;
+    color: #000000; */
+}
+
+  .sbutton {
+    float: right;
+    height: 28px;
+    width: auto;
+    padding: 3px 6px;
+    margin-top: 8px;
+    margin-right: 16px;
+    /* margin-bottom: 10px; */
+    background: #ffffff;
+    /* font-size: 8px; */
+    border: none;
+    cursor: pointer;
+    border-radius: 0px 15px 15px 0px;
+  }
+  
+  .sbutton:hover {
+    background: rgb(194, 194, 194);
+  }
+
+.button_holder {
+	background-color: #ffffff;
+  	border: 1px solid #ffffff;
+  	cursor: pointer;
+  	float: left;
+  	height: 25px;
+  	text-align: center;
+  	width:25px;
+  	border-top-right-radius: 3px;
+  	border-bottom-right-radius: 3px;
+}
+
+.button_holder img {
+	margin-top: 4px;
+    width: 18px;
+}
+
+.search_results {
+	background-color: #fff;
+    border: 1px solid #DADADA;
+    border-bottom: none;
+    border-top: none;
+    margin-top: 21px;
+	box-sizing: border-box;
+	width: fit-content;
+	position: absolute;
+	z-index: 160;
+}
+
+.search_results_footer{
+	padding: 7px 4px 0px 4px;
+    height: 30px;
+    border: 1px solid #DADADA;
+    border-top: none;
+    background-color: #20AAE5;
+    text-align: center;
+}
+
+.search_results_footer a {
+	color: #fff;
+}
+
+.search_result {
+	padding: 10px;
+    height: 100px;
+}
+
 
 .resultDisplayNotification {
 	height: auto;
@@ -617,6 +699,7 @@ display: inline-block;
 	border-radius: 25px;
 	margin: 1px 12px 0 2px;
 	float: left;
+	border-radius: 50%;
 }
 
 .liveSearchText {
@@ -624,9 +707,19 @@ display: inline-block;
 	color: #1E96CA;
 }
 
+.liveSearchText img {
+	height: 50px;
+	/* border-radius: 25px; */
+	margin: 1px 12px 0 2px;
+	float: left;
+	border-radius: 50%;
+} 
+
 .liveSearchText p{
 	margin-left: 10px;
-	font-size: 12px;
+	padding-top: 10px;
+	font-size: 14px;
+	line-height: 20%;
 }
 
 .tab-content {
@@ -643,8 +736,9 @@ display: inline-block;
     right: 10px;
     top: 40px;
     overflow: scroll;
+	z-index: 150;
 }
-}
+
 
 .notification_badge {
 	padding: 3px 7px;

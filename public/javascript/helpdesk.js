@@ -100,8 +100,8 @@ function getDropdownData(user, type) {
 }
 
 
-function getLiveSearchUsers(value, user) {
-
+function getLiveSearchUsers(value, user) 
+{
 	$.post("../../app/libraries/ajax_friend_search.php", {query:value, userLoggedIn: user}, function(data) {
 
 		if($(".search_results_footer_empty")[0]) {
@@ -117,8 +117,6 @@ function getLiveSearchUsers(value, user) {
 			$('.search_results_footer').toggleClass("search_results_footer_empty");
 			$('.search_results_footer').toggleClass("search_results_footer");
 		}
-
 	});
-
 }
 
