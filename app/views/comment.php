@@ -17,7 +17,7 @@
     ?>
 
 
-<html>
+<!DOCTYPE html>
 <head>
     <title></title>
     <link rel="stylesheet" type="text/css" href="../../public/css/temp.css">
@@ -29,6 +29,7 @@
 	* {
 		font-size: 12px;
 		font-family: Arial, Helvetica, Sans-serif;
+        line-height: 25px
 	}
 
 	</style>
@@ -90,9 +91,16 @@
         ?>
 
             <form action="comment.php?post_id=<?php echo $post_id; ?>" id="comment_form" name="postComment<?php echo $post_id; ?>" method="POST">
-            <textarea name="post_body" placeholder="Enter your comment on this" ></textarea>
-            <input type="submit" name="postComment<?php echo $post_id; ?>" value="Post">
 
+            <div class="layout">
+                <div class="col-9"> 
+                    <textarea name="post_body" placeholder="Reply to this complaint" ></textarea>
+                </div>
+
+                <div class="col-1">
+                        <input type="submit" name="postComment<?php echo $post_id; ?>" value="Post">
+                </div>
+            </div>
             </form>
 
            <?php 
@@ -177,28 +185,34 @@
             ?>
 
             <div class="comment_section">
-
+                <div class="commentHeader">
+                
                     <a href="<?php echo $posted_by?>" target="_parent">
                         <img src="<?php echo $user_obj->getProfilePic();?>" title="<?php echo $posted_by;?>" style="float:left; border-radius:100px" height="30">
                     </a>
-                    <a href="<?php echo $posted_by?>" target="_parent"><b><?php echo $user_obj->getName();?></b>
 
-                    </a>&nbsp;&nbsp;&nbsp;&nbsp; 
+                    &nbsp;
+                    <a href="<?php echo $posted_by ?>" target="_parent"><b><?php echo $user_obj->getName();?></b>
 
-                    <?php echo $time_message . "<br>" . $comment_body?>
-                    <hr>
+                    </a>&nbsp;&nbsp;&nbsp;
+
+                    <?php echo $time_message ?>
+                
                 </div>
+                
+                <span class="commentBody"><?php echo $comment_body ?></span>
+
+            </div>
 
             <?php 
 
-
-
                 }
             }
+
             else{
-                echo "<center><br><br> No Comments to Show!</center>";
+                echo "<center><br>No Replies to Show</center>";
             }
-           ?>
+            ?>
 
 
 </body>

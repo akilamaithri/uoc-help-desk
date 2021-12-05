@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+
 <?php
 require '../helpers/headerIn.php';
 require '../views/complain.php';  
@@ -14,16 +16,6 @@ if(isset($_POST['complain'])){
     header("Location:studentDash.php");
 }
 ?>
-
-<!-- <html>
-    <head>
-        <title>UOC HELP DESK</title>
-        <link rel="stylesheet" type="text/css" href="../../public/css/style.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-        <script src="../../public/javascript/register.js"></script>
-    </head>
-
-<body> -->
 
 
 <div class="container">
@@ -91,47 +83,47 @@ if(isset($_POST['complain'])){
 
 		<ul class="cards">
 				
-				<li class="cards_item_small">
-						<div class="dashCard-topics">
-							<div class="dashCard_content">
-								<h4>Laptop Loans</h4>
-							</div>
+			<li class="cards_item_small">
+					<div class="dashCard-topics">
+						<div class="dashCard_content" >
+							<h4>Laptop Loans</h4>
 						</div>
-				</li>
+					</div>
+			</li>
 
-				<li class="cards_item_small">
-						<div class="dashCard-topics">
-							<div class="dashCard_content">
-								<h4>Mahapola</h4>
-							</div>
+			<li class="cards_item_small">
+					<div class="dashCard-topics">
+						<div class="dashCard_content">
+							<h4>Mahapola</h4>
 						</div>
-				</li>
+					</div>
+			</li>
 
 
-				<li class="cards_item_small">
-						<div class="dashCard-topics">
-							<div class="dashCard_content">
-								<h4>Student ID</h4>
-							</div>
+			<li class="cards_item_small">
+					<div class="dashCard-topics">
+						<div class="dashCard_content">
+							<h4>Student ID</h4>
 						</div>
-				</li>
+					</div>
+			</li>
 
 
-				<li class="cards_item_small" >
-						<div class="dashCard-topics">
-							<div class="dashCard_content">
-								<h4>Bursary</h4>
-							</div>
+			<li class="cards_item_small" >
+					<div class="dashCard-topics">
+						<div class="dashCard_content">
+							<h4>Bursary</h4>
 						</div>
-				</li>
+					</div>
+			</li>
 
-				<li class="cards_item_small">
-						<div class="dashCard-topics">
-							<div class="dashCard_content">
-								<h4>Exam</h4>
-							</div>
+			<li class="cards_item_small">
+					<div class="dashCard-topics">
+						<div class="dashCard_content">
+							<h4>Exam</h4>
 						</div>
-				</li>
+					</div>
+			</li>
 		</ul>
 
 	<br><br><hr><br>

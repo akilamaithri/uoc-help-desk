@@ -1,6 +1,6 @@
 <?php
 require '../helpers/headerIn.php';
-require '../views/complain.php';  
+require '../views/complain.php'; 
 
 if(isset($_POST['complain'])){
     $complain = new Complain($con,$userLoggedIn);
@@ -20,49 +20,54 @@ if(isset($_POST['complain'])){
     </div>
 
 
-	<div class="column-2 box" style="width:100%; padding: 0px 20px 0px 20px">
+	<div class="column-2 box">
         <h2>Department Statistics</h2>
 		<br>
 
+		<ul class="cards">
+		 	<li class="cards_item">
+				<div class="dashCard-topics">
+					<h4 class="profileCard_title">Complaints Received</h4>
+						<h2 class="dashCount" id="compReceivedCount">0</h2>
+				</div>
+			</li>
 
-		 <ul class="cards"  style="width:110%; margin:2px;">
-		 <li class="cards_item_small" style="margin-right:20px;">
-						<div class="dashCard-topics" style="background-color: #660066; margin-right:20px; ">
-							<div class="dashCard_content" style="text-align:left; ">
-								<h4 style="color:white; font-size:14px; padding-left:12px; width:1%;display:inline-block">Complaints Pending</h4>
-								<h2 style=" display:inline-block; float:right; padding-right:15px; color:white">12</h2>
-							</div>
-						</div>
-				</li>
+		 	<li class="cards_item">
+				<div class="dashCard-topics">
+					<h4 class="profileCard_title">Complaints Replied</h4>
+						<h2 class="dashCount" id="compRepliedCount">0</h2>
+				</div>
+			</li>	
 
-				<li class="cards_item_small" style="margin-right:20px;">
-						<div class="dashCard-topics" style="background-color: #660066; margin-right:30px;">
-							<div class="dashCard_content" style="text-align:left; ">
-								<h4 style="color:white; font-size:14px; padding-left:12px; width:1%; display:inline-block">Complaints Recieved</h4>
-								<h2 style=" display:inline-block; float:right; padding-right:15px; color:white">23</h2>
-							</div>
-						</div>
-				</li>
+		 	<li class="cards_item">
+				<div class="dashCard-topics">
+					<h4 class="profileCard_title">Complaints Pending</h4>
+						<h2 class="dashCount" id="compPendingCount">0</h2>
+				</div>
+			</li>	
 
-				<li class="cards_item_small" style="margin-right:20px;">
-						<div class="dashCard-topics" style="background-color: #660066; margin-right:50px;">
-							<div class="dashCard_content" style="text-align:left; ">
-								<h4 style="color:white; font-size:14px; padding-left:12px; width:1%;display:inline-block">Complaints Forwarded</h4>
-								<h2 style=" display:inline-block; float:right; padding-right:15px; color:white">5</h2>
-							</div>
-						</div>
-				</li>
-				
-				<li class="cards_item_small">
-						<div class="dashCard-topics" style="background-color: #660066; margin-right:50px;">
-							<div class="dashCard_content" style="text-align:left; ">
-								<h4 style="color:white; font-size:14px; padding-left:12px; width:1%;display:inline-block">Total complaints </h4>
-								<h2 style=" display:inline-block; float:right; padding-right:15px; color:white">54</h2>
-							</div>
-						</div>
-				</li>
+		 	<!-- <li class="cards_item_small">
+				<div class="dashCard-topics">
+					<h4 class="profileCard_title">Monthly Complaints</h4>
+						<h2 class="dashCount">32</h2>
+				</div>
+			</li>	 -->
 				
 		</ul>
+
+		<script>
+			//complains received
+			const count1 = document.getElementById("compReceivedCount");
+			animateValue(count1, 0, 34, 1500);
+
+			//Complaints Replied
+			const count2 = document.getElementById("compRepliedCount");
+			animateValue(count2, 0, 21, 2000);
+
+			//complains pneding
+			const count3 = document.getElementById("compPendingCount");
+			animateValue(count3, 0, 13, 2500);
+		</script>
 
 		<br>
 

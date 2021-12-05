@@ -1,4 +1,4 @@
-<html>
+<!DOCTYPE html>
 <head>
     <title></title>
     <link rel="stylesheet" type="text/css" href="../../public/css/style.css">
@@ -70,7 +70,7 @@
 
     if($num_rows > 0){
         echo '<form action="like.php?post_id=' . $post_id . '" method="POST">
-            <input type="submit" class="btn-reply" name="unlike_button" value="Unlike">&nbsp;&nbsp;
+            <input type="submit" class="btn-liked" name="unlike_button" value="Liked">&nbsp;&nbsp;
             <div class="like_value">
                 '. $total_likes . ' users have this issue
                 </div>

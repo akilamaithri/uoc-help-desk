@@ -5,7 +5,6 @@ require '../views/complain.php';
 require '../views/askFriend.php'; 
 
 
-
 if(isset($_GET['profile_name'])){
     $username = $_GET['profile_name'];
     $user_details_query = mysqli_query($con,"SELECT * FROM user WHERE name='$username'");
@@ -32,9 +31,6 @@ if(isset($_POST['respond_request'])){
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="../../public/javascript/bootstrap.js"></script>
-    <!-- <link rel="stylesheet" type="text/css" href="../../public/css/bootstrap.css"> -->
-
-
 
 <div class="container">
 
@@ -49,7 +45,6 @@ if(isset($_POST['respond_request'])){
         }
         else{
               include('../views/pplCard.php');
-
         }
 
       ?>
@@ -61,28 +56,47 @@ if(isset($_POST['respond_request'])){
         
         <!-------------------------- Statsitics -->
 
-        <ul class="cards">	
+      <ul class="cards">	
 				<li class="cards_item">
 						<div class="dashCard-topics">
-								<h4 class="profileCard_title"><?php echo "Complains:" .  $user_array['num_posts'];?></h4>
+								<!-- <h4 class="profileCard_title"><?php echo "Complains:" .  $user_array['num_posts'];?></h4> -->
+              <h4 class="profileCard_title">Complaints</h4>
+						  <h2 class="dashCount" id="compSent">0</h2>
 						</div>
 				</li>
 
-                <li class="cards_item">
-                    <div class="dashCard-topics">
-                            <h4 class="profileCard_title"><?php echo "Likes:" .  $user_array['num_likes'];?></h4>
-                    </div>
+        <li class="cards_item">
+            <div class="dashCard-topics">
+                    <!-- <h4 class="profileCard_title"><?php echo "Likes:" .  $user_array['num_likes'];?></h4> -->
+              <h4 class="profileCard_title">Likes</h4>
+						  <h2 class="dashCount" id="likeCount">0</h2>
+            </div>
 				</li>
 
-                <li class="cards_item">
-                    <div class="dashCard-topics">
-                            <h4 class="profileCard_title"><?php echo "Friends: " . $num_friends;?></h4>
-                    </div>
+        <li class="cards_item">
+            <div class="dashCard-topics">
+                    <!-- <h4 class="profileCard_title"><?php echo "Friends: " . $num_friends;?></h4> -->
+              <h4 class="profileCard_title">Friends</h4>
+						  <h2 class="dashCount" id="compRepliedCount">0</h2>
+            </div>
 				</li>                
 	
-        </ul>
+      </ul>
 
-        
+      <script>
+			//complains
+			const count4 = document.getElementById("compSent");
+			animateValue(count4, 0, '<?php echo $user_array['num_posts']; ?>', 1500);
+
+			//Likes
+			const count5 = document.getElementById("likeCount");
+			animateValue(count5, 0, '<?php echo $user_array['num_likes']; ?>', 2000);
+
+			//Friends
+			const count6 = document.getElementById("compPendingCount");
+			animateValue(count6, 0, '<?php echo $num_friends; ?>', 2500);
+		</script>
+ 
 
         <!-- <h2>Functions</h2> -->
 

@@ -22,10 +22,10 @@
                     </select>
                 </div>
                 
-                <input type="text" id="Title" name="Title" placeholder="Title" required= "">
+                <input type="text" id="Title" name="Title" placeholder="Complain Title" required= "">
                
 
-                <textarea name="complain_text" id="complain_text"  placeholder="Add description to your issue" required= "" style="height:100px"></textarea>
+                <textarea name="complain_text" id="complain_text"  placeholder="Describe your issue" required= "" style="height:100px"></textarea>
 
                 <!-- <script src="../../public/javascript/nicEdit.js" type="text/javascript"></script>
                 <script type="text/javascript">
@@ -50,7 +50,7 @@
                         <button class="mainbtn" onclick="closeForm()">Close</button>
                     </div>
                 </div>
-                <br>
+                
             </div>
 		</form>
     </div>
