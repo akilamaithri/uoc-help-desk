@@ -16,6 +16,16 @@ $(document).ready(function() {
 });
 
 
+/*................ Announcement ..................*/
+
+function openAnnouncement() {
+  document.getElementById("ann_container").style.display = "block"; 
+}
+
+function closeAnnouncement() {
+  document.getElementById("ann_container").style.display = "none";
+}
+
 /*.................. Complain ..................*/
 
 function openForm() {

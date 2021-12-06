@@ -3,12 +3,16 @@
     require '../modules/connect.php';
     require '../controllers/User.php';
     require '../controllers/Complain.php';
+    require '../views/announcement.php'; 
     require '../controllers/Message.php';
     require '../controllers/Notification.php';
+    include '../controllers/login.php';
+    
     require '../views/complain.php';  
-    require '../views/forwardTo.php';  
+    require '../views/forwardTo.php'; 
+     
 
-    session_start();
+    // session_start();
     //  print_r($_SESSION);
     //  exit();
 
@@ -70,6 +74,7 @@
         //Unread friend req 
         $user_obj = new User($con, $userLoggedIn);
         $num_requests = $user_obj->getNumberOfFriendRequests();
+
 	?>
 
     <div class="navbar" id="navbar" style="padding:0">
@@ -131,9 +136,33 @@
 
 
 
-            <!-- Home -->
-            <a href="../views/studentDash.php" class="nav-label"><i class="fa fa-home" aria-hidden="true"></i><span class="nav-label">Home</span></a>
+            <!-------- Home -->
 
+            <!-- <a href="../views/studentDash.php" class="nav-label">
+                    <i class="fa fa-home" aria-hidden="true"></i>
+                    <span class="nav-label">Home</span> 
+            </a>-->
+
+            <?php
+            require '../controllers/login.php';
+
+            if(!isset($userType)){
+                if($userType==1){
+                    echo '<a href="../views/staffHome.php" class="nav-label">
+                    <i class="fa fa-home" aria-hidden="true"></i>
+                    <span class="nav-label">Home</span>';
+                 }
+
+                else{
+                    echo '<a href="../views/studentDash.php" class="nav-label">
+                    <i class="fa fa-home" aria-hidden="true"></i>
+                    <span class="nav-label">Home</span>';
+                }
+            }
+
+            ?>
+
+            <!------ My Profile ------>
             
             <a href= "<?php echo $userLoggedIn; ?>" class="nav-label"><i class="fa fa-user" aria-hidden="true"></i>&nbspMy Profile</a>
 

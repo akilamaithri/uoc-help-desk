@@ -18,8 +18,6 @@
     <div class="makeCenter">
     
     <div class="mainForm">
-        
-        
         <div id="first">
 
             <h2>Login</h2>

@@ -1,11 +1,13 @@
 <?php
 require '../helpers/headerIn.php';
-require '../views/complain.php'; 
+require '../views/announcement.php'; 
+require '../controllers/login.php';
+
 
 if(isset($_POST['complain'])){
     $complain = new Complain($con,$userLoggedIn);
     $complain->submitComplain($_POST['issuetype'],$_POST['Title'],$_POST['complain_text'],'none');
-    header("Location:staAnnounce.php");
+    header("Location:staffHome.php");
 }
 ?>
 
@@ -115,8 +117,25 @@ if(isset($_POST['complain'])){
 			<!-------------------------------------------- Complains from DB -->
 
 
-			<div class="complain_area"></div>
-			<img id="loading" src="../../public/img/loading.gif">
+
+
+		<h2>Public Complaints</h2>
+
+		<!---------------------------- New Add -->
+		<!-- <div class="main_column column"> -->
+			
+			<!-- <form class="complain_form" action="studentDash.php" method="POST">
+				<textarea name="complain_text" id="complain_text" placeholder="Add a Public Complain "></textarea> 
+
+				<input type="submit" name="complain" id="complain_button" value="Publish"><hr>
+			</form> -->
+
+		<?php require '../views/complain.php'; ?>  
+
+
+		<div class="complain_area"></div>
+		<img id="loading" src="../../public/img/loading.gif">
+
 
 		<!-- </div> -->
 
@@ -165,6 +184,9 @@ if(isset($_POST['complain'])){
 				});
 
 			});
+
+		</script>
+
 
 		</script>
 	

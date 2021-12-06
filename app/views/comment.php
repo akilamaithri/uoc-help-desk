@@ -22,6 +22,19 @@
     <title></title>
     <link rel="stylesheet" type="text/css" href="../../public/css/temp.css">
     <link rel="stylesheet" type="text/css" href="../../public/css/style.css">
+    
+    <style type="text/css">
+	* {
+		font-size: 12px;
+		font-family: Arial, Helvetica, Sans-serif;
+        line-height: 25px
+	}
+    body{
+        height: fit-content;
+
+    }
+	</style>
+
 </head>
 <body>
 
