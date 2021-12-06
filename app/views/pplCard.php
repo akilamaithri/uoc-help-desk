@@ -5,7 +5,12 @@
 	<img src="<?php echo $user['profile_pic'];?>" style="border-radius:20px; margin-top:10px;">
 
 	<p class="pplTitle"><?php echo $user['name']; ?></p>
-	<p class="pplFac">Faculty of Science</p>
+	<p class="pplFac">
+		<?php
+		$ni = new User($con,$userLoggedIn);
+		$ni2 = $ni->getFaculty();
+		echo $ni2;
+		?></p>
 	<p class="pplFac">2018/19</p>
 
 	<p><button class="pplButton pplButtonMain" onclick="location.href='<?php echo $userLoggedIn; ?>'">View Profile</button></p>

@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 
 <?php
+
+use function PHPSTORM_META\type;
+
 require '../helpers/headerIn.php';
 require '../views/complain.php';  
 // require '../controllers/User.php';
@@ -11,10 +14,20 @@ require '../views/complain.php';
 
 
 if(isset($_POST['complain'])){
+	$typeA = $_POST['type'];
+	if($typeA == "Private"){
+		$typeA = "Private";
+	}
+	else{
+		$typeA = "Public";
+	}
     $complain = new Complain($con,$userLoggedIn);
-    $complain->submitComplain($_POST['issuetype'],$_POST['Title'],$_POST['complain_text'],'none');
+    $complain->submitComplain($_POST['issuetype'],$_POST['Title'],$_POST['complain_text'],$typeA,'none');
     header("Location:studentDash.php");
+
+
 }
+
 ?>
 
 
@@ -189,7 +202,6 @@ if(isset($_POST['complain'])){
 
 			<?php require '../views/complain.php'; ?>  
 
-
 			<div class="complain_area"></div>
 			<img id="loading" src="../../public/img/loading.gif">
 
@@ -314,10 +326,6 @@ if(isset($_POST['complain'])){
 </div>
 
 </div>
-
-
-
-
 
 
 

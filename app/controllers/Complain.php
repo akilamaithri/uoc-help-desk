@@ -10,7 +10,7 @@ class Complain{
         $this->user_obj = new User($con,$user); 
     }
 
-    public function submitComplain($category,$complainTitle,$body,$user_to){
+    public function submitComplain($category,$complainTitle,$body,$accessability,$user_to){
         $category = nl2br($category);
 
         $complainTitle = strip_tags($complainTitle);
@@ -22,6 +22,7 @@ class Complain{
         $body = mysqli_real_escape_string($this->con,$body);
         $body = str_replace('\r\n','\n',$body);
         $body = nl2br($body);
+
 
         $check_empty = preg_replace('/\s+/','',$body);
         
@@ -35,7 +36,7 @@ class Complain{
 
 
 
-            $query =mysqli_query($this->con,"INSERT INTO posts VALUES(NULL, '$category', '$complainTitle', '$body', '$added_by', '$user_to', '$date_added', 'no', 'no', '0')");
+            $query =mysqli_query($this->con,"INSERT INTO posts VALUES(NULL, '$category', '$complainTitle', '$body','$accessability','$added_by', '$user_to', '$date_added', 'no', 'no', '0')");
             $returned_id = mysqli_insert_id($this->con);  
             
             if($user_to != 'none'){
@@ -50,6 +51,8 @@ class Complain{
     }
 
     public function loadComplain($data, $limit){
+        $ni = $this->user_obj->getFaculty();
+
         $page = $data['page'];
         $userLoggedIn = $this->user_obj->getUserName();
         if($page==1)
@@ -67,6 +70,7 @@ class Complain{
         while($row = mysqli_fetch_array($data_query)){
             $id = $row['id'];
             $category = $row['category'];
+            $accessability = $row['accessability'];
             $complainTitle = $row['complainTitle'];
             $body = $row['body'];
             $added_by = $row['added_by'];
@@ -202,7 +206,7 @@ class Complain{
                                   
                                 <span class='compCategory'>$category</span>
 
-                                <span class='compPrivacy'><img src='../../public\img\icons\public.svg'>Public</span>
+                                <span class='compPrivacy'><img src='../../public\img\icons\public.svg'>$accessability</span>
 
                                 <br><br>
                                 <span class='compTitle'>$complainTitle</span>
@@ -213,7 +217,8 @@ class Complain{
 
                                     <li class='outline'><img src='../../public/img/icons/person.svg'><span class='compName outline'><a href='$added_by'>$name</a>$user_to</span></li>
 
-                                    <li><img src='../../public/img/icons/faculty.svg'><span class='compName'>UCSC</span></li>
+                                    <li><img src='../../public/img/icons/faculty.svg'><span class='compName'>$ni
+                                    </span></li>
                                 
                                 </ul>
 

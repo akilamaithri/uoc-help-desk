@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Dec 01, 2021 at 05:15 AM
+-- Generation Time: Dec 06, 2021 at 11:32 AM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -91,7 +91,6 @@ INSERT INTO `friend_requests` (`id`, `user_to`, `user_from`) VALUES
 (16, 'Sivamyouri_param', 'Asela_pathirage'),
 (17, 'Lavinka_weerasekara', 'Asela_pathirage'),
 (18, 'Supun_Bhanuka', 'Asela_pathirage'),
-(21, 'Nimesh_nishamal', 'Hansy_nawanjana'),
 (22, 'Nimesh_nishamal', 'Naduni_liyanage'),
 (23, 'Naduni_liyanage', 'Nadun_chamod'),
 (24, 'Nimesh_nishamal', 'Naween_raajan'),
@@ -112,7 +111,7 @@ CREATE TABLE IF NOT EXISTS `likes` (
   `username` varchar(60) NOT NULL,
   `post_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `likes`
@@ -211,6 +210,7 @@ CREATE TABLE IF NOT EXISTS `posts` (
   `category` varchar(20) NOT NULL,
   `complainTitle` varchar(255) NOT NULL,
   `body` text NOT NULL,
+  `accessability` varchar(255) NOT NULL DEFAULT 'Public',
   `added_by` varchar(60) NOT NULL,
   `user_to` varchar(60) NOT NULL,
   `date_added` varchar(20) NOT NULL,
@@ -218,34 +218,18 @@ CREATE TABLE IF NOT EXISTS `posts` (
   `deleted` varchar(3) NOT NULL,
   `likes` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=173 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=206 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `posts`
 --
 
-INSERT INTO `posts` (`id`, `category`, `complainTitle`, `body`, `added_by`, `user_to`, `date_added`, `user_closed`, `deleted`, `likes`) VALUES
-(147, '', '', '', '', '', '', '', '', 0),
-(148, '', '', '', '', '', '', '', '', 0),
-(149, '', '', '', '', '', '', '', '', 0),
-(151, '', '', '', '', '', '', '', '', 0),
-(152, '', '', '', '', '', '', '', '', 0),
-(153, '', '', '', '', '', '', '', '', 0),
-(154, '', '', '', '', '', '', '', '', 0),
-(155, '', '', '', '', '', '', '', '', 0),
-(156, '', '', '', '', '', '', '', '', 0),
-(157, '', '', '', '', '', '', '', '', 0),
-(158, '', '', '', '', '', '', '', '', 0),
-(159, '', '', '', '', '', '', '', '', 0),
-(160, '', '', '', '', '', '', '', '', 0),
-(161, '', '', '', '', '', '', '', '', 0),
-(163, '', '', '', '', '', '', '', '', 0),
-(164, '', '', '', '', '', '', '', '', 0),
-(165, '', '', '', '', '', '', '', '', 0),
-(169, 'Bursary Issues', 'this is important so consider', 'i\'m first year', 'Nimesh_nishamal', 'none', '2021-11-25 17:26:42', 'no', 'no', 0),
-(170, 'Mahapola', 'Mahapola hambun nane ', 'mahapola dennkoo', 'Nimesh_nishamal', 'none', '2021-11-26 11:59:55', 'no', 'no', 0),
-(171, 'Vehicle Pass', 'bbbb', 'sfsfsf', 'Nimesh_nishamal', 'none', '2021-11-26 22:35:00', 'no', 'no', 0),
-(172, 'Vehicle Pass', 'vygvy', 'vyvyvy', 'Hiruni_guruge', 'none', '2021-11-27 08:01:10', 'no', 'no', 0);
+INSERT INTO `posts` (`id`, `category`, `complainTitle`, `body`, `accessability`, `added_by`, `user_to`, `date_added`, `user_closed`, `deleted`, `likes`) VALUES
+(201, 'Bursary Issues', 'BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB', 'aaascd  fvfht', 'Public', 'Sanchitha', 'none', '2021-12-06 16:08:49', 'no', 'no', 0),
+(202, 'Laptop Loan Issues', 'fgfghgqvdcc', 'wqqewerefscc,kli', 'Private', 'Sanchitha', 'none', '2021-12-06 16:09:13', 'no', 'no', 0),
+(203, 'Bursary Issues', 'gtgthyhyjuj', 'cdvbfbn  hnhnn', 'Private', 'Nimesh_nishamal', 'none', '2021-12-06 16:58:20', 'no', 'no', 0),
+(204, 'Bursary Issues', 'sqsqs', 'dcc', 'Private', 'Sadeera', 'none', '2021-12-06 16:58:57', 'no', 'no', 0),
+(205, 'Hostel Issues', 'bfbfbb', 'rgrgrgre', 'Public', 'Sadeera', 'none', '2021-12-06 17:00:27', 'no', 'no', 0);
 
 -- --------------------------------------------------------
 
@@ -261,7 +245,7 @@ CREATE TABLE IF NOT EXISTS `resetpass` (
   `valueIdentity` varchar(50) NOT NULL,
   `active` char(1) DEFAULT 'a',
   PRIMARY KEY (`recordId`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `resetpass`
@@ -287,7 +271,21 @@ INSERT INTO `resetpass` (`recordId`, `stdId`, `createdTime`, `valueIdentity`, `a
 (24, 0, '2021-11-22 15:50:01', 'o62har3qLpQYXIl98fCiX1sAUTnP0N', 'a'),
 (25, 0, '2021-11-22 15:53:09', 'ljosi8L2CZ1Mp4Ierad7cXPtX3A96h', 'a'),
 (26, 0, '2021-11-22 15:58:22', 'gnTm1SX7aqCdXLc08MZ3ofrPYAp6et', 'a'),
-(27, 0, '2021-11-22 15:59:36', '7r9IamdPZ5CYje2ltgpkUXiqN3Mbc0', 'a');
+(27, 0, '2021-11-22 15:59:36', '7r9IamdPZ5CYje2ltgpkUXiqN3Mbc0', 'a'),
+(28, 0, '2021-12-06 12:57:17', 'SknX6fLZACaUci07m21t35PMsNl9Ig', 'a'),
+(29, 0, '2021-12-06 12:59:06', 'jlXCmLnhNgfrbc2p39iA0Q8k7SoYXq', 'a'),
+(30, 0, '2021-12-06 13:07:19', 'hlgUnP97sr65iZ3c2jX0fqoNXYM4LI', 'a'),
+(31, 0, '2021-12-06 13:14:28', 'A734qX06Mhcmkdiof1YSj2NeCs5ILX', 'a'),
+(32, 0, '2021-12-06 13:16:37', 'X8oeSZt5NXTgp7AcnI0P2s39mCUjlM', 'a'),
+(33, 0, '2021-12-06 13:20:13', '7m1bMgIXsLY3U6ShPqafC20XjQnZ89', 'a'),
+(34, 0, '2021-12-06 13:24:02', 'kUsqXL4Q0i2dTP5crZXo69n8pjA7C1', 'a'),
+(35, 0, '2021-12-06 13:25:51', 'TcdYigQ2X1sSX8C5lnqhjfb0N4Imeo', 'a'),
+(36, 0, '2021-12-06 13:28:19', 'dcim6r5XlbtUM7fq80349asZkLp1X2', 'a'),
+(37, 0, '2021-12-06 13:32:55', '70LaTjqMsXNXtfUlh4r1SepCb82cgd', 'a'),
+(38, 0, '2021-12-06 13:53:55', 'N2mCPsdTM8c34i17YLfjbZ6QgkqIl0', 'a'),
+(39, 107, '2021-12-06 13:55:48', 'lCcsX7mfP09iUZN65I4gM2jkqpLTAe', 'a'),
+(40, 108, '2021-12-06 14:01:08', '728XlaXZMgtfeUo9CQLmYqPAjicSn4', 'a'),
+(41, 109, '2021-12-06 16:53:16', 'T7h4MdgAZ0ISm13oNY5CiXLt6lP8sq', 'a');
 
 -- --------------------------------------------------------
 
@@ -361,7 +359,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `teleNumber` int(10) DEFAULT NULL,
   `address` varchar(500) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=107 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=110 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user`
@@ -372,7 +370,7 @@ INSERT INTO `user` (`id`, `name`, `email`, `password`, `created_by`, `profile_pi
 (81, 'Supun_Bhanuka', '2019lac12@stu.foa.cmb.ac.lk', 'c28a340921221fc7cffbb81ae3a782cb', '2021-10-20 00:00:00', '../../public/img/profile_pics/nameaf0a706a6e66ebdeba0813bb7b8a24ean.jpeg', 0, 0, 'no', ',Sivamyouri_param,Nimesh_nishamal,', 'user', NULL, ''),
 (80, 'Asela_pathirage', '2019is053@stu.ucsc.cmb.ac.lk', '9f640e36323b7bd08971f42f0a74b706', '2021-10-20 00:00:00', '../../public/img/profile_pics/Asela_pathirage73a3fbc1f8f789248ac90493377ecd11n.jpeg', 1, 0, 'no', ',Nimesh_nishamal,Hiruni_guruge,', 'user', NULL, ''),
 (83, 'Pamathi_gunarathne', '2018abc123@stu.fmf.cmb.ac.lk', 'f18db8ecbf583e4f0bdf060b28216a01', '2021-10-20 00:00:00', '../../public/img/profile_pics/Pamathi_gunarathne9ef098daa2c62e8f9937de20a76c4daan.jpeg', 1, 1, 'no', ',', 'user', NULL, ''),
-(76, 'Nimesh_nishamal', '2019is052@stu.ucsc.cmb.ac.lk', '76ac9e19c7a1602866b130771962d2ec', '2021-10-20 00:00:00', '../../public/img/profile_pics/Nimesh_nishamal8145e113e18cfdc4198f33b57de9b8c4n.jpeg', 13, 5, 'no', ',Thavindu_ushan,Lavinka_weerasekara,Supun_Bhanuka,Sivamyouri_param,Thavindu_ushan,Asela_pathirage,Udayantha_namal,Yohombu_abeysinghe,', 'user', NULL, ''),
+(76, 'Nimesh_nishamal', '2019is052@stu.ucsc.cmb.ac.lk', '76ac9e19c7a1602866b130771962d2ec', '2021-10-20 00:00:00', '../../public/img/profile_pics/Nimesh_nishamal8145e113e18cfdc4198f33b57de9b8c4n.jpeg', 14, 5, 'no', ',Thavindu_ushan,Lavinka_weerasekara,Supun_Bhanuka,Sivamyouri_param,Thavindu_ushan,Asela_pathirage,Udayantha_namal,Yohombu_abeysinghe,', 'user', NULL, ''),
 (78, 'Hiruni_guruge', '2019is031@stu.ucsc.cmb.ac.lk', '4cfb7678d9aa3e2f1fab5b2223bdcb00', '2021-10-20 00:00:00', '../../public/img/profile_pics/Hiruni_guruge4d3138a834e59dd74222107144b9b9c4n.jpeg', 2, 0, 'no', ',Asela_pathirage,Udayantha_namal,', 'user', NULL, ''),
 (79, 'Thavindu_ushan', '2019is050@stu.ucsc.cmb.ac.lk', 'ae96ec7f236356ad913a2f2b50f1690b', '2021-10-20 00:00:00', '../../public/img/profile_pics/Thavindu_ushand5a6c7548f05003c9c9cdb57398ec89an.jpeg', 1, 0, 'no', ',Nimesh_nishamal,Sivamyouri_param,', 'user', NULL, ''),
 (84, 'Yohombu_abeysinghe', '2019is001@stu.ucsc.cmb.ac.lk', 'a5cb914b5f8ac751ded129866fbbf805', '2021-10-20 00:00:00', '../../public/img/profile_pics/Yohombu_abeysinghe413aa83d0d4229853e28d1a366e1c49an.jpeg', 0, 0, 'no', ',Nimesh_nishamal,', 'user', NULL, ''),
@@ -385,7 +383,10 @@ INSERT INTO `user` (`id`, `name`, `email`, `password`, `created_by`, `profile_pi
 (94, 'Nithasha_pooliyadda', '2018fs067@stu.fos.cmb.ac.lk', '1561ac1be3e8dd2f3aebc6e546ed164b', '2021-10-21 00:00:00', '../../public/img/profile_pics/Nithasha_pooliyadda981799eee637fe5f0a61645eb88bdefan.jpeg', 1, 0, 'no', ',', 'user', NULL, ''),
 (95, 'Sakuna_samaranaayaka', '2016fa144@stu.fos.cmb.ac.lk', '1cf882cfd28a1ac3f1df68ac542e03cb', '2021-10-21 00:00:00', '../../public/img/profile_pics/Sakuna_samaranaayaka3fa431b2764f540f62b2e972f0710e29n.jpeg', 0, 0, 'no', ',', 'user', NULL, ''),
 (106, 'Ridmi', 'Ridmi@stu.fmf.cmb.ac.lk', '036a4fdb4fdc09e3cde07e6200b2f24b', '2021-11-04 10:00:23', '../../public/img/profile_pics/defaults/head_deep_blue.png', 0, 0, 'P', ',', 'user', NULL, ''),
-(104, 'Akila_maithripala', '2019is043@stu.ucsc.cmb.ac.lk', '77cb2899cf0a7a8d52eca93d410df665', '2021-10-22 11:22:31', '../../public/img/profile_pics/defaults/head_deep_blue.png', 1, 0, 'P', ',', 'Admin', NULL, '');
+(104, 'Akila_maithripala', '2019is043@stu.ucsc.cmb.ac.lk', '77cb2899cf0a7a8d52eca93d410df665', '2021-10-22 11:22:31', '../../public/img/profile_pics/defaults/head_deep_blue.png', 1, 0, 'P', ',', 'Admin', NULL, ''),
+(107, 'Suranga', '2021is072@stu.ucsc.cmb.ac.lkb.ac.lk', '28908d6ea1735b596e49df6de94f92b9', '2021-12-06 13:55:48', '../../public/img/profile_pics/defaults/head_emerald.png', 0, 0, 'P', '', 'user', NULL, ''),
+(108, 'Sanchitha', '2021is078@stu.ucsc.cmb.ac.lk', '39c31a69b92b568d355624fa3b4a4de5', '2021-12-06 14:01:08', '../../public/img/profile_pics/defaults/head_emerald.png', 32, 0, 'P', '', 'user', NULL, ''),
+(109, 'Sadeera', '2021is078@stu.fmf.cmb.ac.lk', '9aae0a4ddcf7d68ad41b39c1e5491a3a', '2021-12-06 16:53:16', '../../public/img/profile_pics/defaults/head_emerald.png', 2, 0, 'P', '', 'user', NULL, '');
 
 -- --------------------------------------------------------
 

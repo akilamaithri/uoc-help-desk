@@ -13,6 +13,11 @@ class User{
         return $this->user['name'];
     }
 
+    
+    public function getUserEmail(){
+        return $this->user['email'];
+    }
+
     public function getNumberOfFriendRequests() {
 		$username = $this->user['name'];
 		$query = mysqli_query($this->con, "SELECT * FROM friend_requests WHERE user_to='$username'");
@@ -136,6 +141,39 @@ class User{
             }
         }
         return $mutualFriends;
+    }
+
+    public function getFaculty(){ 
+        $userFacultyIs = $this->getUserEmail();
+        $userFacultyIs = explode( '@', $userFacultyIs );
+        $userFaculty = array_pop($userFacultyIs);
+
+        if($userFaculty=='stu.fos.cmb.ac.lk') {
+            $userFaculty = 'FOS';
+        }
+        elseif($userFaculty=='stu.foa.cmb.ac.lk') {
+            $userFaculty = 'FOA';
+        }
+        elseif($userFaculty=='stu.ucsc.cmb.ac.lk') {
+            $userFaculty = 'UCSC';
+        }
+        elseif($userFaculty=='stu.fmf.cmb.ac.lk') {
+            $userFaculty = 'FMF';
+        }
+        elseif($userFaculty=='stu.science.cmb.ac.lk') {
+            $userFaculty = 'SCIENCE';
+        }
+        elseif($userFaculty=='stu.stat.cmb.ac.lk') {
+            $userFaculty = 'STAT';
+        }
+        elseif($userFaculty=='stu.ssp.cmb.ac.lk') {
+            $userFaculty = 'SSP';
+        }
+        else{
+            $userFaculty = "No Faculty";
+        }
+
+        return $userFaculty;
     }
 
 }

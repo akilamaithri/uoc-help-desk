@@ -20,7 +20,7 @@ class Validate_email {
       return false;
     }
   
-    private function get_domain($email_address) {
+    public function get_domain($email_address) {
       if ( ! $this->is_email( $email_address ) ) {
         return false;
       }

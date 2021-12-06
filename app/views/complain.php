@@ -38,7 +38,7 @@
                 });
                 </script> -->            
                 <br>
-                <input type = "checkbox" id="privacy" name="type" value="public">
+                <input type = "checkbox" name="type" value="Private">
                 <label for="notice">Private</label>
                 <br>
                 <div class="compBtns" align="left">
