@@ -1,7 +1,6 @@
 <?php
     if(session_status()===PHP_SESSION_NONE) {session_start();}
-
-    global $userType;  
+ 
 
 if(isset($_POST['log_button'])){
     $email = filter_var($_POST['log_email'],FILTER_SANITIZE_EMAIL);
@@ -21,13 +20,11 @@ if(isset($_POST['log_button'])){
         }
         
        if($row['user_roll']=="user"){
-        $userType=1;
         $_SESSION['name'] = $username;
         header("Location:../views/studentDash.php");
         exit();
         }
         else if($row['user_roll']=="Admin"){
-        $userType=0;
         $_SESSION['name'] = $username;
         header("Location:../views/staffHome.php");
         exit(); 

@@ -85,7 +85,7 @@ if(isset($_POST['register_button'])){
         $profile_pic = "../../public/img/profile_pics/defaults/head_deep_blue.png";}
         $date = date("Y-m-d H:i:s");
         $value = keyGenerater();
-        $sql = "INSERT INTO user VALUES (NULL,'$name','$em','$password','$date','$profile_pic','0','0','P',',','user'); ";
+        $sql = "INSERT INTO user VALUES (NULL,'$name','$em','$password','$date','$profile_pic','0','0','P','','user',NULL,'');";
         mysqli_query($con,$sql);
         $sql = "SELECT LAST_INSERT_ID()";
         $query = mysqli_query($con,$sql);

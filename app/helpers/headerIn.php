@@ -145,7 +145,7 @@
 
             <?php
             require '../controllers/login.php';
-
+            global $userType;
             if(!isset($userType)){
                 if($userType==1){
                     echo '<a href="../views/staffHome.php" class="nav-label">

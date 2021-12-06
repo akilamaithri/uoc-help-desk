@@ -193,7 +193,6 @@ if(isset($_POST['complain'])){
 			<div class="complain_area"></div>
 			<img id="loading" src="../../public/img/loading.gif">
 
-
 		<!-- </div> -->
 
 		<script>

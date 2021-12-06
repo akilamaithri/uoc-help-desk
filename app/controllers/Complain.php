@@ -228,13 +228,7 @@ class Complain{
                                 <iframe src='../views/like.php?post_id=$id' scrolling='no'></iframe>
 
                                 
-                                <div class='bottomBtns'>
-                                    <select name='forward' id='forward' class='btn-reply'>
-                                        <option>Forward To</option>
-                                        <option>Department Head</option>
-                                        <option><span onclick='forwardTo()'>Other</span></option>
-                                    </select>
-                                </div>
+                               
                             </div>
                         </div>    
                     
