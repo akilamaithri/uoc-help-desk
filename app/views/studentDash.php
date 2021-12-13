@@ -21,11 +21,51 @@ if(isset($_POST['complain'])){
 	else{
 		$typeA = "Public";
 	}
-    $complain = new Complain($con,$userLoggedIn);
-    $complain->submitComplain($_POST['issuetype'],$_POST['Title'],$_POST['complain_text'],$typeA,'none');
-    header("Location:studentDash.php");
+
+	$uploadOk = 1;
+	$imageName = $_FILES['flieToUpload']['name'];
+	$errorMessage = "";
+
+	if($imageName != ""){
+		$targetDir = "../../public/img/complain/";
+		$imageName = $targetDir . uniqid() . basename($imageName);
+		$imageFileType = pathinfo($imageName, PATHINFO_EXTENSION);
+
+		if($_FILES['flieToUpload']['size'] > 10000000){
+			$errorMessage = "Sorry your file is too large";
+			$uploadOk = 0;
+		}
+		if(strtolower($imageFileType) != "jpeg" && strtolower($imageFileType) != "png" && strtolower($imageFileType) != "jpg"){
+			$errorMessage = "Sorry, only jpeg, jpg and png files are allowed";
+			$uploadOk = 0;
+		}
+
+		if($uploadOk) {
+			
+			if(move_uploaded_file($_FILES['fileToUpload']['tmp_name'],$imageName)) {
+				//image uploaded okay
+			}
+			else {
+				//image did not upload
+				$uploadOk = 0;
+			}
+
+	}
+
+	}
 
 
+	
+	if($uploadOk){
+		$complain = new Complain($con,$userLoggedIn);
+    	$complain->submitComplain($_POST['issuetype'],$_POST['Title'],$_POST['complain_text'],$imageName,$typeA,'none');
+    	header("Location:studentDash.php");
+	}
+	else {
+		echo "<div style='text-align:center;' class='alert alert-danger'>
+				$errorMessage
+			</div>";
+	}
 }
 
 ?>

@@ -27,6 +27,7 @@
 
                 <textarea name="complain_text" id="complain_text"  placeholder="Describe your issue" required= "" style="height:100px"></textarea>
 
+                <input type="file" id="fileToUpload" name="fileToUpload">
                 <!-- <script src="../../public/javascript/nicEdit.js" type="text/javascript"></script>
                 <script type="text/javascript">
                 bkLib.onDomLoaded(function() {

@@ -21,12 +21,57 @@ if(isset($_POST['complain'])){
         
     </div>
 
-
 	<div class="column-2 box">
         <h2>Department Statistics</h2>
-		<br>
 
-		<ul class="cards">
+		<!---------------------------------- Chart -->
+
+		<div class="chartCanvas">
+      		<canvas id="myChart"></canvas>
+      	</div>
+
+      	<script>
+			const ctx = document.getElementById('myChart');
+			const myChart = new Chart(ctx, {
+				type: 'doughnut',
+				data: {
+					labels: ['Replied To', 'Pending'],
+					datasets: [{
+						label: '# of Votes',
+						data: [21, 13],
+						backgroundColor: [
+							'#66006650',
+							'rgba(54, 162, 235, 0.2)',
+							
+						],
+						borderColor: [
+							'#660066',
+							'#660066',
+							
+						],
+						borderWidth: 0.5
+					}]
+				},
+				options: {
+					// animation:{
+					// 	animation.animateRotate: true,
+					// 	duration:5
+					// }
+					plugins:{
+						title:{
+							display: true,
+							text:'Complaint Statsitics'
+						}
+					}
+
+					
+				}
+			});
+      	</script>
+
+		<!------------------------------Stat boxes  -->
+
+<ul class="cards">
 		 	<li class="cards_item">
 				<div class="dashCard-topics">
 					<h4 class="profileCard_title">Complaints Received</h4>
@@ -71,7 +116,72 @@ if(isset($_POST['complain'])){
 			animateValue(count3, 0, 13, 2500);
 		</script>
 
-		<br>
+		<!-------------------------------------------------------------------- Testing Complains ---->
+
+		<script>
+			$(function(){
+
+				var userLoggedIn = '<?php echo $userLoggedIn; ?>';
+				var inProgress = false;
+
+				loadComplain(); //Load first complain
+
+				$(window).scroll(function() {
+					var bottomElement = $(".status_complain").last();
+					var noMorecomplain = $('.complain_area').find('.noMoreComplain').val();
+
+					// isElementInViewport uses getBoundingClientRect(), which requires the HTML DOM object, not the jQuery object. The jQuery equivalent is using [0] as shown below.
+					if (isElementInView(bottomElement[0]) && noMoreComplain == 'false') {
+						loadComplain();
+					}
+				});
+
+				function loadComplain() {
+					if(inProgress) { //If it is already in the process of loading some complain, just return
+						return;
+					}
+					
+					inProgress = true;
+					$('#loading').show();
+
+					var page = $('.complain_area').find('.nextPage').val() || 1; //If .nextPage couldn't be found, it must not be on the page yet (it must be the first time loading complain), so use the value '1'
+
+					$.ajax({
+						url: "includes/handlers/ajax_load_complain.php",
+						type: "POST",
+						data: "page=" + page + "&userLoggedIn=" + userLoggedIn,
+						cache:false,
+
+						success: function(response) {
+							$('.complain_area').find('.nextPage').remove(); //Removes current .nextpage 
+							$('.complain_area').find('.noMorecomplain').remove(); //Removes current .nextpage 
+							$('.complain_area').find('.noMorecomplainText').remove(); //Removes current .nextpage 
+
+							$('#loading').hide();
+							$(".complain_area").append(response);
+
+							inProgress = false;
+						}
+					});
+				}
+
+				//Check if the element is in view
+				function isElementInView (el) {
+					var rect = el.getBoundingClientRect();
+
+					return (
+						rect.top >= 0 &&
+						rect.left >= 0 &&
+						rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && //* or $(window).height()
+						rect.right <= (window.innerWidth || document.documentElement.clientWidth) //* or $(window).width()
+					);
+				}
+			});
+
+		</script>
+		
+
+		<!-------------------------------------------------------------------------- Ending test -->
 
 		<h2>For me</h2>
 
@@ -138,6 +248,73 @@ if(isset($_POST['complain'])){
 
 
 		<!-- </div> -->
+
+		<!-- testing new -->
+		<h3>testgin</h3>
+		<script>
+			$(function(){
+
+				var userLoggedIn = '<?php echo $userLoggedIn; ?>';
+				var inProgress = false;
+
+				loadComplain(); //Load first complain
+
+				$(window).scroll(function() {
+					var bottomElement = $(".status_complain").last();
+					var noMorecomplain = $('.complain_area').find('.noMorecomplain').val();
+
+					// isElementInViewport uses getBoundingClientRect(), which requires the HTML DOM object, not the jQuery object. The jQuery equivalent is using [0] as shown below.
+					if (isElementInView(bottomElement[0]) && noMorecomplain == 'false') {
+						loadComplain();
+					}
+				});
+
+				function loadComplain() {
+					if(inProgress) { //If it is already in the process of loading some complain, just return
+						return;
+					}
+					
+					inProgress = true;
+					$('#loading').show();
+
+					var page = $('.complain_area').find('.nextPage').val() || 1; //If .nextPage couldn't be found, it must not be on the page yet (it must be the first time loading complain), so use the value '1'
+
+					$.ajax({
+						url: "includes/handlers/ajax_load_complain.php",
+						type: "POST",
+						data: "page=" + page + "&userLoggedIn=" + userLoggedIn,
+						cache:false,
+
+						success: function(response) {
+							$('.complain_area').find('.nextPage').remove(); //Removes current .nextpage 
+							$('.complain_area').find('.noMorecomplain').remove(); //Removes current .nextpage 
+							$('.complain_area').find('.noMorecomplainText').remove(); //Removes current .nextpage 
+
+							$('#loading').hide();
+							$(".complain_area").append(response);
+
+							inProgress = false;
+						}
+					});
+				}
+
+				//Check if the element is in view	
+				function isElementInView (el) {
+					var rect = el.getBoundingClientRect();
+
+					return (
+						rect.top >= 0 &&
+						rect.left >= 0 &&
+						rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && //* or $(window).height()
+						rect.right <= (window.innerWidth || document.documentElement.clientWidth) //* or $(window).width()
+					);
+				}
+			});
+
+		</script>
+
+		<!-- testing new -->
+
 
 		<script>
 
