@@ -71,7 +71,7 @@ require '../helpers/stuStaff_header.php';
         <h2>Choose an option</h2>
 
 		<ul class="cards">
-			<li class="cards_item_dep" id="topic1">
+			<li class="cards_item_dep" id="topic1" style="width:45%">
 				<div class="depCard" >
 					<div class="depCard_content">
 						<div class="makeCenter">
@@ -82,7 +82,7 @@ require '../helpers/stuStaff_header.php';
 			</li>
 
 			
-            <li class="cards_item_dep" id="topic2">
+            <li class="cards_item_dep" id="topic2" style="width:45%">
 				<div class="depCard">
 					<div class="depCard_content">
 						<div class="makeCenter">

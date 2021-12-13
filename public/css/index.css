@@ -152,9 +152,7 @@ body {
     transition-duration: 0.4s;
   }
   .mainbtn:hover {
-    background-color:   #5a1e50;
-      transform: scale(1.1);
-    color: rgb(255, 255, 255);
+    background-color:   #fff344;
     cursor: pointer;
   }
   

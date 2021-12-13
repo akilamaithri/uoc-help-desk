@@ -83,6 +83,9 @@ if(isset($_POST['respond_request'])){
 	
       </ul>
 
+
+
+
       <script>
 			//complains
 			const count4 = document.getElementById("compSent");
@@ -136,7 +139,7 @@ if(isset($_POST['respond_request'])){
         <!---------------------- Modal ---------------------->
 
        <!-- Modal -->
-<div class="modal fade" id="post_form" tabindex="-1" role="dialog" aria-labelledby="postModalLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="post_form" tabindex="-1" role="dialog" aria-labelledby="postModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -165,7 +168,7 @@ if(isset($_POST['respond_request'])){
       </div>
     </div>
   </div>
-</div>
+</div> -->
 <!-- Modal -->
         <!-- Modal -->
 </div>
