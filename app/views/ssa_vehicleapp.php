@@ -213,7 +213,7 @@
 
     <div class="testbox">
         
-             <form action="../controllers/vehiclepass.php" method="post">
+             <form action="../controllers/vehiclepass.php" name="vehiform" method="post" onSubmit="return validate()">
                         <div class="banner">
                           <h1>Application form of the  vehicle pass for University students</h1>
                         </div>
@@ -222,34 +222,47 @@
                             </div>
                             <div class="item">
       <p>Undergraduate Year<span class="required">*</span></p>
-        <input type="text" name="year" required/>
+        <input type="text" name="year" id="year" required/>
       </div>
                        
       <h5>1. Your Details:</h5>
       <div class="item">
         <p>Name with Initials<span class="required">*</span></p>
-        <input type="text" name="name" required/>
+        <input type="text" name="name" id="name" required/>
       </div>
       <div class="item">
         <p> Address<span class="required">*</span></p>
-        <input type="text" name="address" placeholder="Street address" required/>
+        <input type="text" name="address" id="address" placeholder="Street address" required/>
         <div class="city-item">
-          <input type="text" name="city" placeholder="City" required/>
-          <input type="text" name="province" placeholder="Province" required/>
-          <input type="text" name="zip" placeholder="Postal / Zip code" required/>
+          <input type="text" name="city" id="city" placeholder="City" required/>
+          <input type="text" name="province" id="province" placeholder="Province" required/>
+          <input type="text" name="zip" id="zip" placeholder="Postal / Zip code" required/>
         </div>
       </div>
 <div class="item">
         <p>Contact Number<span class="required">*</span></p>
-        <input type="text" name="contact" required/>
+        <input type="text" name="contact" id ="contact" required/>
       </div>
       <div class="item">
         <p>National Identity Card No<span class="required">*</span></p>
-        <input type="text" name="id_no" />
+        <input type="text" name="id_no" id="id_no" />
       </div>
       <div class="item">
         <p>Faculty<span class="required">*</span></p>
-        <input type="text" name="faculty" required/>
+        <select id="faculty" name="faculty"> 
+        <option value="sel_fac">Select a faculty </option>
+        <option value="arts">Arts </option>
+        <option value="edu">Education</option>
+        <option value="gra">Graduate Studies</option>
+        <option value="law">Law</option>
+        <option value="man">Management & Finance</option>
+        <option value="med">Medicine</option>
+        <option value="sci">Science</option>
+        <option value="tec">Technology</option>
+        <option value="nur">Nursing</option>
+        <option value="sri">Sri Palee Campus</option>
+        <option value="ucsc">UCSC</option>
+</select>
       </div>
       <div class="question">
         <p>Gender<span class="required">*</span></p>
@@ -263,28 +276,33 @@
       <h5>2.Vehicle Details</h5>
       <div class="question">
         <p>Type of the Vehicle (Motor bicycle/Car/Van etc)<span class="required">*</span></p>
-        <input type="text" name="vehicle" required/>
+        <select id="vehicle" name="vehicle"> 
+        <option value="sel_veh">Select a vehicle</option>
+        <option value="mot">Motor bicycle</option>
+        <option value="car">Car</option>
+        <option value="van">Van</option>
+</select>
         </div>
      
 
       <div class="item">
         <p>Vehicle No</p>
-        <input type="text" name="vehi_no" />
+        <input type="text" name="vehi_no" id="vehi_no" />
       </div>
 
       <div class="item">
         <p>Name of the owner of the Vehicle (Submit the copy of Vehicle registration book)</p>
-        <input type="text" name="owner" />
+        <input type="text" name="owner" id="owner"/>
         <p><b> If you are not the owner of the vehicle please submit a formal letterof authorization to use the vehicle</b></p>
       </div>
 
       <div class="item">
         <p>Form submission date</p>
-        <input type="date" name="date" />
+        <input type="date" name="date" id="date" />
       </div>
       <br />
         <div class="question">
-              <input type="checkbox" value="none" id="check_9" name="check" required/>
+              <input type="checkbox" value="none" id="check_9" name="check" />
               <label for="check_9" class="check"><span>I certify that the above information given by me true and correct. I do not hold the University liable for the 
                  safety of the above vehicle during the hours I park the vehicle inside the University premises.
               </span></label>
@@ -301,6 +319,75 @@
                         <button type="submit"  name="submit" value="Submit">Submit</button>
                     </form>
                 
-   
+ <script >
+      function validate()
+      {
+        var year= document.forms["vehiform"]["year"].value;
+        var name= document.forms["vehiform"]["name"].value;
+        var address= document.forms["vehiform"]["address"].value;
+        var city= document.forms["vehiform"]["city"].value;
+        var province= document.forms["vehiform"]["province"].value;
+        var zip= document.forms["vehiform"]["zip"].value;
+        var contact= document.forms["vehiform"]["contact"].value;
+        var id_no= document.forms["vehiform"]["id_no"].value;
+        var faculty= document.forms["vehiform"]["faculty"].value;
+        var gender= document.getElementById("gender");
+        var vehicle= document.forms["vehiform"]["vehicle"].value;
+        var vehi_no= document.forms["vehiform"]["vehi_no"].value;
+        var owner= document.forms["vehiform"]["owner"].value;
+        var date= document.forms["vehiform"]["date"].value;
+        
+        
+        if(isNaN(year))
+        {
+          alert("Year should be in integers");
+          return false;
+        }
+
+        if(!isNaN(name))
+        {
+          alert("Name should be in characters");
+          return false;
+        }
+
+        if(isNaN(contact))
+        {
+          alert("Contact number should be in digits");
+          return false;
+        }
+
+        if(contact.length!=10)
+        {
+          alert("Contact number must be 10 digits");
+          return false;
+        }
+
+        if(faculty=="sel_fac")
+        {
+          alert("Select a faculty");
+          return false;
+        }
+        
+        // if(gender=="")
+        // {
+        //   alert("Select a gender");
+        //   return false;
+        // }
+
+        if(vehicle=="sel_veh")
+        {
+          alert("Select avehicle");
+          return false;
+        }
+        
+
+        if(!check_9.checked)
+        {
+          alert("Plesase tick the checkbox to certify the details");
+          return false;
+        }
+
+      }
+ </script>  
 </body>
 </html>

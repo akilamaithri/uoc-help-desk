@@ -120,12 +120,6 @@ class Notification{
 					$time_message = $interval->s . " seconds ago";
 				}
 			}
-
-
-
-
-
-
             
 			$opened = $row['opened'];
 			$style = ($opened == 'no') ? "background-color: #DDEDFF;" : "";

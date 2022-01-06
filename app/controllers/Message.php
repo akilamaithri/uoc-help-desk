@@ -47,7 +47,7 @@ class Message{
 			$body = $row['body'];
 			$id = $row['id'];
 
-			$div_top = ($user_to == $userLoggedIn) ? "<div class='message' id='green'>" : "<div class='message' id='blue'>";
+			$div_top = ($user_from == $userLoggedIn) ? "<div class='message' id='blue'>" : "<div class='message' id='green'>";
 			$button = "<span class='deleteButton' onclick='deleteMessage($id, this)'></span>";
 			$data = $data . $div_top . $button . $body . "</div><br><br>";
 		}

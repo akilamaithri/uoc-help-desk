@@ -46,18 +46,25 @@
         <script src="../../public/javascript/jcrop_bits.js"></script>
         <script src="../../public/javascript/jquery.Jcrop.js"></script>
         <script src="../../public/javascript/register.js"></script>
+        <script src="../../public/javascript/charts.js"></script>
+
         
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.2/dist/chart.min.js"></script>
+
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="../../public/css/temp.css">
         <link rel="stylesheet" href="../../public/css/style.css">
+        <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+
 
         <style>
-        body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
-        .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
-        .fa-anchor,.fa-coffee {font-size:200px}
+            body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+            .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+            .fa-anchor,.fa-coffee {font-size:200px}
         </style>
 
     </head>
+
     <body>
 
 
@@ -74,7 +81,6 @@
         //Unread friend req 
         $user_obj = new User($con, $userLoggedIn);
         $num_requests = $user_obj->getNumberOfFriendRequests();
-
 	?>
 
     <div class="navbar" id="navbar" style="padding:0">
@@ -101,6 +107,10 @@
             
             <i class="fa fa-comments" aria-hidden="true"></i>
             
+            <?php
+                    if($num_messages > 0)
+                    echo '<div class="badge" id="unread_messages">' . $num_messages . '</div>';
+                ?>
             
             <span class="nav-label">Messages</span>
                     
@@ -128,7 +138,7 @@
 
                 <?php
                     if($num_notifications > 0)
-                        echo '<span class="badge" id="unread_notification">' . $num_notifications . '</span>';
+                        echo '<div span class="badge" id="unread_notification">' . $num_notifications . '</div>';
                 ?>
 
                 <span class="nav-label">Notifications</span>
@@ -146,19 +156,29 @@
             <?php
             require '../controllers/login.php';
             global $userType;
-            if(!isset($userType)){
-                if($userType==1){
+            
+            if(!isset($userType))
+            {
+                if($userType==1)
+                {
                     echo '<a href="../views/staffHome.php" class="nav-label">
                     <i class="fa fa-home" aria-hidden="true"></i>
                     <span class="nav-label">Home</span>';
-                 }
+                }
 
-                else{
+                else
+                {
                     echo '<a href="../views/studentDash.php" class="nav-label">
                     <i class="fa fa-home" aria-hidden="true"></i>
                     <span class="nav-label">Home</span>';
                 }
             }
+            else
+                {
+                    echo '<a href="../views/studentDash.php" class="nav-label">
+                    <i class="fa fa-home" aria-hidden="true"></i>
+                    <span class="nav-label">Home</span>';
+                }
 
             ?>
 

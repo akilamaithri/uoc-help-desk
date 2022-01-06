@@ -18,10 +18,11 @@ else if(count($names) == 2)
 else 
 	$usersReturnedQuery = mysqli_query($con, "SELECT * FROM user WHERE (name LIKE '$names[0]%' OR name LIKE '$names[0]%') AND user_closed='no' LIMIT 8");
 
+if($query != "")
+{
 
-if($query != ""){
-
-	while($row = mysqli_fetch_array($usersReturnedQuery)) {
+	while($row = mysqli_fetch_array($usersReturnedQuery)) 
+	{
 		$user = new User($con, $userLoggedIn);
 
 		if($row['name'] != $userLoggedIn)
@@ -42,12 +43,8 @@ if($query != ""){
 					</div>
 				</a>
 				</div>";
-
 	}
-
 }
-
-
 
 
 ?>

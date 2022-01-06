@@ -14,10 +14,9 @@
 	<br>
 	<p><button class="pplButton pplButtonMain" onclick="location.href='<?php echo $userLoggedIn; ?>'">View Profile</button></p>
 	<p><button class="pplButton" onclick="location.href='staffHome.php';">View my complaints</button></p>
+	<p><button class="pplButton" onclick="location.href='staff_functions.php';">My Functions</button></p>
 	<p><button class="pplButton" onclick="location.href='staAnnounce.php';">My Announcements</button></p>
 	<p><button class="pplButton" onclick="openAnnouncement()">Add Announcement</button></p>
-	<p><button class="pplButton" onclick="location.href='#';">My Functions</button></p>
 	<p><button class="pplButton">Messages</button></p>
-	<br>
-	<p></p>
+	
 </div>

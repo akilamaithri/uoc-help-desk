@@ -14,9 +14,9 @@
     else{
         header("Location:../views/register.php");               //this need to be register.php
     }    
-    ?>
+?>
 
-
+    
 <!DOCTYPE html>
 <head>
     <title></title>
@@ -31,7 +31,8 @@
 	}
     body{
         height: fit-content;
-
+        padding-top: 10px;
+        padding-bottom: 10px
     }
 	</style>
 
@@ -45,17 +46,21 @@
         line-height: 25px
 	}
 
-	</style>
+    body{
+          height: auto;
+    }
+
+</style>
 
 
     <script>
         	function toggle() {
-			var element = document.getElementById("comment_section");
+                var element = document.getElementById("comment_section");
 
-			if(element.style.display == "block") 
-				element.style.display = "none";
-			else 
-				element.style.display = "block";
+                if(element.style.display == "block") 
+                    element.style.display = "none";
+                else 
+                    element.style.display = "block";
 		}
     </script>
 
@@ -64,10 +69,13 @@
                 $post_id = $_GET['post_id'];
             }
 
+
+
             $user_query = mysqli_query($con,"SELECT added_by,user_to FROM posts WHERE id='$post_id'");
             $row = mysqli_fetch_array($user_query);
             $posted_to = $row['added_by'];
             $user_to = $row['user_to'];
+	
 
             if(isset($_POST['postComment' . $post_id])){
                 $post_body = $_POST['post_body'];
@@ -111,7 +119,7 @@
                 </div>
 
                 <div class="col-1">
-                        <input type="submit" name="postComment<?php echo $post_id; ?>" value="Post">
+                    <input type="submit" name="postComment<?php echo $post_id; ?>" value="Post">
                 </div>
             </div>
             </form>
@@ -121,108 +129,132 @@
             
             $count = mysqli_num_rows($get_comments);
 
-            if($count != 0){
-                while($comment = mysqli_fetch_array($get_comments)){
+            if($count != 0)
+            {
+                while($comment = mysqli_fetch_array($get_comments))
+                {
                     $comment_body = $comment['post_body'];
                     $posted_to = $comment['posted_to'];
                     $posted_by = $comment['posted_by'];
                     $date_added = $comment['date_added'];
                     $removed = $comment['removed'];
 
+                    $user_roll = mysqli_query($con, "SELECT user.user_roll FROM user INNER JOIN comments ON user.name = comments.posted_by WHERE user.name=\"$posted_by\"");
+                    
+                    while ($row = $user_roll->fetch_assoc()) 
+                    {
+                        $role= $row['user_roll'];
 
-            $date_time_now = date("Y-m-d H:i:s");
-            $start_date = new DateTime($date_added); //Time of post
-            $end_date = new DateTime($date_time_now); //Current time
-            $interval = $start_date->diff($end_date); //Difference between dates 
-            if($interval->y >= 1) {
-                if($interval->y == 1)
-                    $time_message = $interval->y . " year ago"; //1 year ago
-                else 
-                    $time_message = $interval->y . " years ago"; //1+ year ago
-            }
-            else if ($interval->m >= 1) {
-                if($interval->d == 0) {
-                    $days = " ago";
-                }
-                else if($interval->d == 1) {
-                    $days = $interval->d . " day ago";
-                }
-                else {
-                    $days = $interval->d . " days ago";
-                }
+                    }
+
+                    $date_time_now = date("Y-m-d H:i:s");
+                    $start_date = new DateTime($date_added); //Time of post
+                    $end_date = new DateTime($date_time_now); //Current time
+                    $interval = $start_date->diff($end_date); //Difference between dates 
+                    if($interval->y >= 1) 
+                    {
+                        if($interval->y == 1)
+                            $time_message = $interval->y . " year ago"; //1 year ago
+                        else 
+                            $time_message = $interval->y . " years ago"; //1+ year ago
+                    }
+                    else if ($interval->m >= 1) 
+                    {
+                        if($interval->d == 0) {
+                            $days = " ago";
+                        }
+                        else if($interval->d == 1) {
+                            $days = $interval->d . " day ago";
+                        }
+                        else {
+                            $days = $interval->d . " days ago";
+                        }
 
 
-                if($interval->m == 1) {
-                    $time_message = $interval->m . " month ". $days;
-                }
-                else {
-                    $time_message = $interval->m . " months ". $days;
-                }
+                        if($interval->m == 1) {
+                            $time_message = $interval->m . " month ". $days;
+                        }
+                        else {
+                            $time_message = $interval->m . " months ". $days;
+                        }
 
-            }
-            else if($interval->d >= 1) {
-                if($interval->d == 1) {
-                    $time_message = "Yesterday";
-                }
-                else {
-                    $time_message = $interval->d . " days ago";
-                }
-            }
-            else if($interval->h >= 1) {
-                if($interval->h == 1) {
-                    $time_message = $interval->h . " hour ago";
-                }
-                else {
-                    $time_message = $interval->h . " hours ago";
-                }
-            }
-            else if($interval->i >= 1) {
-                if($interval->i == 1) {
-                    $time_message = $interval->i . " minute ago";
-                }
-                else {
-                    $time_message = $interval->i . " minutes ago";
-                }
-            }
-            else {
-                if($interval->s < 30) {
-                    $time_message = "Just now";
-                }
-                else {
-                    $time_message = $interval->s . " seconds ago";
-                }
-            }
+                    }
+                    else if($interval->d >= 1) 
+                    {
+                        if($interval->d == 1) {
+                            $time_message = "Yesterday";
+                        }
+                        else {
+                            $time_message = $interval->d . " days ago";
+                        }
+                    }
+                    else if($interval->h >= 1) {
+                        if($interval->h == 1) {
+                            $time_message = $interval->h . " hour ago";
+                        }
+                        else {
+                            $time_message = $interval->h . " hours ago";
+                        }
+                    }
+                    else if($interval->i >= 1) 
+                    {
+                        if($interval->i == 1) {
+                            $time_message = $interval->i . " minute ago";
+                        }
+                        else {
+                            $time_message = $interval->i . " minutes ago";
+                        }
+                    }
+                    else 
+                    {
+                        if($interval->s < 30) {
+                            $time_message = "Just now";
+                        }
+                        else {
+                            $time_message = $interval->s . " seconds ago";
+                        }
+                    }
 
-            $user_obj = new User($con,$posted_by);
-
-            ?>
-
-            <div class="comment_section">
-                <div class="commentHeader">
+                    $user_obj = new User($con,$posted_by);
                 
-                    <a href="<?php echo $posted_by?>" target="_parent">
-                        <img src="<?php echo $user_obj->getProfilePic();?>" title="<?php echo $posted_by;?>" style="float:left; border-radius:100px" height="30">
-                    </a>
+                    ?>
 
-                    &nbsp;
-                    <a href="<?php echo $posted_by ?>" target="_parent"><b><?php echo $user_obj->getName();?></b>
+                    <div class="comment_section">
+                        <div class="commentHeader">
+                        
+                            <a href="<?php echo $posted_by?>" target="_parent">
+                                <img src="<?php echo $user_obj->getProfilePic();?>" title="<?php echo $posted_by;?>" style="float:left; border-radius:100px" height="30">
+                            </a>
 
-                    </a>&nbsp;&nbsp;&nbsp;
+                            &nbsp;
+                            <a href="<?php echo $posted_by ?>" target="_parent"><b><?php echo $user_obj->getName();?></b>
 
-                    <?php echo $time_message ?>
-                
-                </div>
-                
-                <span class="commentBody"><?php echo $comment_body ?></span>
+                            </a>&nbsp;&nbsp;&nbsp;
 
-            </div>
+                            <?php echo $time_message ?>
+                        
+                        </div>
 
-            <?php 
+                        <?php 
+                            if ($role=='Admin')
+                            {
+                                echo "<span class='commentBody_staff'>$comment_body</span>";
+                            }
+
+                            else
+                            {
+                                echo "<span class='commentBody'>$comment_body</span>";
+                            }
+                        ?>
+                    </div>
+
+                    <?php 
 
                 }
             }
 
-            else{
+            else
+            {
                 echo "<center><br>No Replies to Show</center>";
             }
             ?>

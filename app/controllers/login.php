@@ -1,6 +1,6 @@
 <?php
     if(session_status()===PHP_SESSION_NONE) {session_start();}
- 
+    $userType=0;
 
 if(isset($_POST['log_button'])){
     $email = filter_var($_POST['log_email'],FILTER_SANITIZE_EMAIL);
@@ -19,15 +19,20 @@ if(isset($_POST['log_button'])){
             $reopen_account = mysqli_query($con,"UPDATE user SET user_closed='no' WHERE email='$email'");
         }
         
-       if($row['user_roll']=="user"){
-        $_SESSION['name'] = $username;
-        header("Location:../views/studentDash.php");
-        exit();
+       if($row['user_roll']=="user")
+       {
+            $_SESSION['name'] = $username;
+            header("Location:../views/studentDash.php");
+            $userType=0;
+            exit();
         }
-        else if($row['user_roll']=="Admin"){
-        $_SESSION['name'] = $username;
-        header("Location:../views/staffHome.php");
-        exit(); 
+
+        else if($row['user_roll']=="Admin")
+        {
+            $_SESSION['name'] = $username;
+            header("Location:../views/staffHome.php");
+            $userType=1;
+            exit();  
         }
         else{
             echo "Invalid Username or Password <br> Please check it out";

@@ -57,7 +57,7 @@ if(isset($_POST['post_message'])) {
 
                     <?php
                         if($user_to != "new"){
-                            echo "<h3>You and <a href='$user_to'>" . $user_to_obj->getName() . "</a></h3><hr><br><br>";
+                            echo "<h3 style='color:#ccccb3'>You and <a href='$user_to'>" . $user_to_obj->getName() . "</a></h3><hr><br><br>";
                             
                             echo "<div class='' id='scroll_messages'>";
                             echo $message_obj->getMessages($user_to);
@@ -74,7 +74,7 @@ if(isset($_POST['post_message'])) {
 
                                     echo "Select the friend you would like to message <br>";
                                     ?>
-                                    <br><input type='text' style='padding:10px 0px 10px 10px; border-radius:5px; border:1px solid; width:50%;' onkeyup='getUsers(this.value, "<?php echo $userLoggedIn; ?>")' name='q' placeholder='Name' autocomplete='off' id='search_text_input'>
+                                    <br><input type='text' style=' padding:10px 0px 10px 10px; border-radius:2px; border:1px solid; width:50%;' onkeyup='getUsers(this.value, "<?php echo $userLoggedIn; ?>")' name='q' placeholder='Name' autocomplete='off' id='search_text_input'>
                                     <?php
                                     echo "<div class='results'></div>";
                                     echo "<br>";

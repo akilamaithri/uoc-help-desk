@@ -10,7 +10,7 @@ class Complain{
         $this->user_obj = new User($con,$user); 
     }
 
-    public function submitComplain($category,$complainTitle,$body,$accessability,$user_to){
+    public function submitComplain($category,$complainTitle,$body,$imageName,$accessability,$user_to){
         $category = nl2br($category);
 
         $complainTitle = strip_tags($complainTitle);
@@ -23,10 +23,26 @@ class Complain{
         $body = str_replace('\r\n','\n',$body);
         $body = nl2br($body);
 
-
         $check_empty = preg_replace('/\s+/','',$body);
         
         if($check_empty != ""){
+
+            $body_array = preg_split("/\s+/", $body);
+
+			foreach($body_array as $key => $value) {
+
+				if(strpos($value, "www.youtube.com/watch?v=") !== false) {
+
+					$link = preg_split("!&!", $value);
+					$value = preg_replace("!watch\?v=!", "embed/", $link[0]);
+					$value = "<br><iframe width=\'420px\' height=\'315px\' src=\'" . $value ."\'></iframe><br>";
+					$body_array[$key] = $value;
+
+				}
+
+			}
+			$body = implode(" ", $body_array);
+            
             $date_added = date("Y-m-d H:i:s");
             $added_by = $this->user_obj->getUserName();
 
@@ -36,7 +52,7 @@ class Complain{
 
 
 
-            $query =mysqli_query($this->con,"INSERT INTO posts VALUES(NULL, '$category', '$complainTitle', '$body','$accessability','$added_by', '$user_to', '$date_added', 'no', 'no', '0')");
+            $query =mysqli_query($this->con,"INSERT INTO posts VALUES(NULL, '$category', '$complainTitle', '$body','$accessability','$added_by', '$user_to', '$date_added', 'no', 'no', '0','$imageName')");
             $returned_id = mysqli_insert_id($this->con);  
             
             if($user_to != 'none'){
@@ -75,6 +91,7 @@ class Complain{
             $body = $row['body'];
             $added_by = $row['added_by'];
             $date_time = $row['date_added'];
+            $imagePath = $row['image'];
 
             if($row['user_to'] == 'none'){
                 $user_to = "";
@@ -91,7 +108,7 @@ class Complain{
             }
 
             $user_logged_obj = new User($this->con,$userLoggedIn);
-            if($user_logged_obj->isFriend($added_by)){
+            // if($user_logged_obj->isFriend($added_by)){
 
             if($num_iterations++ < $start)
             continue;
@@ -197,7 +214,14 @@ class Complain{
                 }
             }
 
-
+            if($imagePath != ""){
+                $imageDiv = "<div class='postedImage'>
+                                <img src='imagePath'>
+                            </div>";
+            }
+            else{
+                $imageDiv = "";
+            }
 
             
             $str .= "<div class='status_complain' >
@@ -223,7 +247,9 @@ class Complain{
                                 </ul>
 
                                 <p>$body</p>
-                                            
+                            
+                                $imageDiv
+                                      
                             </article>
                         
 
@@ -241,13 +267,13 @@ class Complain{
                     </div>
                     
                     <div class='post_comment' id='toggleComment$id' style='display:none;'>
-                    <iframe src='../views/comment.php?post_id=$id' id='comment_iframe' frameborder='0'></iframe>
+                    <iframe src='../views/comment.php?post_id=$id' id='comment_iframe' frameborder='0' style='height:fit-content'></iframe>
                 
                     </div>
                     </div>
                     ";
                     
-        }
+        // }
 
         ?>
                 <script>
@@ -257,7 +283,7 @@ class Complain{
                             {
                                 bootbox.confirm("Are you sure you want to delete this complain?", function(result)
                                 {
-                                    $.post("delete_complain.php?post_id=<?php echo $id; ?>", {result:result});
+                                    $.post("../controllers/delete_complain.php?post_id=<?php echo $id; ?>", {result:result});
                                     if(result)
                                         location.reload();                        
                                 });
@@ -286,6 +312,11 @@ class Complain{
             $start = 0;
         else
             $start = ($page-1) * $limit;
+
+
+            
+
+
 
         $str = "";
         $data_query = mysqli_query($this->con,"SELECT * FROM posts WHERE deleted='no' AND ((added_by='$profileUser' AND user_to='none') OR user_to='$profileUser') ORDER BY id DESC");
@@ -671,12 +702,7 @@ class Complain{
 
 		echo $str;
 	
-
-
-
     }
-
-
 
 }
 

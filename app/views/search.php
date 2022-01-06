@@ -2,7 +2,6 @@
 require '../helpers/headerIn.php';
 require '../views/complain.php';  
 
-
 if(isset($_GET['q'])) {
 	$query = $_GET['q'];
 }
@@ -56,7 +55,8 @@ else {
 				echo "<p id='grey'>Try searching for:</p>";
 				echo "<a href='search.php?q=" . $query ."&type=name' class='mainbtn'>Names</a> <a href='search.php?q=" . $query ."&type=username' class='mainbtn'>Usernames</a><br><br>";
 
-				while($row = mysqli_fetch_array($usersReturnedQuery)) {
+				while($row = mysqli_fetch_array($usersReturnedQuery)) 
+				{
 					$user_obj = new User($con, $user['name']);
 
 					$button = "";
@@ -66,9 +66,7 @@ else {
 
 						//Generate button depending on friendship status 
 						if($user_obj->isFriend($row['name']))
-							$button = "<input type='submit' id='ignore_button' name='" . $row['name'] . "' value='Remove Friend'>"; 
-							
-							
+							$button = "<input type='submit' id='ignore_button' name='" . $row['name'] . "' value='Remove Friend'>";
 
 						else if($user_obj->didReceiveRequest($row['name']))
 							$button = "<input type='submit' name='" . $row['name'] . "'value='Respond to request'>";

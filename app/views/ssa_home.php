@@ -120,6 +120,9 @@ require '../helpers/stuStaff_header.php';
 					</div>
 				</div>
 			</li>
+		</ul>
+
+		<ul class="cards">
 
 			<!------------ mahapola -->
 			<li class="cards_item_dep" id="topic4" onclick="location.href='ssa_mahapola.php';">
@@ -131,9 +134,9 @@ require '../helpers/stuStaff_header.php';
 					</div>
 				</div>
 			</li>
-		</ul>
+		
 
-		<ul class="cards">
+		
 
 		<!-------- Scholarships -->
 			<!-- <li class="cards_item_dep" id="topic4" onclick="location.href='ssa_scholarships.php';">
